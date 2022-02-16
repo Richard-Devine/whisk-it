@@ -10,7 +10,7 @@ export default class Header extends React.Component <HeaderProps> {
                     <img/>
                 </div>
                 <div data-testid='menu-container'>
-                    <Menu onClick={(x) = this.props.onClick(x)}/>
+                    <Menu onClick={(x) => this.props.onClick(x)}/>
                 </div>
             </div>
         )
