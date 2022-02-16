@@ -24,9 +24,9 @@ describe('LandingPage tests', () => {
         expect(wrapper.find({'data-testid': 'header-container'}).exists()).toBe(true)
     })
     it('displaySwitch changes state when called', () => {
-        expect(wrapper.instance().state.viewDetails as boolean).toBe(false)
+        expect(wrapper.instance().state.viewDetails as string).toBe(false)
         wrapper.instance().displaySwitch()
-        expect(wrapper.instance().state.viewDetails as boolean).toBe(true)
+        expect(wrapper.instance().state.viewDetails as string).toBe(true)
     })
     it('', () => {
 

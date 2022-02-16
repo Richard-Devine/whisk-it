@@ -1,4 +1,6 @@
 export type LandingPageState = {
-    viewDetails: boolean
+    pageView: string
 };
-
+export type HeaderProps = {
+    onClick: (x) => void
+};
