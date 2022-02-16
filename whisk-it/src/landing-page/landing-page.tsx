@@ -25,7 +25,6 @@ export default class LandingPage extends React.Component {
         }
     }
 
-
     displaySwitch() {
         this.setState({viewDetails: !this.state.viewDetails})
     }
@@ -34,10 +33,10 @@ export default class LandingPage extends React.Component {
         return (
             <div>
                 <div data-testid='header-container'>
-                    <Header/>
+                    <Header onClick={() => {this.productView()}}/>
                 </div>
                 <div>
-                    {this.productView()}
+                    <Home/>
                 </div>
             </div>
         )

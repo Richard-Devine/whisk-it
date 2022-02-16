@@ -23,4 +23,12 @@ describe('LandingPage tests', () => {
         expect(wrapper.find({'data-testid':'product-details-container'}).exists()).toBe(true)
         expect(wrapper.find({'data-testid': 'header-container'}).exists()).toBe(true)
     })
+    it('displaySwitch changes state when called', () => {
+        expect(wrapper.instance().state.viewDetails as boolean).toBe(false)
+        wrapper.instance().displaySwitch()
+        expect(wrapper.instance().state.viewDetails as boolean).toBe(true)
+    })
+    it('', () => {
+
+    })
 })
