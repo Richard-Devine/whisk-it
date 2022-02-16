@@ -2,10 +2,13 @@ import * as React from 'react'
 import Header from '../header/header'
 import ProductList from "../product-list/product-list";
 import Home from "../home/home"
+import ProductDetails from "../product-details/product-details";
+import Gallery from "../gallery/gallery";
+import ContactUs from "../contact-us/contact-us";
 import {LandingPageState} from "../types";
 
-
 export default class LandingPage extends React.Component {
+
     state: LandingPageState = {
         pageView: "Home"
     }
@@ -14,31 +17,31 @@ export default class LandingPage extends React.Component {
         switch (this.state.pageView) {
             case "Home":
                 return (
-                    <div>
+                    <div data-testid='home-container'>
                         <Home/>
                     </div>
                 )
             case "ProductList":
                 return (
-                    <div>
+                    <div data-testid='product-list-container'>
                         <ProductList/>
                     </div>
                 )
             case "ProductDetails":
                 return (
-                    <div>
+                    <div data-testid='product-details-container'>
                         <ProductDetails/>
                     </div>
                 )
             case "Gallery":
                 return (
-                    <div>
+                    <div data-testid='gallery-container'>
                         <Gallery/>
                     </div>
                 )
             case "ContactUs":
                 return (
-                    <div>
+                    <div data-testid='contact-us-container'>
                         <ContactUs/>
                     </div>
                 )
@@ -46,23 +49,7 @@ export default class LandingPage extends React.Component {
     }
 
     displaySwitch(page) {
-        switch (page) {
-            case "Home":
-                this.setState({pageView: "Home"})
-                break;
-            case "ProductList":
-                this.setState({pageView: "ProductList"})
-                break;
-            case "Product-Details":
-                this.setState({pageView: "ProductDetails"})
-                break;
-            case "Gallery":
-                this.setState({pageView: "Gallery"})
-                break;
-            case "Contact-Us":
-                this.setState({pageView: "ContactUs"})
-                break;
-        }
+        this.setState({pageView: page})
     }
 
     render() {

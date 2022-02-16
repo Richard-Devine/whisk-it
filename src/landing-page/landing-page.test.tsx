@@ -12,23 +12,22 @@ describe('LandingPage tests', () => {
     afterEach(() => {
         wrapper.update()
     })
-    it('renders a Header and ProductList component', () => {
-        expect(wrapper.find({'data-testid': 'header-container'}).exists()).toBe(true)
-        expect(wrapper.find({'data-testid':'product-list-container'}).exists()).toBe(true)
+    it('renders a Header and Home component on first load', () => {
+        expect(wrapper.find({'data-testid':'header-container'}).exists()).toBe(true)
+        expect(wrapper.find({'data-testid':'home-container'}).exists()).toBe(true)
     })
-    it('switches to ProductDetails on state change',() => {
+    it('productView renders correct components on state change',() => {
         expect(wrapper.find({'data-testid':'product-details-container'}).exists()).toBe(false)
-        wrapper.setState({viewDetails: true})
         expect(wrapper.find({'data-testid':'product-list-container'}).exists()).toBe(false)
+        wrapper.setState({pageView: 'ProductDetails'})
+        expect(wrapper.find({'data-testid':'product-list-container'}).exists()).toBe(false)
+        expect(wrapper.find({'data-testid':'home-container'}).exists()).toBe(false)
         expect(wrapper.find({'data-testid':'product-details-container'}).exists()).toBe(true)
-        expect(wrapper.find({'data-testid': 'header-container'}).exists()).toBe(true)
+        expect(wrapper.find({'data-testid':'header-container'}).exists()).toBe(true)
     })
     it('displaySwitch changes state when called', () => {
-        expect(wrapper.instance().state.viewDetails as string).toBe(false)
-        wrapper.instance().displaySwitch()
-        expect(wrapper.instance().state.viewDetails as string).toBe(true)
-    })
-    it('', () => {
-
+        expect(wrapper.instance().state.pageView as string).toBe('Home')
+        wrapper.instance().displaySwitch('Gallery')
+        expect(wrapper.instance().state.pageView as string).toBe('Gallery')
     })
 })
