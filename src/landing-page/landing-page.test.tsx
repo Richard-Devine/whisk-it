@@ -12,7 +12,7 @@ describe('LandingPage tests', () => {
     afterEach(() => {
         wrapper.update()
     })
-    it('renders a Header and Home component on first load', () => {
+    it('renders a Header and Home component on first render', () => {
         expect(wrapper.find({'data-testid':'header-container'}).exists()).toBe(true)
         expect(wrapper.find({'data-testid':'home-container'}).exists()).toBe(true)
     })

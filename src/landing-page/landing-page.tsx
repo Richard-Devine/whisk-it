@@ -6,7 +6,7 @@ import ProductDetails from "../product-details/product-details";
 import Gallery from "../gallery/gallery";
 import ContactUs from "../contact-us/contact-us";
 import Offers from "../offers/offers"
-import {LandingPageState} from "../types";
+import {LandingPageState} from "../webpage-types";
 
 export default class LandingPage extends React.Component {
 

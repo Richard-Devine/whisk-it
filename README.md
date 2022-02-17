@@ -1,6 +1,6 @@
 Header: 
 
-logo and menu bar for Hom, Products, Gallery, Deals, Contact Us
+logo and menu bar for Home, Products, Gallery, Deals, Contact Us
 
 Page 1: 
 

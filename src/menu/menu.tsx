@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {MenuProps} from "../types";
+import {MenuProps} from "../webpage-types";
 
 export default class Menu extends React.Component <MenuProps> {
     render() {

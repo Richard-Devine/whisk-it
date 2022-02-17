@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {HeaderProps} from "../types";
+import {HeaderProps} from "../webpage-types";
 import Menu from "../menu/menu";
 
 export default class Header extends React.Component <HeaderProps> {
