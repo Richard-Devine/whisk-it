@@ -7,7 +7,7 @@ export default class Header extends React.Component <HeaderProps> {
         return(
             <div>
                 <div data-testid='logo-container'>
-                    <img/>
+                    <img src="" alt="Whisk It logo"/>
                 </div>
                 <div data-testid='menu-container'>
                     <Menu onClick={(x) => this.props.onClick(x)}/>
@@ -16,3 +16,4 @@ export default class Header extends React.Component <HeaderProps> {
         )
     }
 }
+//TODO add image source for logo

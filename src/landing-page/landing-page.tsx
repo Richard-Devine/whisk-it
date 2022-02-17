@@ -5,12 +5,14 @@ import Home from "../home/home"
 import ProductDetails from "../product-details/product-details";
 import Gallery from "../gallery/gallery";
 import ContactUs from "../contact-us/contact-us";
+import Offers from "../offers/offers"
 import {LandingPageState} from "../types";
 
 export default class LandingPage extends React.Component {
 
     state: LandingPageState = {
-        pageView: "Home"
+        pageView: "Home",
+        productId: null
     }
 
     productView() {
@@ -24,13 +26,19 @@ export default class LandingPage extends React.Component {
             case "ProductList":
                 return (
                     <div data-testid='product-list-container'>
-                        <ProductList/>
+                        <ProductList onClick={(x) => {this.viewProduct(x)}}/>
                     </div>
                 )
             case "ProductDetails":
                 return (
                     <div data-testid='product-details-container'>
-                        <ProductDetails/>
+                        <ProductDetails backButton={() => {this.displaySwitch('ProductList')}}/>
+                    </div>
+                )
+            case "Offers":
+                return (
+                    <div data-testid='offers-container'>
+                        <Offers/>
                     </div>
                 )
             case "Gallery":
@@ -46,6 +54,11 @@ export default class LandingPage extends React.Component {
                     </div>
                 )
         }
+    }
+
+    viewProduct(product) {
+        this.setState({productId: product})
+        this.setState({pageView: 'ProductDetails'})
     }
 
     displaySwitch(page) {
