@@ -29,3 +29,15 @@ contact us
 Buy: 
 
 link to paypal to finish payment and send Email of order
+
+
+database structure
+
+product:{
+    id: azureTimeId,
+    title: someTitle,
+    imageURL: someURL,
+    description: someDescription,
+    price: somePrice,
+    offer: true/false
+    }

@@ -20,7 +20,7 @@ export default class LandingPage extends React.Component {
             case "Home":
                 return (
                     <div data-testid='home-container'>
-                        <Home/>
+                        <Home onClick={(x) => {this.displaySwitch(x)}}/>
                     </div>
                 )
             case "ProductList":

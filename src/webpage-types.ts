@@ -11,6 +11,18 @@ export type MenuProps = {
 export type ProductListProps = {
     onClick: (x: string) => void
 }
+export type ProductListState = {
+    productRange: object[]
+}
 export type ProductDetailsProps = {
     backButton: () => void
+}
+export type HomeProps = {
+    onClick: (x: string) => void
+}
+export type ProductProps = {
+    title: string
+    description: string
+    price: string
+    image?: string
 }
