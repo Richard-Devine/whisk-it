@@ -7,7 +7,7 @@ Enzyme.configure({ adapter: new Adapter() });
 describe('Home tests', () => {
     let wrapper
     beforeEach(() => {
-        wrapper = shallow(<Home/>)
+        wrapper = shallow(<Home onClick={() => null}/>)
     })
     it('contains blurb, offers, new products and instagram feed', () => {
         expect(wrapper.find({'data-testid':'blurb-container'}).exists()).toBe(true)

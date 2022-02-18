@@ -32,7 +32,7 @@ export default class LandingPage extends React.Component {
             case "ProductDetails":
                 return (
                     <div data-testid='product-details-container'>
-                        <ProductDetails backButton={() => {this.displaySwitch('ProductList')}}/>
+                        <ProductDetails backButton={() => {this.displaySwitch('ProductList')}} id={this.state.productId}/>
                     </div>
                 )
             case "Offers":

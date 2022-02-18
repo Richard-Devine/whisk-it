@@ -16,6 +16,7 @@ export type ProductListState = {
 }
 export type ProductDetailsProps = {
     backButton: () => void
+    id: string
 }
 export type HomeProps = {
     onClick: (x: string) => void
@@ -25,4 +26,6 @@ export type ProductProps = {
     description: string
     price: string
     image?: string
+    onClick: (x:string) => void
+    id: string
 }
