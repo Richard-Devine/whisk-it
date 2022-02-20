@@ -20,6 +20,9 @@ export default class Menu extends React.Component <MenuProps> {
                 <span onClick={() => this.props.onClick('ContactUs')} data-testid='contact-us-button'>
                     Contact Us
                 </span>
+                <span onClick={() => this.props.onClick('Basket')} data-testid='basket-button'>
+                    <img src='' alt='My Basket'/>
+                </span>
             </div>
         )
     }

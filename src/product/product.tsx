@@ -1,8 +1,8 @@
+import * as React from 'react'
 import {ProductProps} from "../webpage-types";
 
 export default function Product(props:ProductProps) {
     return (
-        //test
         <div onClick={() => props.onClick(props.id)}>
             <div data-testid='image-div'>
                 <img src={props.image} alt={props.title}/>

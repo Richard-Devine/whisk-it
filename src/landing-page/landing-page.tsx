@@ -12,7 +12,7 @@ export default class LandingPage extends React.Component {
 
     state: LandingPageState = {
         pageView: "Home",
-        productId: null
+        productId: ""
     }
 
     productView() {
@@ -56,12 +56,12 @@ export default class LandingPage extends React.Component {
         }
     }
 
-    viewProduct(product) {
+    viewProduct(product: string) {
         this.setState({productId: product})
         this.setState({pageView: 'ProductDetails'})
     }
 
-    displaySwitch(page) {
+    displaySwitch(page: string) {
         this.setState({pageView: page})
     }
 

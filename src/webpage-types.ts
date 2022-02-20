@@ -3,7 +3,7 @@ export type LandingPageState = {
     productId: string
 };
 export type HeaderProps = {
-    onClick: (x:string) => void
+    onClick: (x: string) => void
 };
 export type MenuProps = {
     onClick: (x: string) => void
@@ -22,10 +22,10 @@ export type HomeProps = {
     onClick: (x: string) => void
 }
 export type ProductProps = {
-    title: string
-    description: string
-    price: string
-    image?: string
-    onClick: (x:string) => void
-    id: string
+    title: string,
+    description: string,
+    price: string,
+    id: string,
+    image?: string,
+    onClick: (x: string) => void,
 }

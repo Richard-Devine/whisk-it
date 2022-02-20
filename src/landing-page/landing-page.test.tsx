@@ -8,7 +8,7 @@ import ProductList from "../product-list/product-list"
 import Offers from "../offers/offers";
 import Gallery from "../gallery/gallery";
 import ContactUs from "../contact-us/contact-us";
-
+import React from 'react'
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -23,6 +23,7 @@ describe('LandingPage tests', () => {
     //let displaySwitch = jest.fn()
 
     it('renders a Header and Home component on first render', () => {
+        const wrapper = shallow(<LandingPage/>)
         expect(wrapper.find({'data-testid':'header-container'}).exists()).toBe(true)
         expect(wrapper.find({'data-testid':'home-container'}).exists()).toBe(true)
         //expect(wrapper.find({'data-testid':'home-container'}).contains(<Home onClick={(x) => {displaySwitch(x)}} />)).toBe(true)
@@ -40,6 +41,7 @@ describe('LandingPage tests', () => {
         expect(wrapper.find({'data-testid':'product-details-container'}).exists()).toBe(true)
         expect(wrapper.find({'data-testid':'header-container'}).exists()).toBe(true)
         expect(wrapper.find(ProductDetails).exists()).toBe(true)
+        expect(wrapper.find(ProductDetails).props()).toBe(true)
         wrapper.setState({pageView: 'ProductList'})
         expect(wrapper.find({'data-testid':'product-details-container'}).exists()).toBe(false)
         expect(wrapper.find({'data-testid':'product-list-container'}).exists()).toBe(true)
