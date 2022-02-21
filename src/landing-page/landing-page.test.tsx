@@ -13,50 +13,53 @@ import React from 'react'
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('LandingPage tests', () => {
-    let wrapper
-    beforeEach(() => {
-        wrapper = shallow(<LandingPage/>)
-    })
-    afterEach(() => {
-        wrapper.update()
-    })
-    //let displaySwitch = jest.fn()
 
-    it('renders a Header and Home component on first render', () => {
+    it('productView renders correct components on state change',() => {
         const wrapper = shallow(<LandingPage/>)
         expect(wrapper.find({'data-testid':'header-container'}).exists()).toBe(true)
         expect(wrapper.find({'data-testid':'home-container'}).exists()).toBe(true)
-        //expect(wrapper.find({'data-testid':'home-container'}).contains(<Home onClick={(x) => {displaySwitch(x)}} />)).toBe(true)
-        expect(wrapper.find(Header).exists()).toBe(true)
-        expect(wrapper.find(Home).exists()).toBe(true)
-    })
-    it('productView renders correct components on state change',() => {
         expect(wrapper.find({'data-testid':'product-details-container'}).exists()).toBe(false)
         expect(wrapper.find({'data-testid':'product-list-container'}).exists()).toBe(false)
         expect(wrapper.find({'data-testid':'offers-container'}).exists()).toBe(false)
         expect(wrapper.find({'data-testid':'gallery-container'}).exists()).toBe(false)
         expect(wrapper.find({'data-testid':'contact-us-container'}).exists()).toBe(false)
+        expect(wrapper.find(Header).exists()).toBe(true)
+        expect(wrapper.find(Home).exists()).toBe(true)
+        const spy = jest.spyOn(wrapper.instance(), 'displaySwitch')
+        wrapper.find(Home).simulate('click')
+        expect(spy).toHaveBeenCalled()
+
         wrapper.setState({pageView: 'ProductDetails'})
         expect(wrapper.find({'data-testid':'home-container'}).exists()).toBe(false)
         expect(wrapper.find({'data-testid':'product-details-container'}).exists()).toBe(true)
         expect(wrapper.find({'data-testid':'header-container'}).exists()).toBe(true)
-        expect(wrapper.find(ProductDetails).exists()).toBe(true)
-        expect(wrapper.find(ProductDetails).props()).toBe(true)
+        //expect(wrapper.find(ProductDetails).exists()).toBe(true) <---------IS THIS NEEDED
+        expect(wrapper.find(ProductDetails).prop('id')).toBe("")
+        const ProductDetailsSpy = jest.spyOn(wrapper.instance(), 'displaySwitch')
+        wrapper.find(ProductDetails).simulate('click')
+        expect(ProductDetailsSpy).toHaveBeenCalled()
+
         wrapper.setState({pageView: 'ProductList'})
         expect(wrapper.find({'data-testid':'product-details-container'}).exists()).toBe(false)
         expect(wrapper.find({'data-testid':'product-list-container'}).exists()).toBe(true)
         expect(wrapper.find({'data-testid':'header-container'}).exists()).toBe(true)
+        const ProductListSpy = jest.spyOn(wrapper.instance(), 'viewProduct')
         expect(wrapper.find(ProductList).exists()).toBe(true)
+        wrapper.find(ProductList).simulate('click')
+        expect(ProductListSpy).toHaveBeenCalled()
+
         wrapper.setState({pageView: 'Offers'})
         expect(wrapper.find({'data-testid':'product-list-container'}).exists()).toBe(false)
         expect(wrapper.find({'data-testid':'offers-container'}).exists()).toBe(true)
         expect(wrapper.find({'data-testid':'header-container'}).exists()).toBe(true)
         expect(wrapper.find(Offers).exists()).toBe(true)
+
         wrapper.setState({pageView: 'Gallery'})
         expect(wrapper.find({'data-testid':'offers-container'}).exists()).toBe(false)
         expect(wrapper.find({'data-testid':'gallery-container'}).exists()).toBe(true)
         expect(wrapper.find({'data-testid':'header-container'}).exists()).toBe(true)
         expect(wrapper.find(Gallery).exists()).toBe(true)
+
         wrapper.setState({pageView: 'ContactUs'})
         expect(wrapper.find({'data-testid':'gallery-container'}).exists()).toBe(false)
         expect(wrapper.find({'data-testid':'contact-us-container'}).exists()).toBe(true)
@@ -64,12 +67,15 @@ describe('LandingPage tests', () => {
         expect(wrapper.find(ContactUs).exists()).toBe(true)
     })
     it('displaySwitch changes state when called', () => {
+        const wrapper = shallow(<LandingPage/>)
         expect(wrapper.instance().state.pageView as string).toBe('Home')
         wrapper.instance().displaySwitch('Gallery')
         expect(wrapper.instance().state.pageView as string).toBe('Gallery')
     })
     it('viewProduct changes state when called', () => {
-        expect(wrapper.instance().state.productId as string).toBe(null)
+        const wrapper = shallow(<LandingPage/>)
+        expect(wrapper.instance().state.productId as string).toBe("")
+        expect(wrapper.instance().state.pageView as string).toBe('Home')
         wrapper.instance().viewProduct('mini-egg-brownie')
         expect(wrapper.instance().state.productId as string).toBe('mini-egg-brownie')
         expect(wrapper.instance().state.pageView as string).toBe('ProductDetails')

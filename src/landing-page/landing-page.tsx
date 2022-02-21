@@ -6,6 +6,7 @@ import ProductDetails from "../product-details/product-details";
 import Gallery from "../gallery/gallery";
 import ContactUs from "../contact-us/contact-us";
 import Offers from "../offers/offers"
+import Basket from "../basket/basket"
 import {LandingPageState} from "../webpage-types";
 
 export default class LandingPage extends React.Component {
@@ -51,6 +52,12 @@ export default class LandingPage extends React.Component {
                 return (
                     <div data-testid='contact-us-container'>
                         <ContactUs/>
+                    </div>
+                )
+            case "Basket":
+                return (
+                    <div data-testid='basket-container'>
+                        <Basket/>
                     </div>
                 )
         }
