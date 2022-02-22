@@ -5,6 +5,9 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
     render() {
         return(
             <div>
+                <div data-testid='back-button-div' onClick={() => {this.props.backButton()}}>
+
+                </div>
                 <div data-testid='image-div'>
 
                 </div>
@@ -17,10 +20,13 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
                 <div data-testid='price-div'>
 
                 </div>
-                <div data-testid='allergens-div'>
+                <div data-testid='allergy-div'>
 
                 </div>
                 <div data-testid='image-div'>
+
+                </div>
+                <div data-testid='buy-div'>
 
                 </div>
 

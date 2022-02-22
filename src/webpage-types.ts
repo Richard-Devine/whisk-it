@@ -27,5 +27,5 @@ export type ProductProps = {
     price: string,
     id: string,
     image?: string,
-    onClick?: (x: string) => void,
+    onClick: (x: string) => void,
 }
