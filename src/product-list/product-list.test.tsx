@@ -19,6 +19,8 @@ describe('ProductList tests', () => {
         expect(wrapper.find(Product).prop('description')).toBe("This is a brownie")
         expect(wrapper.find(Product).prop('price')).toBe("2.50")
         expect(wrapper.find(Product).prop('id')).toBe("13564")
+        expect(wrapper.find(Product).prop('imageURL')).toBe("www.somewhere.com/image1")
+        expect(wrapper.find(Product).prop('allergens')).toBe("milk")
         wrapper.find(Product).simulate('click')
         expect(func).toHaveBeenCalled()
     })

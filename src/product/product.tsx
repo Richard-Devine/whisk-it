@@ -3,9 +3,9 @@ import {ProductProps} from "../webpage-types";
 
 export default function Product(props:ProductProps) {
     return (
-        <div onClick={() => props.onClick(props.id)}>
+        <div data-testid='product-wrapper' onClick={() => props.onClick(props.id)}>
             <div data-testid='image-div'>
-                <img src={props.image} alt={props.title}/>
+                <img src={props.imageURL} alt={props.title}/>
             </div>
             <div data-testid='title-div'>
                 {props.title}
