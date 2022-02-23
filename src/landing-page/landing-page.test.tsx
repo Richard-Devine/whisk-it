@@ -26,9 +26,9 @@ describe('LandingPage tests', () => {
         expect(wrapper.find({'data-testid':'contact-us-container'}).exists()).toBe(false)
         expect(wrapper.find(Header).exists()).toBe(true)
         expect(wrapper.find(Home).exists()).toBe(true)
-        const spy = jest.spyOn(instance, 'displaySwitch')
+        const HomeSpy = jest.spyOn(instance, 'displaySwitch')
         wrapper.find(Home).simulate('click')
-        expect(spy).toHaveBeenCalled()
+        expect(HomeSpy).toHaveBeenCalled()
 
         wrapper.setState({pageView: 'ProductDetails'})
         expect(wrapper.find({'data-testid':'home-container'}).exists()).toBe(false)

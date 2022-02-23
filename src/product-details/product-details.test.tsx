@@ -7,23 +7,30 @@ Enzyme.configure({ adapter: new Adapter() });
 
 describe('ProductDetails tests', () => {
 
-    it('renders correct divs and values', () => {
-        const data = {id: '1463342', title: 'Blondie', imageURL: 'www.somewhere.com/image2', description: 'This is a blondie', price: '4.50', offer: false, allergens: 'fish'}
-        const back = jest.fn()
-        const wrapper = shallow(<ProductDetails backButton={() => back()} id={'1463342'}/>)
+    it('renders correct divs, values and onClick functions', () => {
+
+        const data = [{id: '1463342', title: 'Blondie', imageURL: 'www.somewhere.com/image2', description: 'This is a blondie', price: '4.50', offer: false, allergens: 'fish'}]
+        const wrapper = shallow(<ProductDetails backButton={() => null} id={'1463342'}/>)
         wrapper.setState({productInfo:data})
-        expect(wrapper.find({'data-testid':'image-div'}).exists()).toBe(true)
-        expect(wrapper.find({'data-testid':'title-div'}).exists()).toBe(true)
-        expect(wrapper.find({'data-testid':'description-div'}).exists()).toBe(true)
-        expect(wrapper.find({'data-testid':'price-div'}).exists()).toBe(true)
-        expect(wrapper.find({'data-testid':'buy-div'}).exists()).toBe(true)
-        expect(wrapper.find({'data-testid':'back-button-div'}).exists()).toBe(true)
-        expect(wrapper.find({'data-testid':'allergy-div'}).exists()).toBe(true)
+
+        expect(wrapper.find({'data-testid':'image-div'}).contains(<img src={'www.somewhere.com/image2'} alt={'Blondie'}/>)).toBe(true)
+        expect(wrapper.find({'data-testid':'title-div'}).text().includes('Blondie' as string)).toBe(true)
+        expect(wrapper.find({'data-testid':'description-div'}).text().includes('This is a blondie' as string)).toBe(true)
+        expect(wrapper.find({'data-testid':'price-div'}).text().includes('4.50' as string)).toBe(true)
+        expect(wrapper.find({'data-testid':'allergy-div'}).text().includes('fish' as string)).toBe(true)
+
+    })
+    it('onClick functions work', () => {
+
+        const mockFunc = jest.fn()
+        const wrapper = shallow(<ProductDetails backButton={() => mockFunc()} id={'1463342'}/>)
+        const instance = wrapper.instance() as any
+
         wrapper.find({'data-testid':'back-button-div'}).simulate('click')
-        expect(back).toHaveBeenCalled()
-        const buy = jest.fn()
-        const button = shallow(<button onClick={() => buy} data-testid='buy-button'>Buy</button>)
-        button.simulate('click')
-        expect(buy).toHaveBeenCalled()
+        expect(mockFunc).toHaveBeenCalled()
+
+        const buyButtonSpy = jest.spyOn(instance, 'buy')
+        wrapper.find({'data-testid':'buy-div'}).simulate('click')
+        expect(buyButtonSpy).toHaveBeenCalled()
     })
 })

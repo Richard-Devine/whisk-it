@@ -6,14 +6,19 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
     state : ProductDetailsState = {
         productInfo: data
     }
+    buy() {
+    console.log('hello')
+    }
     render() {
         return (
             <div>
-                {this.state.productInfo.map((product, i) => {
+                {this.state.productInfo.map((product, i) =>
+                {
                     if (product.id === this.props.id) {
                         return (
-                            <div>
-                                <div data-testid='back-button-div' onClick={() => {this.props.backButton()}}>
+                            <div key={i}>
+                                <div data-testid='back-button-div' onClick={() => this.props.backButton()}>
+                                    Back
                                 </div>
                                 <div data-testid='image-div'>
                                     <img src={product.imageURL} alt={product.title}/>
@@ -30,8 +35,8 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
                                 <div data-testid='allergy-div'>
                                     {product.allergens}
                                 </div>
-                                <div data-testid='buy-div'>
-                                    <button onClick={() => null} data-testid='buy-button'>Buy</button>
+                                <div data-testid='buy-div' onClick={() => this.buy()}>
+                                    Buy
                                 </div>
 
                             </div>
