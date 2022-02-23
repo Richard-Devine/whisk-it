@@ -13,7 +13,7 @@ export default class ProductList extends React.Component <ProductListProps, Prod
                 {this.state.productRange.map((product, i) => {
                     return(
                         <div data-testid='product-container' key={i}>
-                            <Product title={product.title} allergens={product.allergens} description={product.description} price={product.price} imageURL={product.imageURL} onClick={(x:string) => {this.props.onClick(x)}} id={product.id}/>
+                            <Product title={product.title} allergens={product.allergens} description={product.description} price={product.price} imageURL={product.imageURL} onClick={() => {this.props.onClick(product.id)}}/>
                         </div>
                     )
                 })}

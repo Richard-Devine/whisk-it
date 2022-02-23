@@ -76,9 +76,7 @@ export default class LandingPage extends React.Component {
         return (
             <div>
                 <div data-testid='header-container'>
-                    <Header onClick={(x) => {
-                        this.displaySwitch(x)
-                    }}/>
+                    <Header onClick={(x) => {this.displaySwitch(x)}}/>
                 </div>
                 <div>
                     {this.productView()}
