@@ -39,7 +39,7 @@ export default class LandingPage extends React.Component {
             case "Offers":
                 return (
                     <div data-testid='offers-container'>
-                        <Offers/>
+                        <Offers onClick={(x) => {this.viewProduct(x)}}/>
                     </div>
                 )
             case "Gallery":

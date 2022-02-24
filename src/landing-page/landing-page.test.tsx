@@ -38,7 +38,8 @@ describe('LandingPage tests', () => {
         expect(wrapper.find(ProductDetails).prop('id')).toBe("")
         const ProductDetailsSpy = jest.spyOn(instance, 'displaySwitch')
         wrapper.find(ProductDetails).simulate('click')
-        expect(ProductDetailsSpy).toHaveBeenCalledWith('ProductList')
+        expect(ProductDetailsSpy).toHaveBeenCalled()
+        //expect(ProductDetailsSpy).toHaveBeenCalledWith('ProductList)
 
         wrapper.setState({pageView: 'ProductList'})
         expect(wrapper.find({'data-testid':'product-details-container'}).exists()).toBe(false)
@@ -53,7 +54,10 @@ describe('LandingPage tests', () => {
         expect(wrapper.find({'data-testid':'product-list-container'}).exists()).toBe(false)
         expect(wrapper.find({'data-testid':'offers-container'}).exists()).toBe(true)
         expect(wrapper.find({'data-testid':'header-container'}).exists()).toBe(true)
+        const OffersSpy = jest.spyOn(instance, 'viewProduct')
         expect(wrapper.find(Offers).exists()).toBe(true)
+        wrapper.find(Offers).simulate('click')
+        expect(OffersSpy).toHaveBeenCalled()
 
         wrapper.setState({pageView: 'Gallery'})
         expect(wrapper.find({'data-testid':'offers-container'}).exists()).toBe(false)

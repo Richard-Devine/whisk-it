@@ -21,6 +21,7 @@ export type dataProps = {
     id: string,
     imageURL: string,
     allergens?: string
+    offer: boolean
 }
 export type ProductDetailsProps = {
     backButton: () => void
@@ -29,7 +30,12 @@ export type ProductDetailsProps = {
 export type ProductDetailsState = {
     productInfo: dataProps[]
 }
-
+export type OffersState = {
+    productRange: dataProps[]
+}
+export type OffersProps ={
+    onClick: (x:string) => void
+}
 export type HomeProps = {
     onClick: (x: string) => void
 }
