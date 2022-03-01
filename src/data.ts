@@ -1,7 +1,27 @@
-import * as image from './images/clip_on_cool_bag_green_side_view_1_1.jpg'
+//import * as image from './images/clip_on_cool_bag_green_side_view_1_1.jpg'
 
-export const data = [{id: '13564', title: 'Brownie', imageURL: 'www.somewhere.com/image1', description: 'This is a brownie', price: '2.50', offer: false, allergens: 'milk'},
-    {id: '1463342', title: 'Blondie', imageURL: 'www.somewhere.com/image2', description: 'This is a blondie', price: '4.50', offer: false, allergens: 'fish'},
-    {id: '1463342234', title: 'Offer', imageURL: 'www.somewhere.com/image3', description: 'This is an offer', price: '10.50', offer: true, allergens: 'eggs'}]
+export const data = [{id: 1, title: 'Mint Aero Brownies', imageURL: 'www.somewhere.com/image1', description: 'Our signature fudgey brownie recipe crammed full with mint flavoured aero balls.', price: '13', offer: false, allergens: 'Wheat, Eggs, Dairy, may contain Nuts, may contain Peanuts'},
+    {id: 2, title: 'Crunchie Brownies', imageURL: 'www.somewhere.com/image2', description: 'Fudgey brownie base with chocolate honeycomb pieces folded in. Topped with a chocolate ganache layer and MORE chocolate honeycomb. Honeycomb heaven! ', price: '13', offer: false, allergens: 'Wheat, Eggs, Dairy, may contain Nuts'},
+    {id: 3, title: 'Cookies and Cream Brownies', imageURL: 'www.somewhere.com/image3', description: 'Fudgey brownie base with chocolate Oreo’s folded throughout. Topped with a layer of our creamy white chocolate and Oreo mix, finished with extra Oreos. ', price: '13', offer: false, allergens: 'Wheat, Eggs, Dairy, may contain Nuts'},
+    {id: 4, title: 'Crème Egg Brownie', imageURL: 'www.somewhere.com/image3', description: 'Easter favourite! Enjoy a slab of our fudgey brownie that is filled with chocolate chunks and crème egg pieces. The brownies are topped with more crème eggs.', price: '13', offer: false, allergens: 'Wheat, Eggs, Dairy, may contain Nuts'},
+    {id: 5, title: 'Cherry Bakewell Blondie', imageURL: 'www.somewhere.com/image3', description: 'Our best selling Blondie! Our signature fudgey Blondie recipe loaded with white chocolate chunks, fruity cherry jam with a strong almond flavour. ', price: '13', offer: false, allergens: 'Wheat, Eggs, Dairy, Nuts'},
+    {id: 6, title: 'Biscoff Blondie', imageURL: 'www.somewhere.com/image3', description: 'Our signature fudgey Blondie with Biscoff melted throughout, white chocolate chunks and topped with the famous Biscoff biscuits.', price: '13', offer: false, allergens: 'Wheat, Eggs, Dairy, Soya, may contain Nuts'},
+    {id: 7, title: 'Milky Way Crispy Roll Blondie', imageURL: 'www.somewhere.com/image3', description: 'Our signature Blondie recipe, full with milk chocolate chunks and Milky Way crispy rolls.', price: '13', offer: false, allergens: 'Wheat, Eggs, Dairy, Soya, may contain Nuts'},
+    {id: 8, title: 'Galaxy Cookie Bar', imageURL: 'www.somewhere.com/image3', description: 'Our best selling cookie bar, this is our signature soft and chewy cookie bar recipe that has copious amounts of Galaxy chocolate folded throughout and added to the top once baked. ', price: '13', offer: false, allergens: 'Wheat, Eggs, Dairy, Soya, may contain Nuts'},
+    {id: 9, title: 'Hungry Hippo Cookie Bar', imageURL: 'www.somewhere.com/image3', description: 'Soft and chewy cookie bar packed full of Kinder chocolate chunks and Kinder Happy Hippos giving you the famous hazelnut Kinder flavour! ', price: '13', offer: false, allergens: 'Wheat, Eggs, Dairy, Soya, may contain Nuts'},
+    {id: 10, title: 'Half and Half Box', imageURL: 'www.somewhere.com/image3', description: 'Choose 2 of our regular flavours of any brownie, blondie or cookie bar to have 4 pieces of each flavour.', price: '15', offer: true, allergens: 'Wheat, Eggs, Dairy, Soya, may contain Nuts'},
+    {id: 11, title: 'Box of 4 different flavours', imageURL: 'www.somewhere.com/image3', description: "Choose 4 of our regular flavours of any brownie, blondie or cookie bar to have 2 pieces of each flavour. The perfect decision for someone who can't decide!", price: '18', offer: true, allergens: 'Wheat, Eggs, Dairy, Soya, may contain Nuts'}]
 
-export const allImages = [image]
+
+
+/*{id: id, title: 'Terry Chocolate Orange Brownie', imageURL: 'www.somewhere.com/image3', description: 'Our signature brownie with melted chocolate orange folded through, milk chocolate chunks and MORE chocolate orange pieces. The  brownie is then topped with a drizzle of chocolate orange chocolate and a segment.', price: '10.50', offer: true, allergens: 'allergens'},
+    {id: id, title: 'White Smartie Blondie', imageURL: 'www.somewhere.com/image3', description: 'Chewy and fudgey blondie that is packed full of white chocolate chunks and white Smartie chocolate pieces.', price: '10.50', offer: true, allergens: 'allergens'},
+    {id: id, title: 'Mini Egg Blondie Easter Egg', imageURL: 'www.somewhere.com/image3', description: 'Easter egg shaped Mini Egg Blondie, perfect for an Easter treat.', price: '10.50', offer: true/false, allergens: 'allergens'},
+    {id: id, title: 'Crème Egg Brownie Easter Egg', imageURL: 'www.somewhere.com/image3', description: 'Easter egg shaped Crème Egg Blondie, perfect for an Easter treat.', price: '10.50', offer: true/false, allergens: 'allergens'},
+    {id: id, title: 'Mint Aero Brownie Easter Egg', imageURL: 'www.somewhere.com/image3', description: 'Easter egg shaped Mint Aero Brownie, perfect for an Easter treat.', price: '10.50', offer: true/false, allergens: 'allergens'},
+    {id: id, title: 'Crème Egg Scotched Egg', imageURL: 'www.somewhere.com/image3', description: 'A whole Crème egg wrapped on our signature fudgey brownie, which is then rolled in milk chocolate and finished with chocolate sprinkles.', price: '10.50', offer: true/false, allergens: 'allergens'}*/
+
+
+
+// TEMPLATE: {id: id, title: 'title', imageURL: 'www.somewhere.com/image3', description: 'description', price: '10.50', offer: true/false, allergens: 'allergens'}
+//export const allImages = [image]

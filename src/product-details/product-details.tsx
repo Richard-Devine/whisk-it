@@ -6,9 +6,7 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
     state : ProductDetailsState = {
         productInfo: data
     }
-    buy() {
-    console.log('hello')
-    }
+
     render() {
         return (
             <div>
@@ -35,8 +33,8 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
                                 <div data-testid='allergy-div'>
                                     {product.allergens}
                                 </div>
-                                <div data-testid='buy-div' onClick={() => this.buy()}>
-                                    Buy
+                                <div data-testid='buy-div' onClick={() => this.props.addProductButton(product)}>
+                                    Add to basket
                                 </div>
 
                             </div>
@@ -51,4 +49,3 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
 }
 
 //TODO link correct data to all the divs
-//TODO link Paypal API to buy div

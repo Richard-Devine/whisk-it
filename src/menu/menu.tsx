@@ -21,7 +21,7 @@ export default class Menu extends React.Component <MenuProps> {
                     Contact Us
                 </span>
                 <span onClick={() => this.props.onClick('Basket')} data-testid='basket-button'>
-                    <img src='' alt='My Basket'/>
+                    <img src='../images/shopping-cart.png' alt='My Basket'/>
                 </span>
             </div>
         )

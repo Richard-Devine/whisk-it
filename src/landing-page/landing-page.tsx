@@ -7,13 +7,14 @@ import Gallery from "../gallery/gallery";
 import ContactUs from "../contact-us/contact-us";
 import Offers from "../offers/offers"
 import Basket from "../basket/basket"
-import {LandingPageState} from "../webpage-types";
+import {dataProps, LandingPageState} from "../webpage-types";
 
 export default class LandingPage extends React.Component {
 
     state: LandingPageState = {
         pageView: "Home",
-        productId: ""
+        productId: 0,
+        myBasket: []
     }
 
     productView() {
@@ -33,7 +34,7 @@ export default class LandingPage extends React.Component {
             case "ProductDetails":
                 return (
                     <div data-testid='product-details-container'>
-                        <ProductDetails backButton={() => {this.displaySwitch('ProductList')}} id={this.state.productId}/>
+                        <ProductDetails backButton={() => {this.displaySwitch('ProductList')}} id={this.state.productId} addProductButton={(x) => {this.addToBasket(x)}}/>
                     </div>
                 )
             case "Offers":
@@ -57,19 +58,23 @@ export default class LandingPage extends React.Component {
             case "Basket":
                 return (
                     <div data-testid='basket-container'>
-                        <Basket/>
+                        <Basket myBasket={this.state.myBasket} backButton={() => this.displaySwitch('Home')}/>
                     </div>
                 )
         }
     }
 
-    viewProduct(product: string) {
+    viewProduct(product: number) {
         this.setState({productId: product})
         this.setState({pageView: 'ProductDetails'})
     }
 
     displaySwitch(page: string) {
         this.setState({pageView: page})
+    }
+
+    addToBasket(product: dataProps) {
+        this.state.myBasket.push(product)
     }
 
     render() {

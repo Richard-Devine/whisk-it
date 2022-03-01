@@ -35,10 +35,13 @@ describe('LandingPage tests', () => {
         expect(wrapper.find({'data-testid':'product-details-container'}).exists()).toBe(true)
         expect(wrapper.find({'data-testid':'header-container'}).exists()).toBe(true)
         //expect(wrapper.find(ProductDetails).exists()).toBe(true) <---------IS THIS NEEDED
-        expect(wrapper.find(ProductDetails).prop('id')).toBe("")
+        expect(wrapper.find(ProductDetails).prop('id')).toBe(0)
         const ProductDetailsSpy = jest.spyOn(instance, 'displaySwitch')
+        const ProductDetailsBasketSpy = jest.spyOn(instance, 'addToBasket')
         wrapper.find(ProductDetails).simulate('click')
         expect(ProductDetailsSpy).toHaveBeenCalled()
+        wrapper.find(ProductDetails).simulate('click')
+        expect(ProductDetailsBasketSpy).toHaveBeenCalled()
         //expect(ProductDetailsSpy).toHaveBeenCalledWith('ProductList)
 
         wrapper.setState({pageView: 'ProductList'})
@@ -80,12 +83,20 @@ describe('LandingPage tests', () => {
     })
     it('viewProduct changes state when called', () => {
 
-        const wrapper = shallow<Component>(<LandingPage/>)
+        const wrapper = shallow(<LandingPage/>)
         const instance = wrapper.instance() as any
-        expect(instance.state.productId as string).toBe("")
+        expect(instance.state.productId as string).toBe(0)
         expect(instance.state.pageView as string).toBe('Home')
-        instance.viewProduct('mini-egg-brownie')
-        expect(instance.state.productId as string).toBe('mini-egg-brownie')
+        instance.viewProduct(1)
+        expect(instance.state.productId as string).toBe(1)
         expect(instance.state.pageView as string).toBe('ProductDetails')
+    })
+    it('addToBasket pushes data object into array', () => {
+
+        const wrapper = shallow(<LandingPage/>)
+        const instance = wrapper.instance() as any
+        expect(instance.state.myBasket as object[]).toStrictEqual([])
+        instance.addToBasket({id: 52, title: 'blondie', imageURL: 'www.somewhere.com/image3', description: 'this is a blondie', price: '10.50', offer: false, allergens: 'egg'})
+        expect(instance.state.myBasket as object[]).toStrictEqual([{id: 52, title: 'blondie', imageURL: 'www.somewhere.com/image3', description: 'this is a blondie', price: '10.50', offer: false, allergens: 'egg'}])
     })
 })

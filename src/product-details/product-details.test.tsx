@@ -9,8 +9,8 @@ describe('ProductDetails tests', () => {
 
     it('renders correct divs, values and onClick functions', () => {
 
-        const data = [{id: '1463342', title: 'Blondie', imageURL: 'www.somewhere.com/image2', description: 'This is a blondie', price: '4.50', offer: false, allergens: 'fish'}]
-        const wrapper = shallow(<ProductDetails backButton={() => null} id={'1463342'}/>)
+        const data = [{id: 1463342, title: 'Blondie', imageURL: 'www.somewhere.com/image2', description: 'This is a blondie', price: '4.50', offer: false, allergens: 'fish'}]
+        const wrapper = shallow(<ProductDetails backButton={() => null} id={1463342} addProductButton={() => null}/>)
         wrapper.setState({productInfo:data})
 
         expect(wrapper.find({'data-testid':'image-div'}).contains(<img src={'www.somewhere.com/image2'} alt={'Blondie'}/>)).toBe(true)
@@ -22,15 +22,17 @@ describe('ProductDetails tests', () => {
     })
     it('onClick functions work', () => {
 
-        const mockFunc = jest.fn()
-        const wrapper = shallow(<ProductDetails backButton={() => mockFunc()} id={'1463342'}/>)
-        const instance = wrapper.instance() as any
+        const data = [{id: 1463342, title: 'Blondie', imageURL: 'www.somewhere.com/image2', description: 'This is a blondie', price: '4.50', offer: false, allergens: 'fish'}]
 
-        wrapper.find({'data-testid':'back-button-div'}).simulate('click')
+        const mockFunc = jest.fn()
+        const otherMockFunc = jest.fn()
+        const wrapper = shallow(<ProductDetails backButton={() => mockFunc()} id={1463342} addProductButton={() => otherMockFunc()}/>)
+        wrapper.setState({productInfo:data})
+
+        wrapper.find({'data-testid':'back-button-div'}).at(0).simulate('click')
         expect(mockFunc).toHaveBeenCalled()
 
-        const buyButtonSpy = jest.spyOn(instance, 'buy')
         wrapper.find({'data-testid':'buy-div'}).simulate('click')
-        expect(buyButtonSpy).toHaveBeenCalled()
+        expect(otherMockFunc).toHaveBeenCalled()
     })
 })

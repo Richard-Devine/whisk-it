@@ -9,7 +9,7 @@ Enzyme.configure({ adapter: new Adapter() });
 describe('ProductList tests', () => {
 
     it('renders Product container div on first render', () => {
-        const data = [{id: '13564', title: 'Brownie', imageURL: 'www.somewhere.com/image1', description: 'This is a brownie', price: '2.50', offer: false, allergens: 'milk'}]
+        const data = [{id: 13564, title: 'Brownie', imageURL: 'www.somewhere.com/image1', description: 'This is a brownie', price: '2.50', offer: false, allergens: 'milk'}]
         const func = jest.fn()
         const wrapper = shallow(<ProductList onClick={func}/>)
         wrapper.setState({productRange:data})
@@ -21,6 +21,6 @@ describe('ProductList tests', () => {
         expect(wrapper.find(Product).prop('imageURL')).toBe("www.somewhere.com/image1")
         expect(wrapper.find(Product).prop('allergens')).toBe("milk")
         wrapper.find(Product).simulate('click')
-        expect(func).toHaveBeenCalledWith('13564')
+        expect(func).toHaveBeenCalled()
     })
 })

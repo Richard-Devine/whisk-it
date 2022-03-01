@@ -9,16 +9,14 @@ describe('Product tests', () => {
 
     it('renders divs for properties and their values are displayed', () => {
         const mockFunc = jest.fn()
-        const wrapper = shallow(<Product description={'description'} price={'3.40'} title={'title'} imageURL={'some/src'} onClick={mockFunc} id={"3920"}/>)
-        expect(wrapper.find({'data-testid':'description-div'}).exists()).toBe(true)
+        const wrapper = shallow(<Product description={'description'} price={'3.40'} title={'title'} imageURL={'some/src'} onClick={mockFunc} id={392}/>)
+
         expect(wrapper.find({'data-testid':'description-div'}).text().includes('description' as string)).toBe(true)
-        expect(wrapper.find({'data-testid':'title-div'}).exists()).toBe(true)
         expect(wrapper.find({'data-testid':'title-div'}).text().includes('title' as string)).toBe(true)
-        expect(wrapper.find({'data-testid':'price-div'}).exists()).toBe(true)
         expect(wrapper.find({'data-testid':'price-div'}).text().includes('£3.40' as string)).toBe(true)
-        expect(wrapper.find({'data-testid':'image-div'}).exists()).toBe(true)
         expect(wrapper.find({'data-testid':'image-div'}).contains(<img src={'some/src'} alt={'title'}/>)).toBe(true)
+
         wrapper.find({'data-testid':'product-wrapper'}).simulate('click')
-        expect(mockFunc).toHaveBeenCalled()
+        expect(mockFunc).toHaveBeenCalledWith(392)
     })
 })
