@@ -2,18 +2,26 @@ import * as React from 'react'
 import {BasketProps} from '../webpage-types'
 
 export default class Basket extends React.Component<BasketProps> {
+
+    removeFromBasket(i:number) {
+        this.props.myBasket.splice(i, 1)
+        this.forceUpdate()
+    }
+
     render() {
         return (
             <div>
                 {this.props.myBasket.map((product, i) => {
                     return(
-
-                <div key={i}>
+                <div key={i} data-testid='basket-wrapper'>
                     <div data-testid='back-button-div' onClick={() => this.props.backButton()}>
                         Back
                     </div>
                     <div data-testid='image-div'>
                         <img src={product.imageURL} alt={product.title}/>
+                    </div>
+                    <div data-testid='delete-button-div' onClick={() => this.removeFromBasket(i)}>
+                        X
                     </div>
                     <div data-testid='title-div'>
                         {product.title}
@@ -27,10 +35,9 @@ export default class Basket extends React.Component<BasketProps> {
                     <div data-testid='allergy-div'>
                         {product.allergens}
                     </div>
-                    <div data-testid='buy-div'>
-                        Add to basket
+                    <div data-testid='buy-div' onClick={() => null}>
+                        Buy
                     </div>
-
                 </div>
                     )
                 })}
@@ -38,4 +45,3 @@ export default class Basket extends React.Component<BasketProps> {
         )
     }
 }
-//TODO Add basket tests
