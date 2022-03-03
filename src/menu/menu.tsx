@@ -6,23 +6,23 @@ export default class Menu extends React.Component <MenuProps> {
     render() {
         return (
             <div>
-                <span onClick={() => this.props.onClick('Home')} data-testid='home-button'>
+                <span onClick={() => this.props.onClick('Home')} className="menu-options" data-testid='home-button'>
                     Home
                 </span>
-                <span onClick={() => this.props.onClick('ProductList')} data-testid='products-button'>
+                <span onClick={() => this.props.onClick('ProductList')} className="menu-options" data-testid='products-button'>
                     Products
                 </span>
-                <span onClick={() => this.props.onClick('Offers')} data-testid='offers-button'>
+                <span onClick={() => this.props.onClick('Offers')} className="menu-options" data-testid='offers-button'>
                     Offers
                 </span>
-                <span onClick={() => this.props.onClick('Gallery')} data-testid='gallery-button'>
+                <span onClick={() => this.props.onClick('Gallery')} className="menu-options" data-testid='gallery-button'>
                     Gallery
                 </span>
-                <span onClick={() => this.props.onClick('ContactUs')} data-testid='contact-us-button'>
+                <span onClick={() => this.props.onClick('ContactUs')} className="menu-options" data-testid='contact-us-button'>
                     Contact Us
                 </span>
-                <span onClick={() => this.props.onClick('Basket')} data-testid='basket-button'>
-                    <img src={img} alt='My Basket'/>
+                <span onClick={() => this.props.onClick('Basket')} className="menu-options" data-testid='basket-button'>
+                    <img src={img} alt='My Basket' className='basket-image'/>
                 </span>
             </div>
         )

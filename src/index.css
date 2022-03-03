@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.website-container{
+  width: 1300px;
+  margin: auto;
+}
+.menu-options {
+  margin: 0 10px;
+}
+.basket-image{
+  height: 30px;
+  background-color: blue;
+}
+.product-wrapper{
+  display: flex;
+}
+.product-list-image-div{
+
+}
+.product-list-info-container{
+
+}

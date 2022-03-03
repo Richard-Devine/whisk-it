@@ -79,7 +79,7 @@ export default class LandingPage extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='website-container'>
                 <div data-testid='header-container'>
                     <Header onClick={(x) => {this.displaySwitch(x)}}/>
                 </div>
