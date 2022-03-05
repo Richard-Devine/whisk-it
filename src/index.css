@@ -33,6 +33,7 @@ code {
     background-color: #95c9e7;
     color: white;
     font-size: 30px;
+    font-weight: bold;
 }
 
 .basket-image {
@@ -43,6 +44,12 @@ code {
     display: flex;
     border-radius: 10px;
     margin: 10px 0;
+    transition: 0.25s;
+}
+.product-wrapper:hover{
+    transform: scale(1.025);
+    transition: 0.25s;
+    box-shadow: 1px 1px 20px 1px #95c9e7, -1px -1px 20px 1px #99cbe7;
 }
 
 .product-list-image-div {
