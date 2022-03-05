@@ -25,8 +25,8 @@ describe('basket tests', () => {
         const mockFunc = jest.fn()
         const wrapper = shallow(<Basket myBasket={[]} backButton={mockFunc}/>)
         const instance = wrapper.instance() as any
-        wrapper.setProps({myBasket:[{id: 6, title: 'Biscoff Blondie', imageURL: 'www.somewhere.com/image3', description: 'Our signature fudgey Blondie with Biscoff melted throughout, white chocolate chunks and topped with the famous Biscoff biscuits.', price: '13', offer: false, allergens: 'Wheat, Eggs, Dairy, Soya, may contain Nuts'},
-                {id: 7, title: 'Milky Way Crispy Roll Blondie', imageURL: 'www.somewhere.com/image3', description: 'Our signature Blondie recipe, full with milk chocolate chunks and Milky Way crispy rolls.', price: '13', offer: false, allergens: 'Wheat, Eggs, Dairy, Soya, may contain Nuts'}]})
+        wrapper.setProps({myBasket:[{id: 6, title: 'Biscoff Blondie', imageURL: 'www.somewhere.com/image3', description: 'Our signature fudgey Blondie with Biscoff melted throughout, white chocolate chunks and topped with the famous Biscoff biscuits.', price: 13, offer: false, allergens: 'Wheat, Eggs, Dairy, Soya, may contain Nuts'},
+                {id: 7, title: 'Milky Way Crispy Roll Blondie', imageURL: 'www.somewhere.com/image3', description: 'Our signature Blondie recipe, full with milk chocolate chunks and Milky Way crispy rolls.', price: 13, offer: false, allergens: 'Wheat, Eggs, Dairy, Soya, may contain Nuts'}]})
 
         wrapper.find({'data-testid':'back-button-div'}).at(0).simulate('click')
         expect(mockFunc).toHaveBeenCalled()
@@ -36,11 +36,11 @@ describe('basket tests', () => {
         expect(removeFromBasketSpy).toHaveBeenCalledWith(0)
     })
     it('removeFromBasket function works as expected', () => {
-        const wrapper = mount(<Basket myBasket={[{id: 6, title: 'Biscoff Blondie', imageURL: 'www.somewhere.com/image3', description: 'Our signature fudgey Blondie with Biscoff melted throughout, white chocolate chunks and topped with the famous Biscoff biscuits.', price: '13', offer: false, allergens: 'Wheat, Eggs, Dairy, Soya, may contain Nuts'},
-            {id: 7, title: 'Milky Way Crispy Roll Blondie', imageURL: 'www.somewhere.com/image3', description: 'Our signature Blondie recipe, full with milk chocolate chunks and Milky Way crispy rolls.', price: '13', offer: false, allergens: 'Wheat, Eggs, Dairy, Soya, may contain Nuts'}]} backButton={() => null}/>)
+        const wrapper = mount(<Basket myBasket={[{id: 6, title: 'Biscoff Blondie', imageURL: 'www.somewhere.com/image3', description: 'Our signature fudgey Blondie with Biscoff melted throughout, white chocolate chunks and topped with the famous Biscoff biscuits.', price: 13, offer: false, allergens: 'Wheat, Eggs, Dairy, Soya, may contain Nuts'},
+            {id: 7, title: 'Milky Way Crispy Roll Blondie', imageURL: 'www.somewhere.com/image3', description: 'Our signature Blondie recipe, full with milk chocolate chunks and Milky Way crispy rolls.', price: 13, offer: false, allergens: 'Wheat, Eggs, Dairy, Soya, may contain Nuts'}]} backButton={() => null}/>)
         const instance = wrapper.instance() as any
 
         instance.removeFromBasket(0)
-        expect(wrapper.prop('myBasket')).toStrictEqual([{id: 7, title: 'Milky Way Crispy Roll Blondie', imageURL: 'www.somewhere.com/image3', description: 'Our signature Blondie recipe, full with milk chocolate chunks and Milky Way crispy rolls.', price: '13', offer: false, allergens: 'Wheat, Eggs, Dairy, Soya, may contain Nuts'}])
+        expect(wrapper.prop('myBasket')).toStrictEqual([{id: 7, title: 'Milky Way Crispy Roll Blondie', imageURL: 'www.somewhere.com/image3', description: 'Our signature Blondie recipe, full with milk chocolate chunks and Milky Way crispy rolls.', price: 13, offer: false, allergens: 'Wheat, Eggs, Dairy, Soya, may contain Nuts'}])
     })
 })

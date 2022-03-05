@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {MenuProps} from "../webpage-types";
-import img from '../images/shopping-cart.png'
+import basket from '../images/shopping-cart.webp'
 
 export default class Menu extends React.Component <MenuProps> {
     render() {
@@ -22,7 +22,7 @@ export default class Menu extends React.Component <MenuProps> {
                     Contact Us
                 </span>
                 <span onClick={() => this.props.onClick('Basket')} className="menu-options" data-testid='basket-button'>
-                    <img src={img} alt='My Basket' className='basket-image'/>
+                    <img src={basket} alt='My Basket' className='basket-image'/>
                 </span>
             </div>
         )

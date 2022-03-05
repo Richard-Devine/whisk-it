@@ -5,6 +5,7 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: url('./images/Whisi-it-background.webp') center;
 }
 
 code {
@@ -28,13 +29,20 @@ code {
     margin: 0 10px;
 }
 
+.menu-container{
+    background-color: #95c9e7;
+    color: white;
+    font-size: 30px;
+}
+
 .basket-image {
     height: 30px;
-    background-color: blue;
 }
 
 .product-wrapper {
     display: flex;
+    border-radius: 10px;
+    margin: 10px 0;
 }
 
 .product-list-image-div {
@@ -43,6 +51,7 @@ code {
 .product-list-image-div img {
     max-height: 100px;
     max-width: 100px;
+    border-radius: 10px;
 }
 
 .product-list-info-container {

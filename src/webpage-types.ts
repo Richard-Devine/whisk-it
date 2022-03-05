@@ -18,7 +18,7 @@ export type ProductListState = {
 export type dataProps = {
     title: string,
     description: string,
-    price: string,
+    price: number,
     id: number,
     imageURL: string,
     allergens?: string
@@ -44,7 +44,7 @@ export type HomeProps = {
 export type ProductProps = {
     title: string,
     description: string,
-    price: string,
+    price: number,
     id: number,
     imageURL: string,
     allergens?: string

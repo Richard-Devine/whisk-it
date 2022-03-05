@@ -9,7 +9,7 @@ describe('Product tests', () => {
 
     it('renders divs for properties and their values are displayed', () => {
         const mockFunc = jest.fn()
-        const wrapper = shallow(<Product description={'description'} price={'3.40'} title={'title'} imageURL={'some/src'} onClick={mockFunc} id={392}/>)
+        const wrapper = shallow(<Product description={'description'} price={3.40} title={'title'} imageURL={'some/src'} onClick={mockFunc} id={392}/>)
 
         expect(wrapper.find({'data-testid':'description-div'}).text().includes('description' as string)).toBe(true)
         expect(wrapper.find({'data-testid':'title-div'}).text().includes('title' as string)).toBe(true)
