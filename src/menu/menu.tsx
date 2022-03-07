@@ -21,7 +21,7 @@ export default class Menu extends React.Component <MenuProps> {
                 <span onClick={() => this.props.onClick('ContactUs')} className="menu-options" data-testid='contact-us-button'>
                     Contact Us
                 </span>
-                <span onClick={() => this.props.onClick('Basket')} className="menu-options" data-testid='basket-button'>
+                <span onClick={() => this.props.onClick('Basket')} className="menu-options basket-button" data-testid='basket-button'>
                     <img src={basket} alt='My Basket' className='basket-image'/>
                 </span>
             </div>
