@@ -16,6 +16,8 @@ code {
     margin: auto;
 }
 
+/*-------------Header--------------*/
+
 .header-banner-div {
     max-width: 400px;
     margin: auto;
@@ -25,12 +27,9 @@ code {
     max-width: 400px;
 }
 
-.menu-options {
-    margin: 0 10px;
-    cursor: default;
-}
+/*---------------------Menu-----------------------*/
 
-.menu-container{
+.menu-container {
     background-color: #95c9e7;
     color: white;
     font-size: 30px;
@@ -38,24 +37,35 @@ code {
     border-radius: 10px;
 }
 
-.basket-button{
-    float:right;
-    display:block
+.menu-options {
+    margin: 0 10px;
+    cursor: default;
+}
+
+.basket-button {
+    float: right;
+    display: block
 }
 
 .basket-image {
     height: 33px;
 }
 
+/*----------------------Home-----------------------*/
+
+
+/*------------------Product List-------------------*/
+
 .product-wrapper {
     display: flex;
     border-radius: 10px;
-    margin: 10px 0;
+    margin: 20px 0;
     transition: 0.25s;
-    cursor: default
+    cursor: default;
+    font-size: 1.1em;
 }
 
-.product-wrapper:hover{
+.product-wrapper:hover {
     transform: scale(1.025);
     transition: 0.25s;
     box-shadow: 1px 1px 20px 1px #95c9e7, -1px -1px 20px 1px #99cbe7;
@@ -64,40 +74,120 @@ code {
 .product-list-image-div {
     margin-right: 10px
 }
+.product-list-title-div {
+    font-weight: bold;
+    font-size: 1.2em
+}
 
 .product-list-image-div img {
-    max-height: 100px;
-    max-width: 100px;
+    max-height: 150px;
+    max-width: 150px;
     border-radius: 10px;
     display: block;
 }
+.product-list-info-container{
+    display:grid;
+    grid-template-rows: 33%;
+}
 .product-list-info {
-    margin:5px;
+    margin: 5px;
 }
 
+/*----------------Product Details------------------*/
+
 .back-button {
-    height:50px;
+    height: 50px;
     float: right
 }
 
-.product-details-wrapper{
+.product-details-wrapper {
     display: grid;
     grid-template-columns: 450px 1fr;
     margin-top: 30px;
 }
 
 .product-details-image-div img {
-    width:400px;
+    width: 400px;
     border-radius: 30px
 }
 
 .product-details-content {
-    font-size: 2em;
+    font-size: 1.7em;
+    border: 1px solid #95c9e7;
+    border-radius: 30px;
+    padding: 10px;
+    display: grid;
+    grid-template-rows: 25% 33% 1fr;
 }
-.title-back-button-wrapper{
+
+.title-back-button-wrapper {
     margin-bottom: 70px;
 }
-.product-details-title-div{
+
+.product-details-title-div {
     font-weight: bold;
-    float:left
+    float: left
 }
+
+.allergy-price-buy-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-self: end;
+}
+
+.price-buy-wrapper {
+    justify-self: right;
+    margin-right: 20px;
+    align-self: end;
+}
+
+.product-details-buy-div {
+    background-color: #95c9e7;
+    color: white;
+    padding: 0 10px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 3px 1px lightgray;
+    cursor: default;
+    user-select: none;
+}
+
+.product-details-buy-div:active {
+    transform: scale(0.96);
+    box-shadow: none;
+}
+
+
+/*---------------------Offers----------------------*/
+
+
+/*---------------------Gallery---------------------*/
+
+
+/*---------------------Basket-----------------------*/
+
+
+/*----------------------Footer---------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

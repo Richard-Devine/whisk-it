@@ -31,14 +31,19 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
                                     <div data-testid='description-div'>
                                         {product.description}
                                     </div>
-                                    <div data-testid='allergy-div'>
-                                        {product.allergens}
-                                    </div>
-                                    <div data-testid='price-div'>
-                                        £{(product.price / 100).toFixed(2)}
-                                    </div>
-                                    <div data-testid='buy-div' onClick={() => this.props.addProductButton(product)}>
-                                        Add to basket
+                                    <div className='allergy-price-buy-container'>
+                                        <div data-testid='allergy-div'>
+                                            {product.allergens}
+                                        </div>
+                                        <div className='price-buy-wrapper'>
+                                            <div data-testid='price-div'>
+                                                £{(product.price / 100).toFixed(2)}
+                                            </div>
+                                            <div data-testid='buy-div' className='product-details-buy-div'
+                                                 onClick={() => this.props.addProductButton(product)}>
+                                                Add to basket
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
