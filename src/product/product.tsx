@@ -8,13 +8,13 @@ export default function Product(props: ProductProps) {
                 <img src={props.imageURL} alt={props.title}/>
             </div>
             <div data-testid='info-container' className='product-list-info-container'>
-                <div data-testid='title-div'>
+                <div data-testid='title-div' className='product-list-info'>
                     {props.title}
                 </div>
-                <div data-testid='description-div'>
+                <div data-testid='description-div' className='product-list-info'>
                     {props.description}
                 </div>
-                <div data-testid='price-div'>
+                <div data-testid='price-div' className='product-list-info'>
                     £{props.price}
                 </div>
             </div>

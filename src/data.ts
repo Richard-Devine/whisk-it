@@ -25,7 +25,7 @@ import cremeEggScotchEgg from './images/Brownie Scotch Crème Egg.webp'
 
 
 
-export const data = [{id: 1, title: 'Mint Aero Brownies', imageURL: mintAeroBrownies, description: 'Our signature fudgey brownie recipe crammed full with mint flavoured aero balls.', price: 1300, offer: false, allergens: 'Wheat, Eggs, Dairy, may contain Nuts, may contain Peanuts'},
+export const data = [{id: 1, title: 'Mint Aero Brownies', imageURL: mintAeroBrownies, description: 'Our signature fudgey brownie recipe crammed full with mint flavoured Aero balls.', price: 1300, offer: false, allergens: 'Wheat, Eggs, Dairy, may contain Nuts, may contain Peanuts'},
     {id: 2, title: 'Crunchie Brownies', imageURL: crunchieBrownies, description: 'Fudgey brownie base with chocolate honeycomb pieces folded in. Topped with a chocolate ganache layer and MORE chocolate honeycomb. Honeycomb heaven! ', price: 1300, offer: false, allergens: 'Wheat, Eggs, Dairy, may contain Nuts'},
     {id: 3, title: 'Cookies and Cream Brownies', imageURL: cookiesAndCreamBrownies, description: 'Fudgey brownie base with chocolate Oreo’s folded throughout. Topped with a layer of our creamy white chocolate and Oreo mix, finished with extra Oreos. ', price: 1300, offer: false, allergens: 'Wheat, Eggs, Dairy, may contain Nuts'},
     {id: 4, title: 'Crème Egg Brownie', imageURL: cremeEggBrownie, description: 'Easter favourite! Enjoy a slab of our fudgey brownie that is filled with chocolate chunks and crème egg pieces. The brownies are topped with more crème eggs.', price: 1300, offer: false, allergens: 'Wheat, Eggs, Dairy, may contain Nuts'},
@@ -54,5 +54,5 @@ export const data = [{id: 1, title: 'Mint Aero Brownies', imageURL: mintAeroBrow
 
 
 
-// TEMPLATE: {id: id, title: 'title', imageURL: 'www.somewhere.com/image3', description: 'description', price: '10.50', offer: true/false, allergens: 'allergens'}
+// TEMPLATE: {id: id, title: 'title', imageURL: 'www.somewhere.com/image3', description: 'description', price: 10.50, offer: true/false, allergens: 'allergens'}
 //export const allImages = [image]

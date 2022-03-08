@@ -11,7 +11,7 @@ export default class Offers extends React.Component <OffersProps, OffersState> {
         return (
             <div data-testid='offers-wrapper'>
                 {this.state.productRange.map((product, i) => {
-                    if (product.offer === true) {
+                    if (product.offer) {
                         return (
                             <div data-testid='offer-divs' onClick={() => this.props.onClick(product.id)} key={i}>
                                 <div data-testid='title-div'>
