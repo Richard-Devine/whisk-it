@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {HeaderProps} from "../webpage-types";
 import Menu from "../menu/menu";
-import whiskItLogo from '../images/Whisk it banner transparent.webp'
+import whiskItLogo from '../website-icons/Whisk it banner transparent.webp'
 
 export default class Header extends React.Component <HeaderProps> {
     render() {

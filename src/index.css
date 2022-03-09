@@ -3,7 +3,7 @@ body {
     font-family: Garamond, serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: url('./images/Whisi-it-background.webp') center;
+    background: url('website-icons/Whisk-it-background.webp') center;
 }
 
 code {
@@ -161,8 +161,19 @@ code {
 
 
 /*---------------------Gallery---------------------*/
-
-
+.gallery-container{
+    display: grid;
+    grid-template-columns: repeat(6, calc(17% - 10px));
+    align-items: center;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    margin:10px 0 0 10px
+}
+.gallery-images{
+    width: 200px;
+    max-height: 200px;
+    align-self: center;
+}
 /*---------------------Basket-----------------------*/
 
 

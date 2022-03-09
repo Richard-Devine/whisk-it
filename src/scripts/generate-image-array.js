@@ -8,7 +8,7 @@ fs.readdir("../images",(err,files)=>{
     content += `"${file}",`
   }
   content += "]"
-  fs.writeFile("../gallery/image-array.js",content, err =>{
+  fs.writeFile("../gallery/image-array.ts",content, err =>{
     if(err) console.log(err)
   })
 })

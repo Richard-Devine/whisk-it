@@ -1,7 +1,7 @@
 import * as React from 'react'
 import {ProductDetailsProps, ProductDetailsState} from "../webpage-types"
 import {data} from "../data";
-import backButton from '../images/Back-Button.webp'
+import backButton from '../website-icons/Back-Button.webp'
 
 export default class ProductDetails extends React.Component <ProductDetailsProps, ProductDetailsState> {
     state: ProductDetailsState = {

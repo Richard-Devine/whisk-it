@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {MenuProps} from "../webpage-types";
-import basket from '../images/shopping-cart.webp'
+import basket from '../website-icons/shopping-cart.webp'
 
 export default class Menu extends React.Component <MenuProps> {
     render() {
