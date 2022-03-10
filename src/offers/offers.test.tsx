@@ -16,6 +16,7 @@ describe('Offers tests', () => {
         expect(wrapper.find({'data-testid':'description-div'}).text().includes('This is an offer' as string)).toBe(true)
         expect(wrapper.find({'data-testid':'price-div'}).text().includes('10.50' as string)).toBe(true)
         expect(wrapper.find({'data-testid':'img-div'}).contains(<img src={'www.somewhere.com/image3'} alt={'Offer'}/>)).toBe(true)
+        expect(wrapper.find({'data-testid':'offer-content-div'}).exists()).toBe(true)
         wrapper.find({'data-testid':'offer-divs'}).simulate('click')
         expect(mockFunc).toHaveBeenCalled()
         expect(mockFunc).toHaveBeenCalledWith(1463342234)

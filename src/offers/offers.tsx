@@ -13,18 +13,20 @@ export default class Offers extends React.Component <OffersProps, OffersState> {
                 {this.state.productRange.map((product, i) => {
                     if (product.offer) {
                         return (
-                            <div data-testid='offer-divs' onClick={() => this.props.onClick(product.id)} key={i}>
-                                <div data-testid='title-div'>
-                                    {product.title}
-                                </div>
-                                <div data-testid='img-div'>
+                            <div data-testid='offer-divs' onClick={() => this.props.onClick(product.id)} key={i} className='offers-wrapper'>
+                                <div data-testid='img-div' className='offers-img-div'>
                                     <img src={product.imageURL} alt={product.title}/>
                                 </div>
-                                <div data-testid='description-div'>
-                                    {product.description}
-                                </div>
-                                <div data-testid='price-div'>
-                                    {product.price}
+                                <div data-testid='offers-content-div' className='offers-info-container'>
+                                    <div data-testid='title-div' className='offers-info offers-title-div'>
+                                        {product.title}
+                                    </div>
+                                    <div data-testid='description-div' className='offers-info'>
+                                        {product.description}
+                                    </div>
+                                    <div data-testid='price-div' className='offers-info'>
+                                        £{(product.price/100).toFixed(2)}
+                                    </div>
                                 </div>
                             </div>
                         )

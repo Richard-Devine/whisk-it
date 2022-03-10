@@ -32,7 +32,9 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
                                         {product.description}
                                     </div>
                                     <div className='allergy-price-buy-container'>
+
                                         <div data-testid='allergy-div'>
+                                            <div data-testid='allergens-div' className='allergens-div'>Allergens:</div>
                                             {product.allergens}
                                         </div>
                                         <div className='price-buy-wrapper'>

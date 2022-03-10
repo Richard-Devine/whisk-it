@@ -7,7 +7,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 describe('Menu tests', () => {
     it('renders all menu options', () => {
-        let wrapper = shallow(<Menu onClick={() => null}/>)
+        let wrapper = shallow(<Menu onClick={() => null} myBasket={10}/>)
         expect(wrapper.find({'data-testid':'home-button'}).exists()).toBe(true)
         expect(wrapper.find({'data-testid':'products-button'}).exists()).toBe(true)
         expect(wrapper.find({'data-testid':'offers-button'}).exists()).toBe(true)

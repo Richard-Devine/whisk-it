@@ -2,12 +2,15 @@ export type LandingPageState = {
     pageView: string
     productId: number
     myBasket: dataProps[]
+    basketTotal: number
 };
 export type HeaderProps = {
     onClick: (x: string) => void
+    myBasket: number
 };
 export type MenuProps = {
     onClick: (x: string) => void
+    myBasket: number
 }
 export type ProductListProps = {
     onClick: (x: number) => void
@@ -52,6 +55,7 @@ export type ProductProps = {
 }
 export type BasketProps = {
     myBasket: dataProps[]
+    myBasketTotal: number
     backButton: () => void
 }
 

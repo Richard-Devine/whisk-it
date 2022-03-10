@@ -44,13 +44,19 @@ code {
 
 .basket-button {
     float: right;
-    display: block
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    grid-column-gap: 5px;
 }
 
 .basket-image {
     height: 33px;
+    margin-right:5px;
 }
-
+.basket-total{
+    margin: 0;
+    font-size: 25px;
+}
 /*----------------------Home-----------------------*/
 
 
@@ -72,7 +78,8 @@ code {
 }
 
 .product-list-image-div {
-    margin-right: 10px
+    margin-right: 10px;
+    width: 150px
 }
 .product-list-title-div {
     font-weight: bold;
@@ -84,6 +91,7 @@ code {
     max-width: 150px;
     border-radius: 10px;
     display: block;
+    margin: auto
 }
 .product-list-info-container{
     display:grid;
@@ -120,10 +128,6 @@ code {
     grid-template-rows: 25% 33% 1fr;
 }
 
-.title-back-button-wrapper {
-    margin-bottom: 70px;
-}
-
 .product-details-title-div {
     font-weight: bold;
     float: left
@@ -131,7 +135,13 @@ code {
 
 .allergy-price-buy-container {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 65% 35%;
+    align-self: end;
+}
+.allergens-div{
+    font-weight: bold;
+}
+.allergy-div {
     align-self: end;
 }
 
@@ -139,6 +149,8 @@ code {
     justify-self: right;
     margin-right: 20px;
     align-self: end;
+    display:grid;
+    height:100px;
 }
 
 .product-details-buy-div {
@@ -149,6 +161,7 @@ code {
     box-shadow: 4px 4px 3px 1px lightgray;
     cursor: default;
     user-select: none;
+    align-self: end;
 }
 
 .product-details-buy-div:active {
@@ -159,7 +172,41 @@ code {
 
 /*---------------------Offers----------------------*/
 
-
+.offers-wrapper {
+    display: flex;
+    border-radius: 10px;
+    margin: 20px 0;
+    transition: 0.25s;
+    cursor: default;
+    font-size: 1.1em;
+}
+.offers-wrapper:hover {
+    transform: scale(1.025);
+    transition: 0.25s;
+    box-shadow: 1px 1px 20px 1px #95c9e7, -1px -1px 20px 1px #99cbe7;
+}
+.offers-img-div img{
+    max-height: 150px;
+    max-width: 150px;
+    border-radius: 10px;
+    display: block;
+    margin: auto
+}
+.offers-image-div {
+    margin-right: 10px;
+    width: 150px
+}
+.offers-title-div {
+    font-weight: bold;
+    font-size: 1.2em
+}
+.offers-info-container{
+    display:grid;
+    grid-template-rows: 33%;
+}
+.offers-info {
+    margin: 5px;
+}
 /*---------------------Gallery---------------------*/
 .gallery-container{
     display: grid;

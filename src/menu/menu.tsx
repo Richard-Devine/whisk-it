@@ -3,6 +3,7 @@ import {MenuProps} from "../webpage-types";
 import basket from '../website-icons/shopping-cart.webp'
 
 export default class Menu extends React.Component <MenuProps> {
+
     render() {
         return (
             <div>
@@ -22,7 +23,12 @@ export default class Menu extends React.Component <MenuProps> {
                     Contact Us
                 </span>
                 <span onClick={() => this.props.onClick('Basket')} className="menu-options basket-button" data-testid='basket-button'>
+                    <div className='basket-div'>
                     <img src={basket} alt='My Basket' className='basket-image'/>
+                    </div>
+                    <div className='menu-options basket-total'>
+                        £{(this.props.myBasket/100).toFixed(2)}
+                    </div>
                 </span>
             </div>
         )
