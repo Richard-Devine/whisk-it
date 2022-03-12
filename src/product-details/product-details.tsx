@@ -41,7 +41,7 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
                                             <div data-testid='price-div'>
                                                 £{(product.price / 100).toFixed(2)}
                                             </div>
-                                            <div data-testid='buy-div' className='product-details-buy-div'
+                                            <div data-testid='buy-div' className='product-details-buy-div btn'
                                                  onClick={() => this.props.addProductButton(product)}>
                                                 Add to basket
                                             </div>

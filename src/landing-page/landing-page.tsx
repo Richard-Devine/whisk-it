@@ -7,6 +7,7 @@ import Gallery from "../gallery/gallery";
 import ContactUs from "../contact-us/contact-us";
 import Offers from "../offers/offers"
 import Basket from "../basket/basket"
+import Footer from "../footer/footer";
 import {dataProps, LandingPageState} from "../webpage-types";
 
 export default class LandingPage extends React.Component {
@@ -23,25 +24,35 @@ export default class LandingPage extends React.Component {
             case "Home":
                 return (
                     <div data-testid='home-container'>
-                        <Home onClick={(x) => {this.displaySwitch(x)}}/>
+                        <Home onClick={(x) => {
+                            this.displaySwitch(x)
+                        }}/>
                     </div>
                 )
             case "ProductList":
                 return (
                     <div data-testid='product-list-container'>
-                        <ProductList onClick={(x) => {this.viewProduct(x)}}/>
+                        <ProductList onClick={(x) => {
+                            this.viewProduct(x)
+                        }}/>
                     </div>
                 )
             case "ProductDetails":
                 return (
                     <div data-testid='product-details-container'>
-                        <ProductDetails backButton={() => {this.displaySwitch('ProductList')}} id={this.state.productId} addProductButton={(x) => {this.addToBasket(x)}}/>
+                        <ProductDetails backButton={() => {
+                            this.displaySwitch('ProductList')
+                        }} id={this.state.productId} addProductButton={(x) => {
+                            this.addToBasket(x)
+                        }}/>
                     </div>
                 )
             case "Offers":
                 return (
                     <div data-testid='offers-container'>
-                        <Offers onClick={(x) => {this.viewProduct(x)}}/>
+                        <Offers onClick={(x) => {
+                            this.viewProduct(x)
+                        }}/>
                     </div>
                 )
             case "Gallery":
@@ -59,7 +70,8 @@ export default class LandingPage extends React.Component {
             case "Basket":
                 return (
                     <div data-testid='basket-container'>
-                        <Basket myBasket={this.state.myBasket} myBasketTotal={this.state.basketTotal} backButton={() => this.displaySwitch('Home')} />
+                        <Basket myBasket={this.state.myBasket} myBasketTotal={this.state.basketTotal}
+                                backButton={() => this.displaySwitch('Home')}/>
                     </div>
                 )
         }
@@ -78,13 +90,14 @@ export default class LandingPage extends React.Component {
         this.state.myBasket.push(product)
         this.totalPrice()
     }
-    totalPrice(){
-        let total:number = 0
-        this.state.myBasket.map((product,i) => {
+
+    totalPrice() {
+        let total: number = 0
+        this.state.myBasket.map((product, i) => {
             total += product.price
             console.log(total)
             console.log(product.price)
-            this.setState({basketTotal:total})
+            this.setState({basketTotal: total})
         })
     }
 
@@ -92,10 +105,15 @@ export default class LandingPage extends React.Component {
         return (
             <div className='website-container'>
                 <div data-testid='header-container'>
-                    <Header onClick={(x) => {this.displaySwitch(x)}} myBasket={this.state.basketTotal}/>
+                    <Header onClick={(x) => {
+                        this.displaySwitch(x)
+                    }} myBasket={this.state.basketTotal}/>
                 </div>
                 <div>
                     {this.productView()}
+                </div>
+                <div>
+                    <Footer/>
                 </div>
             </div>
         )

@@ -14,7 +14,6 @@ describe('Home tests', () => {
         expect(wrapper.find({'data-testid':'offers-container'}).exists()).toBe(true)
         expect(wrapper.find({'data-testid':'new-products-container'}).exists()).toBe(true)
         expect(wrapper.find({'data-testid':'instagram-container'}).exists()).toBe(true)
-        expect(wrapper.find({'data-testid':'footer-container'}).exists()).toBe(true)
         wrapper.find({'data-testid':'new-products-container'}).simulate('click')
         expect(mockFunc).toHaveBeenCalledWith('ProductList')
         wrapper.find({'data-testid':'offers-container'}).simulate('click')

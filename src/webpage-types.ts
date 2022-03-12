@@ -12,6 +12,11 @@ export type MenuProps = {
     onClick: (x: string) => void
     myBasket: number
 }
+export type HomeState = {
+    productRange: dataProps[],
+    latestOffers: object[],
+    latestProducts: object[]
+}
 export type ProductListProps = {
     onClick: (x: number) => void
 }

@@ -33,7 +33,7 @@ export default class Basket extends React.Component<BasketProps> {
                     )
                 })}
                 </div>
-                <div data-testid='buy-div'>
+                <div data-testid='buy-div' className='basket-buy-div btn'>
                     Buy Via Paypal
                 </div>
             </div>

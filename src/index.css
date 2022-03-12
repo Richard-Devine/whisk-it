@@ -10,6 +10,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background: url('website-icons/Whisk-it-background.webp') center;
 }
+a{
+    color: white;
+    text-decoration: none;
+}
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -19,6 +23,20 @@ code {
 .website-container {
     width: 1300px;
     margin: auto;
+}
+.btn {
+    background-color: #95c9e7;
+    color: white;
+    padding: 0 10px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 3px 1px #dbd5d5;
+    cursor: default;
+    user-select: none;
+}
+
+.btn:active {
+    transform: scale(0.96);
+    box-shadow: none;
 }
 
 /*-------------Header--------------*/
@@ -65,6 +83,26 @@ code {
 }
 /*----------------------Home-----------------------*/
 
+.new-products-container{
+    color: #95c9e7;
+    font-size: 2em;
+    font-weight: bold;
+}
+.new-products-wrapper{
+    color: black;
+    display: flex;
+    border-radius: 10px;
+    margin: 20px 0;
+    transition: 0.25s;
+    cursor: default;
+    font-size: 0.52em;
+    font-weight: normal;
+}
+.new-products-wrapper:hover {
+    transform: scale(1.025);
+    transition: 0.25s;
+    box-shadow: 1px 1px 20px 1px #95c9e7, -1px -1px 20px 1px #99cbe7;
+}
 
 /*------------------Product List-------------------*/
 
@@ -162,20 +200,9 @@ code {
 }
 
 .product-details-buy-div {
-    background-color: #95c9e7;
-    color: white;
-    padding: 0 10px;
-    border-radius: 10px;
-    box-shadow: 4px 4px 3px 1px lightgray;
-    cursor: default;
-    user-select: none;
     align-self: end;
 }
 
-.product-details-buy-div:active {
-    transform: scale(0.96);
-    box-shadow: none;
-}
 
 
 /*---------------------Offers----------------------*/
@@ -248,10 +275,55 @@ code {
     max-height: 100px;
     border-radius: 10px;
 }
+.basket-buy-div {
+    align-self: end;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto
+}
 
 /*----------------------Footer---------------------*/
 
-
+.footer-wrapper{
+    background-color: #99cbe7;
+    color: white;
+    border-radius: 10px;
+    padding:15px;
+    margin: 10px 0;
+}
+.footer-text{
+    text-align: center;
+}
+.footer-links{
+    display: grid;
+    grid-template-columns:25% 25% 25% 25%;
+}
+.instagram-link{
+    margin: 10px 0 0 40px;
+    grid-column-start: 2;
+    display:grid;
+    grid-template-columns: auto 1fr;
+}
+.instagram-link-text{
+    align-items: center;
+    padding-left:5px
+}
+.instagram-link-img img {
+    height: 20px
+}
+.email-link {
+    margin: 10px 40px 0 0;
+    grid-column-start: 3;
+    display:grid;
+    grid-template-columns: auto 1fr;
+}
+.email-link-text{
+    align-items: center;
+    padding-left:5px
+}
+.email-link-img img {
+    height: 20px
+}
 
 
 
