@@ -15,22 +15,19 @@ export default class Home extends React.Component <HomeProps> {
         this.state.productRange.map((product) => {
             if (product.offer) {
                 latestOffers.push(product)
-                if (latestOffers.length > 2) {
-                    latestOffers.slice(0, 1)
-                }
             }
-
         })
         this.setState({latestOffers: latestOffers})
     }
 
     newestOffers() {
+        if(this.state.latestOffers.length > 2){
+            this.state.latestOffers.splice(0, (this.state.latestOffers.length -2))
+        }
         return (
             this.state.latestOffers.map((offer, i) => {
-                console.log('latest offers')
-                console.log(this.state.latestOffers)
                 return (
-                    <div className='new-products-wrapper' key={i}>
+                    <div className='new-offers-wrapper' key={i}>
                         <div data-testid='image-div' className='product-list-image-div'>
                             <img src={offer.imageURL} alt={offer.title}/>
                         </div>
@@ -86,7 +83,7 @@ export default class Home extends React.Component <HomeProps> {
                         }
                     })}
                 </div>
-                <div data-testid='offers-container' onClick={() => {
+                <div data-testid='new-offers-container' className='new-offers-container' onClick={() => {
                     this.props.onClick('Offers')
                 }}>
                     Our latest offers!

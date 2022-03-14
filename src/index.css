@@ -82,6 +82,26 @@ code {
     font-size: 0.8em
 }
 /*----------------------Home-----------------------*/
+.new-offers-container{
+    color: #95c9e7;
+    font-size: 2em;
+    font-weight: bold;
+}
+.new-offers-wrapper{
+    color: black;
+    display: flex;
+    border-radius: 10px;
+    margin: 20px 0;
+    transition: 0.25s;
+    cursor: default;
+    font-size: 0.52em;
+    font-weight: normal;
+}
+.new-offers-wrapper:hover {
+    transform: scale(1.025);
+    transition: 0.25s;
+    box-shadow: 1px 1px 20px 1px #95c9e7, -1px -1px 20px 1px #99cbe7;
+}
 
 .new-products-container{
     color: #95c9e7;
