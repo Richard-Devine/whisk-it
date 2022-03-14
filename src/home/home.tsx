@@ -24,7 +24,6 @@ export default class Home extends React.Component <HomeProps> {
         this.setState({latestOffers: latestOffers})
     }
 
-
     newestOffers() {
         return (
             this.state.latestOffers.map((offer, i) => {
@@ -99,4 +98,4 @@ export default class Home extends React.Component <HomeProps> {
         )
     }
 }
-//TODO change the map to trigger once and produce the required divs (do this on componentDidMount?).
+//TODO home page tests
