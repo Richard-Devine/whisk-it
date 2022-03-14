@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {ProductDetailsProps, ProductDetailsState} from "../webpage-types"
+import {ProductDetailsProps, ProductDetailsState, dataProps} from "../webpage-types"
 import {data} from "../data";
 import backButton from '../website-icons/Back-Button.webp'
 
@@ -8,10 +8,35 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
         productInfo: data
     }
 
+    selectBox(product: dataProps) {
+        if (product.select) {
+            let selectArr:any[] = []
+            for (let i:number = 0; i < product.select; i++) {
+                selectArr.push(
+                    <span className='select-div'>
+                        <select>
+                            {this.options()}
+                        </select>
+                    </span>)
+                }
+            return(selectArr)
+        }
+    }
+
+    options(){
+        return(
+        this.state.productInfo.map((product, i) => {
+            if(!product.offer)
+            return (
+                <option value={product.title}>{product.title}</option>
+            )
+        })
+        )
+    }
+
     render() {
         return (
             <div>
-
                 {this.state.productInfo.map((product, i) => {
                     if (product.id === this.props.id) {
                         return (
@@ -31,8 +56,10 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
                                     <div data-testid='description-div'>
                                         {product.description}
                                     </div>
+                                    <div className='select-wrapper' data-testid='select-wrapper'>
+                                    {this.selectBox(product)}
+                                    </div>
                                     <div className='allergy-price-buy-container'>
-
                                         <div data-testid='allergy-div'>
                                             <div data-testid='allergens-div' className='allergens-div'>Allergens:</div>
                                             {product.allergens}
@@ -60,4 +87,5 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
     }
 }
 
-//TODO link correct data to all the divs
+//TODO add custom select boxes to offer products
+//TODO add tests for new elements

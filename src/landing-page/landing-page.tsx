@@ -119,3 +119,4 @@ export default class LandingPage extends React.Component {
         )
     }
 }
+//TODO Landing page tests

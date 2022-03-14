@@ -31,6 +31,7 @@ export type dataProps = {
     imageURL: string,
     allergens?: string
     offer: boolean
+    select?: number
 }
 export type ProductDetailsProps = {
     backButton: () => void

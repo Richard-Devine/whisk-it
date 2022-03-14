@@ -99,3 +99,4 @@ export default class Home extends React.Component <HomeProps> {
     }
 }
 //TODO home page tests
+//TODO home page CSS
