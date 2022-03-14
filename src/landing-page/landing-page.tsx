@@ -71,7 +71,7 @@ export default class LandingPage extends React.Component {
                 return (
                     <div data-testid='basket-container'>
                         <Basket myBasket={this.state.myBasket} myBasketTotal={this.state.basketTotal}
-                                backButton={() => this.displaySwitch('Home')}/>
+                                backButton={() => this.displaySwitch('Home')} deleteItem={() => {this.totalPrice()}}/>
                     </div>
                 )
         }

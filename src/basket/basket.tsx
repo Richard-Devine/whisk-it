@@ -5,7 +5,7 @@ export default class Basket extends React.Component<BasketProps> {
 
     removeFromBasket(i: number) {
         this.props.myBasket.splice(i, 1)
-        this.forceUpdate()
+        this.props.deleteItem()
     }
 
     render() {

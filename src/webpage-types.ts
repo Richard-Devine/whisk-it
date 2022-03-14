@@ -62,6 +62,7 @@ export type BasketProps = {
     myBasket: dataProps[]
     myBasketTotal: number
     backButton: () => void
+    deleteItem: () => void
 }
 
 
