@@ -9,8 +9,51 @@ export default class Home extends React.Component <HomeProps> {
         latestOffers: [],
         index: 0
     }
+
+    componentDidMount() {
+        let latestOffers: dataProps[] = []
+        this.state.productRange.map((product) => {
+            if (product.offer) {
+                latestOffers.push(product)
+                if (latestOffers.length > 2) {
+                    latestOffers.slice(0, 1)
+                }
+            }
+
+        })
+        this.setState({latestOffers: latestOffers})
+    }
+
+
+    newestOffers() {
+        return (
+            this.state.latestOffers.map((offer, i) => {
+                console.log('latest offers')
+                console.log(this.state.latestOffers)
+                return (
+                    <div className='new-products-wrapper' key={i}>
+                        <div data-testid='image-div' className='product-list-image-div'>
+                            <img src={offer.imageURL} alt={offer.title}/>
+                        </div>
+                        <div data-testid='info-container' className='product-list-info-container'>
+                            <div data-testid='title-div'
+                                 className='product-list-info product-list-title-div'>
+                                {offer.title}
+                            </div>
+                            <div data-testid='description-div' className='product-list-info'>
+                                {offer.description}
+                            </div>
+                            <div data-testid='price-div' className='product-list-info'>
+                                £{(offer.price / 100).toFixed(2)}
+                            </div>
+                        </div>
+                    </div>
+                )
+            })
+        )
+    }
+
     render() {
-        {console.log(this.state.latestOffers)}
         return (
             <div>
                 <div data-testid='blurb-container'>
@@ -48,41 +91,7 @@ export default class Home extends React.Component <HomeProps> {
                     this.props.onClick('Offers')
                 }}>
                     Our latest offers!
-                    {this.state.productRange.map((product) => {
-                        console.log(this.state.latestOffers)
-                        if (product.offer) {
-                            this.state.latestOffers.push(product)
-                            console.log(this.state.latestOffers.length)
-                            this.state.latestOffers.map((offer,i) => {
-                                console.log(this.state.latestOffers)
-
-                            return (
-                                <div className='new-products-wrapper' key={i}>
-                                    <div data-testid='image-div' className='product-list-image-div'>
-                                        <img src={offer.imageURL} alt={offer.title}/>
-                                    </div>
-                                    <div data-testid='info-container' className='product-list-info-container'>
-                                        <div data-testid='title-div'
-                                             className='product-list-info product-list-title-div'>
-                                            {offer.title}
-                                        </div>
-                                        <div data-testid='description-div' className='product-list-info'>
-                                            {offer.description}
-                                        </div>
-                                        <div data-testid='price-div' className='product-list-info'>
-                                            £{(offer.price / 100).toFixed(2)}
-                                        </div>
-                                    </div>
-                                </div>
-                            )
-
-                            })
-                            if (this.state.latestOffers.length > 2) {
-                                this.state.latestOffers.slice(0, 1)
-                        }
-                        }
-                    })
-                    }
+                    {this.newestOffers()}
                 </div>
                 <div data-testid='instagram-container'>
                 </div>
