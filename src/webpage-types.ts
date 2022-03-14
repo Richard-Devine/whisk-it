@@ -32,6 +32,7 @@ export type dataProps = {
     allergens?: string
     offer: boolean
     select?: number
+    options?:{1:string, 2:string, 3?: string, 4?: string}
 }
 export type ProductDetailsProps = {
     backButton: () => void
@@ -62,7 +63,6 @@ export type ProductProps = {
 export type BasketProps = {
     myBasket: dataProps[]
     myBasketTotal: number
-    backButton: () => void
     deleteItem: () => void
 }
 

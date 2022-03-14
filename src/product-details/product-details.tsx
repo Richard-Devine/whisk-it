@@ -11,7 +11,7 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
     selectBox(product: dataProps) {
         if (product.select) {
             let selectArr:any[] = []
-            for (let i:number = 0; i < product.select; i++) {
+            for (let i:any = 0; i < product.select; i++) {
                 selectArr.push(
                     <span className='select-div'>
                         <select>
@@ -39,6 +39,7 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
 
 
     render() {
+
         return (
             <div>
                 {this.state.productInfo.map((product, i) => {

@@ -37,11 +37,11 @@ describe('LandingPage tests', () => {
         //expect(wrapper.find(ProductDetails).exists()).toBe(true) <---------IS THIS NEEDED
         expect(wrapper.find(ProductDetails).prop('id')).toBe(0)
         const ProductDetailsSpy = jest.spyOn(instance, 'displaySwitch')
-        const ProductDetailsBasketSpy = jest.spyOn(instance, 'addToBasket')
+        //const ProductDetailsBasketSpy = jest.spyOn(instance, 'addToBasket')
         wrapper.find(ProductDetails).simulate('click')
         expect(ProductDetailsSpy).toHaveBeenCalled()
         wrapper.find(ProductDetails).simulate('click')
-        expect(ProductDetailsBasketSpy).toHaveBeenCalled()
+        //expect(ProductDetailsBasketSpy).toHaveBeenCalled()
         //expect(ProductDetailsSpy).toHaveBeenCalledWith('ProductList)
 
         wrapper.setState({pageView: 'ProductList'})

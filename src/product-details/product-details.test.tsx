@@ -19,7 +19,7 @@ describe('ProductDetails tests', () => {
         expect(wrapper.find({'data-testid':'price-div'}).text().includes('£4.50' as string)).toBe(true)
         expect(wrapper.find({'data-testid':'allergens-div'}).text().includes('Allergens:' as string)).toBe(true)
         expect(wrapper.find({'data-testid':'allergy-div'}).text().includes('fish' as string)).toBe(true)
-        expect(wrapper.find('.title-back-button-div').exists()).toBe(true)
+        expect(wrapper.find('.title-back-button-wrapper').exists()).toBe(true)
         expect(wrapper.find('.product-details-wrapper').exists()).toBe(true)
 
     })

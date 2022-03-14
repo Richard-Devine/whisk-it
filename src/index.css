@@ -292,28 +292,51 @@ select{
 /*---------------------Basket-----------------------*/
 .basket-wrapper{
     display: grid;
-    grid-template-columns: 80% 20%;
+    grid-template-columns: 60% 40%;
     width: 100%;
-    margin-top: 20px;
 }
 
 .basket-items-wrapper{
     display:grid;
-    grid-template-columns: auto 1fr;
-    grid-row-gap: 50px;
+    grid-template-columns: 130px 1fr;
+    grid-column-gap: 20px;
     font-size: 1.1em;
+    margin: 20px 0;
 }
 .image-div img {
     max-width: 200px;
     max-height: 100px;
     border-radius: 10px;
 }
+
 .basket-buy-div {
-    align-self: end;
     text-align: center;
     width: 50%;
-    margin: 0 auto
 }
+.basket-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding: 10px;
+    border: 1px solid #99cbe7;
+    border-radius: 10px;
+}
+.basket-container {
+    width: 70%;
+    margin: 0 auto;
+}
+.basket-image-div{
+    margin:auto;
+    display:inherit;
+}
+.checkout-container{
+    text-align: right;
+    margin:20px;
+}
+.checkout-container div{
+    margin: 10px auto;
+    font-size: 1.2em;
+}
+
 
 /*----------------------Footer---------------------*/
 
@@ -322,7 +345,7 @@ select{
     color: white;
     border-radius: 10px;
     padding:15px;
-    margin: 10px 0;
+    margin: 20px 0 10px 0;
 }
 .footer-text{
     text-align: center;
