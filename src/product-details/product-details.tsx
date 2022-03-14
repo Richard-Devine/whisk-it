@@ -15,7 +15,8 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
                 selectArr.push(
                     <span className='select-div'>
                         <select>
-                            {this.options()}
+                            <option>Choose Flavour</option>
+                        {this.options()}
                         </select>
                     </span>)
                 }
@@ -28,11 +29,14 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
         this.state.productInfo.map((product, i) => {
             if(!product.offer)
             return (
-                <option value={product.title}>{product.title}</option>
+                <option value={product.title}>
+                {product.title}
+                </option>
             )
         })
         )
     }
+
 
     render() {
         return (

@@ -60,7 +60,7 @@ export default class Home extends React.Component <HomeProps> {
                 }}>
                     Our latest products!
                     {this.state.productRange.map((product, i) => {
-                        if (product.id === this.state.productRange.length - 1 || product.id === this.state.productRange.length - 2) {
+                        if (product.id > this.state.productRange.length - 3) {
                             return (
                                 <div className='new-products-wrapper' key={i}>
                                     <div data-testid='image-div' className='product-list-image-div'>

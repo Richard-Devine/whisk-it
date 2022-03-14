@@ -38,6 +38,16 @@ code {
     transform: scale(0.96);
     box-shadow: none;
 }
+select{
+    border-radius: 10px;
+    background-color: #99cbe7;
+    font-family: inherit;
+    border: none;
+    color: white;
+    font-size: 0.7em;
+    width: 150px;
+}
+
 
 /*-------------Header--------------*/
 
@@ -191,7 +201,7 @@ code {
     border-radius: 30px;
     padding: 10px;
     display: grid;
-    grid-template-rows: 25% 33% 1fr;
+    grid-template-rows: 25% 25% 1fr;
 }
 
 .product-details-title-div {
@@ -203,6 +213,7 @@ code {
     display: grid;
     grid-template-columns: 65% 35%;
     align-self: end;
+    align-items: end;
 }
 .allergens-div{
     font-weight: bold;
@@ -222,7 +233,9 @@ code {
 .product-details-buy-div {
     align-self: end;
 }
-
+.select-div{
+    margin: 10px;
+}
 
 
 /*---------------------Offers----------------------*/
