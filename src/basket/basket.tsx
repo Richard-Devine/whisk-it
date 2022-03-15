@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {BasketProps} from '../webpage-types'
+import {BasketProps, dataProps} from '../webpage-types'
 
 export default class Basket extends React.Component<BasketProps> {
 
@@ -7,6 +7,26 @@ export default class Basket extends React.Component<BasketProps> {
         this.props.myBasket.splice(i, 1)
         this.props.deleteItem()
         this.forceUpdate()
+    }
+
+    options(product:dataProps) {
+        if(product.options) {
+            if (!product.options['4']) {
+                return (
+                    <div>
+                        {product.options['1']} {product.options['2']}
+                    </div>
+                )
+            }
+            if (product.options['4']) {
+                return (
+                    <div>
+                        {product.options['1']} {product.options['2']} {product.options['3']} {product.options['4']}
+                    </div>
+                )
+            }
+        }
+
     }
 
     render() {
@@ -25,6 +45,9 @@ export default class Basket extends React.Component<BasketProps> {
                                     </div>
                                     <div data-testid='delete-button-div'>
                                         <div onClick={() => this.removeFromBasket(i)} className='btn'>X</div>
+                                    </div>
+                                    <div>
+                                        {this.options(product)}
                                     </div>
                                     <div data-testid='price-div'>
                                         £{(product.price / 100).toFixed(2)}

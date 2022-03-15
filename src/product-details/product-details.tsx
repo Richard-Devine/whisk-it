@@ -5,16 +5,19 @@ import backButton from '../website-icons/Back-Button.webp'
 
 export default class ProductDetails extends React.Component <ProductDetailsProps, ProductDetailsState> {
     state: ProductDetailsState = {
-        productInfo: data
+        productInfo: data,
+        selections:{
+            selection1:"",
+            selection2:""}
     }
 
     selectBox(product: dataProps) {
         if (product.select) {
             let selectArr:any[] = []
-            for (let i:any = 0; i < product.select; i++) {
+            for (let i:number = 0; i < product.select; i++) {
                 selectArr.push(
                     <span className='select-div'>
-                        <select>
+                        <select onChange={(e) => {this.optionSelected(i, e, product)}}>
                             <option>Choose Flavour</option>
                         {this.options()}
                         </select>
@@ -37,6 +40,24 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
         )
     }
 
+    optionSelected(i:number, event:any, product:dataProps) {
+        if(product.options){
+        switch (i) {
+            case 0:
+                product.options['1'] = event.target.value
+                break;
+            case 1:
+                product.options['2'] = event.target.value
+                break;
+            case 2:
+                product.options['3'] = event.target.value
+                break;
+            case 3:
+                product.options['4'] = event.target.value
+                break;
+        }
+        }
+    }
 
     render() {
 
