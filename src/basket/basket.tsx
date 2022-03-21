@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {BasketProps, dataProps} from '../webpage-types'
+import {BasketProps, dataProps, itemProps} from '../webpage-types'
 
 export default class Basket extends React.Component<BasketProps> {
 
@@ -9,19 +9,19 @@ export default class Basket extends React.Component<BasketProps> {
         this.forceUpdate()
     }
 
-    options(product:dataProps) {
+    options(product:itemProps) {
         if(product.options) {
             if (!product.options['4']) {
                 return (
-                    <div>
-                        {product.options['1']} {product.options['2']}
+                    <div className='product-options'>
+                        -{product.options['1']}    -{product.options['2']}
                     </div>
                 )
             }
             if (product.options['4']) {
                 return (
-                    <div>
-                        {product.options['1']} {product.options['2']} {product.options['3']} {product.options['4']}
+                    <div className='product-options'>
+                        -{product.options['1']}    -{product.options['2']}    <br/>-{product.options['3']}    -{product.options['4']}
                     </div>
                 )
             }
@@ -57,7 +57,7 @@ export default class Basket extends React.Component<BasketProps> {
                         )
                     })}
                 </div>
-                <div className='checkout-container'>
+                <div className='checkout-wrapper'>
                     <div className='sub-total-div'>
                         Subtotal: £{(this.props.myBasketTotal / 100).toFixed(2)}
                     </div>
@@ -69,7 +69,7 @@ export default class Basket extends React.Component<BasketProps> {
                         £{(((this.props.myBasket.length * 350) / 100) + (this.props.myBasketTotal / 100)).toFixed(2)}
                     </div>
 
-                    <div data-testid='buy-div' className='basket-buy-div btn'>
+                    <div data-testid='buy-div' className='basket-buy-div btn' onClick={() => {this.props.checkout()}}>
                         Proceed to checkout
                     </div>
                 </div>

@@ -328,15 +328,17 @@ select{
     margin:auto;
     display:inherit;
 }
-.checkout-container{
+.checkout-wrapper{
     text-align: right;
     margin:20px;
 }
-.checkout-container div{
+.checkout-wrapper div{
     margin: 10px auto;
     font-size: 1.2em;
 }
-
+.product-options{
+    font-size: 0.7em;
+}
 
 /*----------------------Footer---------------------*/
 
@@ -380,6 +382,36 @@ select{
 .email-link-img img {
     height: 20px
 }
+
+
+/*----------------------------------Checkout-------------------------------*/
+.checkout-grid-container{
+    text-align: center;
+    margin:20px;
+}
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    margin: 20px auto;
+    width:50%;
+}
+.checkout-grid-titles{
+    margin:10px;
+    text-align: right;
+    height:1.33em;
+}
+.checkout-div-inputs{
+    border: 1px solid black;
+    height: 1.2em;
+    margin: 10px;
+    text-align: left;
+}
+.paypal-btn{
+    width:20%;
+    margin:0 auto;
+    height:1.3em;
+}
+
 
 
 

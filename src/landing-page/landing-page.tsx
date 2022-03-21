@@ -8,7 +8,8 @@ import ContactUs from "../contact-us/contact-us";
 import Offers from "../offers/offers"
 import Basket from "../basket/basket"
 import Footer from "../footer/footer";
-import {dataProps, LandingPageState} from "../webpage-types";
+import Checkout from "../checkout/checkout";
+import {dataProps, LandingPageState, itemProps} from "../webpage-types";
 
 export default class LandingPage extends React.Component {
 
@@ -71,7 +72,13 @@ export default class LandingPage extends React.Component {
                 return (
                     <div data-testid='basket-container' className='basket-container'>
                         <Basket myBasket={this.state.myBasket} myBasketTotal={this.state.basketTotal}
-                                deleteItem={() => {this.totalPrice()}}/>
+                                deleteItem={() => {this.totalPrice()}} checkout={() => {this.displaySwitch("Checkout")}}/>
+                    </div>
+                )
+            case "Checkout":
+                return (
+                    <div className='checkout-container'>
+                        <Checkout myBasket={this.state.myBasket}/>
                     </div>
                 )
         }
@@ -87,18 +94,36 @@ export default class LandingPage extends React.Component {
     }
 
     addToBasket(product: dataProps) {
-        this.state.myBasket.push(product)
+        let item:itemProps = {
+            id: new Date(Date()).toISOString(),
+            title: product.title,
+            price: product.price,
+            imageURL:product.imageURL,
+        }
+        if(product.options){
+            if(product.options["4"]){
+            item.options = {1:product.options["1"], 2:product.options["2"], 3:product.options["3"], 4: product.options["4"]}
+            } else {
+                item.options = {1: product.options["1"], 2: product.options["2"]}
+            }
+        }
+        this.state.myBasket.push(item)
         this.totalPrice()
     }
 
     totalPrice() {
         let total: number = 0
-        this.state.myBasket.map((product, i) => {
-            total += product.price
-            console.log(total)
-            console.log(product.price)
+        if(this.state.myBasket.length > 0) {
+            this.state.myBasket.map((product, i) => {
+                total += product.price
+                console.log(total)
+                console.log(product.price)
+                this.setState({basketTotal: total})
+            })
+        } else{
+            total = 0
             this.setState({basketTotal: total})
-        })
+        }
     }
 
     render() {

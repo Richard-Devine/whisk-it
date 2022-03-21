@@ -1,7 +1,7 @@
 export type LandingPageState = {
     pageView: string
     productId: number
-    myBasket: dataProps[]
+    myBasket: itemProps[]
     basketTotal: number
 };
 export type HeaderProps = {
@@ -67,14 +67,22 @@ export type ProductProps = {
     onClick: (x: number) => void,
 }
 export type BasketProps = {
-    myBasket: dataProps[]
+    myBasket: itemProps[]
     myBasketTotal: number
     deleteItem: () => void
+    checkout: () => void
 }
-type value = {
-    1:string,
-    2:string,
-    3?:string,
-    4?:string
+export type itemProps = {
+    id: string
+    title: string
+    price:number
+    imageURL: string
+    options?:dataProps["options"]
+}
+export type CheckoutProps = {
+    myBasket: itemProps[]
+}
+export type CheckoutState ={
+    basketTotal:number
 }
 
