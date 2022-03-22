@@ -12,6 +12,8 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
             selection2:""}
     }
 
+
+
     selectBox(product: dataProps) {
         if (product.select) {
             let selectArr:any[] = []
