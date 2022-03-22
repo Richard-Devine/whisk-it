@@ -44,7 +44,7 @@ export default class Basket extends React.Component<BasketProps> {
                                         {product.title}
                                     </div>
                                     <div data-testid='delete-button-div'>
-                                        <div onClick={() => this.removeFromBasket(i)} className='btn'>X</div>
+                                        <div onClick={() => this.removeFromBasket(i)} className='btn delete-button'>X</div>
                                     </div>
                                     <div>
                                         {this.options(product)}

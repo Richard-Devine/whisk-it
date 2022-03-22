@@ -10,6 +10,7 @@ import Basket from "../basket/basket"
 import Footer from "../footer/footer";
 import Checkout from "../checkout/checkout";
 import {dataProps, LandingPageState, itemProps} from "../webpage-types";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 export default class LandingPage extends React.Component {
 
@@ -127,6 +128,7 @@ export default class LandingPage extends React.Component {
     }
 
     render() {
+
         return (
             <div className='website-container'>
                 <div data-testid='header-container'>
@@ -134,9 +136,9 @@ export default class LandingPage extends React.Component {
                         this.displaySwitch(x)
                     }} myBasket={this.state.basketTotal}/>
                 </div>
-                <div>
-                    {this.productView()}
-                </div>
+                    <div>
+                        {this.productView()}
+                    </div>
                 <div>
                     <Footer/>
                 </div>
