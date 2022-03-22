@@ -3,6 +3,8 @@ import {ProductListProps, ProductListState} from "../webpage-types";
 import Product from '../product/product'
 import {data} from '../data'
 
+
+
 export default class ProductList extends React.Component <ProductListProps, ProductListState> {
     state : ProductListState = {
         productRange: data
@@ -18,6 +20,7 @@ export default class ProductList extends React.Component <ProductListProps, Prod
                     )
                 })}
             </div>
+
         )
     }
 }

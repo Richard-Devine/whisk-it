@@ -81,6 +81,7 @@ export type itemProps = {
 }
 export type CheckoutProps = {
     myBasket: itemProps[]
+    checkoutComplete: () => void
 }
 export type CheckoutState ={
     basketTotal:number

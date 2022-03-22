@@ -1,9 +1,17 @@
 import * as React from 'react'
 import {ProductProps} from "../webpage-types";
+import {useNavigate} from "react-router-dom";
 
 export default function Product(props: ProductProps) {
+    let navigate = useNavigate()
+
+    function routing(id:number){
+        props.onClick(id);
+        navigate("/Product-Details")
+    }
+
     return (
-        <div data-testid='product-wrapper' className='product-wrapper' onClick={() => props.onClick(props.id)}>
+        <div data-testid='product-wrapper' className='product-wrapper' onClick={() => {routing(props.id)}} >
             <div data-testid='image-div' className='product-list-image-div'>
                 <img src={props.imageURL} alt={props.title}/>
             </div>

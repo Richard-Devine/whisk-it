@@ -2,6 +2,7 @@ import * as React from 'react'
 import {ProductDetailsProps, ProductDetailsState, dataProps} from "../webpage-types"
 import {data} from "../data";
 import backButton from '../website-icons/Back-Button.webp'
+import {Link} from "react-router-dom";
 
 export default class ProductDetails extends React.Component <ProductDetailsProps, ProductDetailsState> {
     state: ProductDetailsState = {
@@ -76,7 +77,7 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
                                             {product.title}
                                         </div>
                                         <div data-testid='back-button-div' onClick={() => this.props.backButton()}>
-                                            <img src={backButton} alt='Back Button' className='back-button'/>
+                                           <Link to="/Products"> <img src={backButton} alt='Back Button' className='back-button'/></Link>
                                         </div>
                                     </div>
                                     <div data-testid='description-div'>

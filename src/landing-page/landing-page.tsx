@@ -10,7 +10,7 @@ import Basket from "../basket/basket"
 import Footer from "../footer/footer";
 import Checkout from "../checkout/checkout";
 import {dataProps, LandingPageState, itemProps} from "../webpage-types";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes, useNavigate} from "react-router-dom";
 
 export default class LandingPage extends React.Component {
 
@@ -79,7 +79,13 @@ export default class LandingPage extends React.Component {
             case "Checkout":
                 return (
                     <div className='checkout-container'>
-                        <Checkout myBasket={this.state.myBasket}/>
+                        <Checkout myBasket={this.state.myBasket} checkoutComplete={() => {this.displaySwitch("CheckoutComplete")}}/>
+                    </div>
+                )
+            case "CheckoutComplete":
+                return (
+                    <div>
+
                     </div>
                 )
         }
@@ -128,7 +134,6 @@ export default class LandingPage extends React.Component {
     }
 
     render() {
-
         return (
             <div className='website-container'>
                 <div data-testid='header-container'>
@@ -136,9 +141,35 @@ export default class LandingPage extends React.Component {
                         this.displaySwitch(x)
                     }} myBasket={this.state.basketTotal}/>
                 </div>
-                    <div>
-                        {this.productView()}
-                    </div>
+                <Routes>
+
+                    <Route path="/" element={<Home onClick={(x) => {
+                        this.displaySwitch(x)
+                    }}/>}/>
+
+                    <Route path="Products" element={<ProductList onClick={(x) => {
+                        this.viewProduct(x)
+                    }}/>}/>
+
+                    <Route path="Product-Details" element={<ProductDetails backButton={() => {
+                        this.displaySwitch('ProductList')
+                    }} id={this.state.productId} addProductButton={(x) => {
+                        this.addToBasket(x)
+                    }}/>}/>
+
+                    <Route path="Offers" element={<Offers onClick={(x) => {
+                        this.viewProduct(x)
+                    }}/>}/>
+
+                    <Route path="Gallery" element={<Gallery />}/>
+
+                    <Route path="Basket" element={<Basket myBasket={this.state.myBasket} myBasketTotal={this.state.basketTotal}
+                                                           deleteItem={() => {this.totalPrice()}} checkout={() => {this.displaySwitch("Checkout")}}/>}/>
+
+                    <Route path="Checkout" element={<Checkout myBasket={this.state.myBasket} checkoutComplete={() => {this.displaySwitch("CheckoutComplete")}}/>}/>
+
+                    <Route path="Checkout" element={<Checkout myBasket={this.state.myBasket} checkoutComplete={() => {this.displaySwitch("CheckoutComplete")}}/>}/>
+                </Routes>
                 <div>
                     <Footer/>
                 </div>

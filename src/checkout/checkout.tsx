@@ -9,12 +9,9 @@ export default class Checkout extends React.Component<CheckoutProps> {
     componentDidMount() {
         let currentTotal = 0
         this.props.myBasket.map((product) => {
-
             currentTotal += (product.price + 350)
             let newTotal = (currentTotal / 100)
-
             return (this.setState({basketTotal: newTotal}))
-
         })
     }
 
@@ -44,7 +41,7 @@ export default class Checkout extends React.Component<CheckoutProps> {
                     <input type="hidden" name="item_name" value="Whisk It order"/>
                     <input type="hidden" name="currency_code" value="GBP"/>
                     <input type="hidden" name="amount" value={this.state.basketTotal.toString()}/>
-                    <input type="hidden" name="return" value={""}/>
+                    <input type="hidden" name="return" value={this.props.checkoutComplete()}/>
                     <input type="image" src="http://www.paypal.com/en_US/i/btn/x-click-but01.gif" name="submit"
                            alt="Make payments with PayPal - it's fast, free and secure!" />
                 </form>
