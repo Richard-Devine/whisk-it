@@ -27,7 +27,7 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
 
     options(){
         return(
-        this.state.productInfo.map((product, i) => {
+        this.state.productInfo.map((product) => {
             if(!product.offer)
             return (
                 <option value={product.title}>
