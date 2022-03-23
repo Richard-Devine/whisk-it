@@ -1,14 +1,14 @@
 import * as React from 'react'
-import {OffersProps, OffersState} from "../webpage-types";
+import {OffersProps} from "../webpage-types";
 import {data} from "../data";
 import {useNavigate} from "react-router-dom";
 
 export default function Offers (props:OffersProps){
     let navigate = useNavigate()
 
-    function routing(id:number) {
+    function routing(id:number, title:string) {
         props.onClick(id)
-        navigate("/Product-Details")
+        navigate("/Products/"+title)
     }
 
         return (
@@ -16,7 +16,7 @@ export default function Offers (props:OffersProps){
                 {data.map((product, i) => {
                     if (product.offer) {
                         return (
-                            <div data-testid='offer-divs' onClick={() => routing(product.id)} key={i} className='offers-wrapper'>
+                            <div data-testid='offer-divs' onClick={() => routing(product.id, product.title)} key={i} className='offers-wrapper'>
                                 <div data-testid='img-div' className='offers-img-div'>
                                     <img src={product.imageURL} alt={product.title}/>
                                 </div>

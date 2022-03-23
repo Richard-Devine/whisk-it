@@ -7,12 +7,7 @@ import {Link} from "react-router-dom";
 export default class ProductDetails extends React.Component <ProductDetailsProps, ProductDetailsState> {
     state: ProductDetailsState = {
         productInfo: data,
-        selections:{
-            selection1:"",
-            selection2:""}
     }
-
-
 
     selectBox(product: dataProps) {
         if (product.select) {
@@ -78,7 +73,7 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
                                         <div data-testid='title-div' className='product-details-title-div'>
                                             {product.title}
                                         </div>
-                                        <div data-testid='back-button-div' onClick={() => this.props.backButton()}>
+                                        <div data-testid='back-button-div'>
                                            <Link to="/Products"> <img src={backButton} alt='Back Button' className='back-button'/></Link>
                                         </div>
                                     </div>

@@ -11,7 +11,7 @@ export default class Header extends React.Component <HeaderProps> {
                     <img src={whiskItLogo} alt="Whisk It logo" className='header-banner-image'/>
                 </div>
                 <div data-testid='menu-container' className='menu-container'>
-                    <Menu onClick={(x) => this.props.onClick(x)} myBasket={this.props.myBasket}/>
+                    <Menu myBasket={this.props.myBasket}/>
                 </div>
             </div>
         )

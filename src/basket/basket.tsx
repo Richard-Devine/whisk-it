@@ -1,15 +1,15 @@
 import * as React from 'react'
-import {BasketProps, dataProps, itemProps} from '../webpage-types'
+import {BasketProps, itemProps} from '../webpage-types'
+import {useNavigate} from "react-router-dom";
 
-export default class Basket extends React.Component<BasketProps> {
+export default function Basket(props:BasketProps){
 
-    removeFromBasket(i: number) {
-        this.props.myBasket.splice(i, 1)
-        this.props.deleteItem()
-        this.forceUpdate()
+    function removeFromBasket(i: number) {
+        props.myBasket.splice(i, 1)
+        props.deleteItem()
     }
 
-    options(product:itemProps) {
+    function options(product:itemProps) {
         if(product.options) {
             if (!product.options['4']) {
                 return (
@@ -26,14 +26,14 @@ export default class Basket extends React.Component<BasketProps> {
                 )
             }
         }
-
     }
 
-    render() {
+    let navigate = useNavigate()
+
         return (
             <div className='basket-wrapper'>
                 <div>
-                    {this.props.myBasket.map((product, i) => {
+                    {props.myBasket.map((product, i) => {
                         return (
                             <div key={i} data-testid='basket-items-wrapper' className='basket-items-wrapper'>
                                 <div data-testid='image-div' className='basket-image-div image-div'>
@@ -44,10 +44,10 @@ export default class Basket extends React.Component<BasketProps> {
                                         {product.title}
                                     </div>
                                     <div data-testid='delete-button-div'>
-                                        <div onClick={() => this.removeFromBasket(i)} className='btn delete-button'>X</div>
+                                        <div onClick={() => removeFromBasket(i)} className='btn delete-button'>X</div>
                                     </div>
                                     <div>
-                                        {this.options(product)}
+                                        {options(product)}
                                     </div>
                                     <div data-testid='price-div'>
                                         £{(product.price / 100).toFixed(2)}
@@ -59,23 +59,23 @@ export default class Basket extends React.Component<BasketProps> {
                 </div>
                 <div className='checkout-wrapper'>
                     <div className='sub-total-div'>
-                        Subtotal: £{(this.props.myBasketTotal / 100).toFixed(2)}
+                        Subtotal: £{(props.myBasketTotal / 100).toFixed(2)}
                     </div>
                     <div className='postage-div'>
-                        Postage: £{((this.props.myBasket.length * 350) / 100).toFixed(2)}
+                        Postage: £{((props.myBasket.length * 350) / 100).toFixed(2)}
                     </div>
                     <div className='total-div'>
                         Total:
-                        £{(((this.props.myBasket.length * 350) / 100) + (this.props.myBasketTotal / 100)).toFixed(2)}
+                        £{(((props.myBasket.length * 350) / 100) + (props.myBasketTotal / 100)).toFixed(2)}
                     </div>
 
-                    <div data-testid='buy-div' className='basket-buy-div btn' onClick={() => {this.props.checkout()}}>
+                    <div data-testid='buy-div' className='basket-buy-div btn' onClick={() => {navigate("/Checkout")}}>
                         Proceed to checkout
                     </div>
                 </div>
             </div>
         )
     }
-}
+
 
 //TODO Basket tests for new elements

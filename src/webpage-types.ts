@@ -1,21 +1,14 @@
 export type LandingPageState = {
-    pageView: string
     productId: number
     myBasket: itemProps[]
     basketTotal: number
+    completeOrder?:OrderProps
 };
 export type HeaderProps = {
-    onClick: (x: string) => void
     myBasket: number
 };
 export type MenuProps = {
-    onClick: (x: string) => void
     myBasket: number
-}
-export type HomeState = {
-    productRange: dataProps[],
-    latestOffers: dataProps[],
-    index: number,
 }
 export type ProductListProps = {
     onClick: (x: number) => void
@@ -32,30 +25,23 @@ export type dataProps = {
     allergens?: string
     offer: boolean
     select?: number
-    options?:{1?:string, 2?:string, 3?: string, 4?: string}
+    options?: { 1?: string, 2?: string, 3?: string, 4?: string }
 }
 export type ProductDetailsProps = {
-    backButton: () => void
     id: number
-    addProductButton: (x:dataProps) => void
+    addProductButton: (x: dataProps) => void
 }
 export type ProductDetailsState = {
     productInfo: dataProps[]
-    selections: {
-        selection1?: string
-        selection2?: string
-        selection3?: string
-        selection4?: string
-    }
 }
 export type OffersState = {
     productRange: dataProps[]
 }
-export type OffersProps ={
-    onClick: (x:number) => void
+export type OffersProps = {
+    onClick: (x: number) => void
 }
 export type HomeProps = {
-    onClick: (x: string) => void
+    onClick: (x: number) => void
 }
 export type ProductProps = {
     title: string,
@@ -70,20 +56,36 @@ export type BasketProps = {
     myBasket: itemProps[]
     myBasketTotal: number
     deleteItem: () => void
-    checkout: () => void
 }
 export type itemProps = {
     id: string
     title: string
-    price:number
+    price: number
     imageURL: string
-    options?:dataProps["options"]
+    options?: dataProps["options"]
 }
 export type CheckoutProps = {
     myBasket: itemProps[]
-    checkoutComplete: () => void
+    completeOrder: (x:OrderProps) => void
 }
-export type CheckoutState ={
-    basketTotal:number
+export type CheckoutState = {
+    basketTotal: number
+    order: OrderProps
 }
-
+export type OrderProps = {
+    name?: string
+    house?: string
+    street?: string
+    city?: string
+    postcode?: string
+    email?: string
+}
+export type PaymentButtonsProps = {
+    amount: number
+    order: OrderProps
+    completeOrder: (x:OrderProps) => void
+}
+export type CheckoutCompleteProps = {
+    myBasket: itemProps[]
+    completeOrder?: OrderProps
+}

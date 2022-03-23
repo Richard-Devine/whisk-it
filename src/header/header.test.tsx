@@ -7,7 +7,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 describe('header component tests', () => {
     it('renders logo-container and menu component', () => {
-        let wrapper = shallow(<Header onClick= {() => null} myBasket={10}/>)
+        let wrapper = shallow(<Header myBasket={10}/>)
         expect(wrapper.find({'data-testid': 'logo-container'}).exists()).toBe(true)
         expect(wrapper.find({'data-testid': 'menu-container'}).exists()).toBe(true)
     })

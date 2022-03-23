@@ -10,7 +10,7 @@ describe('ProductDetails tests', () => {
     it('renders correct divs, values and onClick functions', () => {
 
         const data = [{id: 1463342, title: 'Blondie', imageURL: 'www.somewhere.com/image2', description: 'This is a blondie', price: 450, offer: false, allergens: 'fish'}]
-        const wrapper = shallow(<ProductDetails backButton={() => null} id={1463342} addProductButton={() => null}/>)
+        const wrapper = shallow(<ProductDetails  id={1463342} addProductButton={() => null}/>)
         wrapper.setState({productInfo:data})
 
         expect(wrapper.find({'data-testid':'image-div'}).contains(<img src={'www.somewhere.com/image2'} alt={'Blondie'}/>)).toBe(true)
@@ -25,15 +25,8 @@ describe('ProductDetails tests', () => {
     })
     it('onClick functions work', () => {
 
-        const data = [{id: 1463342, title: 'Blondie', imageURL: 'www.somewhere.com/image2', description: 'This is a blondie', price: '4.50', offer: false, allergens: 'fish'}]
-
-        const mockFunc = jest.fn()
         const otherMockFunc = jest.fn()
-        const wrapper = shallow(<ProductDetails backButton={() => mockFunc()} id={1463342} addProductButton={() => otherMockFunc()}/>)
-        wrapper.setState({productInfo:data})
-
-        wrapper.find({'data-testid':'back-button-div'}).at(0).simulate('click')
-        expect(mockFunc).toHaveBeenCalled()
+        const wrapper = shallow(<ProductDetails  id={1463342} addProductButton={() => otherMockFunc()}/>)
 
         wrapper.find({'data-testid':'buy-div'}).simulate('click')
         expect(otherMockFunc).toHaveBeenCalled()

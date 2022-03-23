@@ -1,19 +1,17 @@
 import * as React from 'react'
 import {imageArr} from './image-array'
 
-export default class Gallery extends React.Component {
+export default function Gallery() {
 
-    render() {
-        return (
-            <div className='gallery-container' data-testid='gallery-container'>
-                {imageArr.map((source, index) => {
-                    return (
-                        <div key={index} className='gallery-images-div' data-testid='gallery-images-div'>
-                            <img src={require('../images/'+source)} alt='Gallery' className='gallery-images' />
-                        </div>
-                    )
-                })}
-            </div>
-        )
-    }
+    return (
+        <div className='gallery-container' data-testid='gallery-container'>
+            {imageArr.map((source, index) => {
+                return (
+                    <div key={index} className='gallery-images-div' data-testid='gallery-images-div'>
+                        <img src={require('../images/' + source)} alt='Gallery' className='gallery-images'/>
+                    </div>
+                )
+            })}
+        </div>
+    )
 }

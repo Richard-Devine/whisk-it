@@ -7,7 +7,7 @@ export default function Product(props: ProductProps) {
 
     function routing(id:number){
         props.onClick(id);
-        navigate("/Product-Details")
+        navigate("/Products/"+props.title)
     }
 
     return (

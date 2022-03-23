@@ -6,6 +6,9 @@
     src: url('./font/Roboto_Condensed/RobotoCondensed-Light.ttf');
 
 }
+html{
+    overflow-y: scroll;
+}
 body {
     margin: 0;
     font-family: whisk-it-font, system-ui;
