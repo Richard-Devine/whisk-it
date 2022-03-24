@@ -11,25 +11,26 @@ export default class Checkout extends React.Component<CheckoutProps> {
     orderDetails(e: any, key: string) {
 
         if(e.target.value < 1){
-            alert("please enter your " + key)
-        }
-        if (key === "name") {
-            this.state.order.name = e.target.value
-        }
-        if (key === "house name/number") {
-            this.state.order.house = e.target.value
-        }
-        if (key === "street name") {
-            this.state.order.street = e.target.value
-        }
-        if (key === "city name") {
-            this.state.order.city = e.target.value
-        }
-        if (key === "postcode") {
-            this.state.order.postcode = e.target.value
-        }
-        if (key === "email address") {
-            this.state.order.email = e.target.value
+            alert("Please enter your " + key)
+        } else {
+            if (key === "name") {
+                this.state.order.name = e.target.value
+            }
+            if (key === "house name/number") {
+                this.state.order.house = e.target.value
+            }
+            if (key === "street name") {
+                this.state.order.street = e.target.value
+            }
+            if (key === "city name") {
+                this.state.order.city = e.target.value
+            }
+            if (key === "postcode") {
+                this.state.order.postcode = e.target.value
+            }
+            if (key === "email address") {
+                this.state.order.email = e.target.value
+            }
         }
         console.log(this.state.order)
     }
@@ -37,11 +38,24 @@ export default class Checkout extends React.Component<CheckoutProps> {
 
     componentDidMount() {
         let currentTotal = 0
-        this.props.myBasket.map((product) => {
+        let string:string =""
+        this.props.myBasket.map((product,i) => {
+            if(product.options){
+                if(product.options['4']){
+                    string += `${(i+1)}. ${product.title} (${product.options['1']}/${product.options['2']}/${product.options['3']}/${product.options['4']})<br/>`
+                }
+                if(!product.options['4']){
+                    string += `${(i+1)}. ${product.title} (${product.options['1']}/${product.options['2']})<br/>`
+                }
+            } else {
+                string += `${(i+1)}. ${product.title}<br/>`
+            }
             currentTotal += (product.price + 350)
             let newTotal = (currentTotal / 100)
-            return (this.setState({basketTotal: newTotal}))
+            this.setState({basketTotal: newTotal})
+            this.state.order.order = string
         })
+
     }
 
 
@@ -68,9 +82,8 @@ export default class Checkout extends React.Component<CheckoutProps> {
                     <label htmlFor="email">Email Address:</label>
                     <input type="text" id="email" placeholder="Email Address"
                            onBlur={(e) => this.orderDetails(e, "email address")}/><br/>
-
                 </form>
-                <PaymentButtons amount={this.state.basketTotal} order={this.state.order} completeOrder={(x) => {this.props.completeOrder(x)}}/>
+                <PaymentButtons amount={this.state.basketTotal} order={this.state.order} completeOrder={() => {this.props.completeOrder()}} myBasket={this.props.myBasket}/>
             </div>
         )
     }

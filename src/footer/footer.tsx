@@ -20,7 +20,7 @@ export default class Footer extends React.Component {
                         <a href="mailto:michaelaparish@hotmail.co.uk"><img src={email} alt='Email icon'/></a>
                     </div>
                     <div data-testid='email-link-text' className='email-link-text'>
-                        <a href="mailto:michaelaparish@hotmail.co.uk">michaelaparish@hotmail.co.uk </a>
+                        <a href="mailto:michaelaparish@hotmail.co.uk">whisk-it@outlook.com</a>
                     </div>
                     </div>
 

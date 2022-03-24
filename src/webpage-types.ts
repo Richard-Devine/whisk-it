@@ -2,7 +2,6 @@ export type LandingPageState = {
     productId: number
     myBasket: itemProps[]
     basketTotal: number
-    completeOrder?:OrderProps
 };
 export type HeaderProps = {
     myBasket: number
@@ -66,7 +65,7 @@ export type itemProps = {
 }
 export type CheckoutProps = {
     myBasket: itemProps[]
-    completeOrder: (x:OrderProps) => void
+    completeOrder: () => void
 }
 export type CheckoutState = {
     basketTotal: number
@@ -79,13 +78,16 @@ export type OrderProps = {
     city?: string
     postcode?: string
     email?: string
+    order?: string
 }
 export type PaymentButtonsProps = {
     amount: number
     order: OrderProps
-    completeOrder: (x:OrderProps) => void
+    completeOrder: () => void
+    myBasket: itemProps[]
 }
 export type CheckoutCompleteProps = {
     myBasket: itemProps[]
-    completeOrder?: OrderProps
 }
+
+

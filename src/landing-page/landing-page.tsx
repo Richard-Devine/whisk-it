@@ -48,8 +48,6 @@ export default class LandingPage extends React.Component {
         if(this.state.myBasket.length > 0) {
             this.state.myBasket.map((product, i) => {
                 total += product.price
-                console.log(total)
-                console.log(product.price)
                 this.setState({basketTotal: total})
             })
         } else {
@@ -57,8 +55,9 @@ export default class LandingPage extends React.Component {
             this.setState({basketTotal: total})
         }
     }
-    completeOrder(x:OrderProps){
-        this.setState({completeOrder:x})
+    completeOrder(){
+        this.setState({myBasket:[]})
+        this.totalPrice()
     }
 
     render() {
@@ -89,9 +88,9 @@ export default class LandingPage extends React.Component {
                     <Route path="Basket" element={<Basket myBasket={this.state.myBasket} myBasketTotal={this.state.basketTotal}
                                                            deleteItem={() => {this.totalPrice()}} />}/>
 
-                    <Route path="Checkout" element={<Checkout myBasket={this.state.myBasket} completeOrder={(x) => this.completeOrder(x)}/>}/>
+                    <Route path="Checkout" element={<Checkout myBasket={this.state.myBasket} completeOrder={() => this.completeOrder()}/>}/>
 
-                    <Route path="CheckoutComplete" element={<CheckoutComplete myBasket={this.state.myBasket} completeOrder={this.state.completeOrder}/>}/>
+                    <Route path="CheckoutComplete" element={<CheckoutComplete myBasket={this.state.myBasket} />}/>
                 </Routes>
                 <div>
                     <Footer/>
