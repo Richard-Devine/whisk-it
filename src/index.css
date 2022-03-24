@@ -6,6 +6,9 @@
     src: url('./font/Roboto_Condensed/RobotoCondensed-Light.ttf');
 
 }
+:root {
+    --blue: #95c9e7
+}
 html{
     overflow-y: scroll;
 }
@@ -31,7 +34,7 @@ code {
     margin: auto;
 }
 .btn {
-    background-color: #95c9e7;
+    background-color: var(--blue) ;
     color: white;
     padding: 0 10px;
     border-radius: 10px;
@@ -46,7 +49,7 @@ code {
 }
 select{
     border-radius: 10px;
-    background-color: #99cbe7;
+    background-color: var(--blue);
     font-family: inherit;
     border: none;
     color: white;
@@ -56,7 +59,6 @@ select{
 
 
 /*-------------Header--------------*/
-
 .header-banner-div {
     max-width: 400px;
     margin: auto;
@@ -69,7 +71,7 @@ select{
 /*---------------------Menu-----------------------*/
 
 .menu-container {
-    background-color: #95c9e7;
+    background-color: var(--blue);
     color: white;
     font-size: 30px;
     font-weight: bold;
@@ -97,9 +99,15 @@ select{
     padding-top: 3px;
     font-size: 0.8em
 }
+.menu-wrapper{
+    display:unset
+}
+.drop-down-container{
+    display:none
+}
 /*----------------------Home-----------------------*/
 .new-offers-container{
-    color: #95c9e7;
+    color: var(--blue);
     font-size: 2em;
     font-weight: bold;
 }
@@ -116,11 +124,11 @@ select{
 .new-offers-wrapper:hover {
     transform: scale(1.025);
     transition: 0.25s;
-    box-shadow: 1px 1px 20px 1px #95c9e7, -1px -1px 20px 1px #99cbe7;
+    box-shadow: 1px 1px 20px 1px #95c9e7, -1px -1px 20px 1px var(--blue);
 }
 
 .new-products-container{
-    color: #95c9e7;
+    color: var(--blue);
     font-size: 2em;
     font-weight: bold;
 }
@@ -137,7 +145,7 @@ select{
 .new-products-wrapper:hover {
     transform: scale(1.025);
     transition: 0.25s;
-    box-shadow: 1px 1px 20px 1px #95c9e7, -1px -1px 20px 1px #99cbe7;
+    box-shadow: 1px 1px 20px 1px #95c9e7, -1px -1px 20px 1px var(--blue);
 }
 
 /*------------------Product List-------------------*/
@@ -154,7 +162,7 @@ select{
 .product-wrapper:hover {
     transform: scale(1.025);
     transition: 0.25s;
-    box-shadow: 1px 1px 20px 1px #95c9e7, -1px -1px 20px 1px #99cbe7;
+    box-shadow: 1px 1px 20px 1px var(--blue), -1px -1px 20px 1px var(--blue);
 }
 
 .product-list-image-div {
@@ -203,7 +211,7 @@ select{
 
 .product-details-content {
     font-size: 1.7em;
-    border: 1px solid #95c9e7;
+    border: 1px solid var(--blue);
     border-radius: 30px;
     padding: 10px;
     display: grid;
@@ -257,7 +265,7 @@ select{
 .offers-wrapper:hover {
     transform: scale(1.025);
     transition: 0.25s;
-    box-shadow: 1px 1px 20px 1px #95c9e7, -1px -1px 20px 1px #99cbe7;
+    box-shadow: 1px 1px 20px 1px #95c9e7, -1px -1px 20px 1px var(--blue);
 }
 .offers-img-div img{
     max-height: 150px;
@@ -323,7 +331,7 @@ select{
     display: grid;
     grid-template-columns: 1fr auto;
     padding: 10px;
-    border: 1px solid #99cbe7;
+    border: 1px solid var(--blue);
     border-radius: 10px;
 }
 .basket-container {
@@ -353,7 +361,7 @@ select{
 /*----------------------Footer---------------------*/
 
 .footer-wrapper{
-    background-color: #99cbe7;
+    background-color: var(--blue);
     color: white;
     border-radius: 10px;
     padding:15px;
@@ -455,6 +463,13 @@ select{
     .website-container{
         width:769px
     }
+    .gallery-container{
+        grid-template-columns: repeat(4,25%);
+    }
+    .gallery-images {
+        width: 150px;
+        max-height: 150px;
+    }
     .footer-links{
         grid-template-columns: 15% 35% 35% 15%;
     }
@@ -481,6 +496,29 @@ select{
 @media screen and (max-width: 769px){
     .website-container{
         width:481px
+    }
+    .drop-down-container{
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+    }
+    .drop-down-container img{
+        height: 20px;
+        margin-left: 10px;
+
+    }
+    .drop-down-wrapper{
+        position: absolute;
+        background-color: var(--blue);
+        padding: 10px;
+        border-radius: 0 0 10px 10px;
+        top:30px
+    }
+    .menu-wrapper{
+        display:none
+    }
+    .drop-down-wrapper{
+        z-index: 1;
     }
 }
 

@@ -89,5 +89,7 @@ export type PaymentButtonsProps = {
 export type CheckoutCompleteProps = {
     myBasket: itemProps[]
 }
-
+export type DropDownState = {
+    menuDisplay: boolean
+}
 

@@ -63,7 +63,7 @@ export default class LandingPage extends React.Component {
     render() {
         return (
             <div className='website-container'>
-                <div data-testid='header-container'>
+                <div data-testid='header-container' className="header-container">
                     <Header myBasket={this.state.basketTotal}/>
                 </div>
                 <Routes>
