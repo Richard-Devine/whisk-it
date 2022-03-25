@@ -66,22 +66,22 @@ export default class Checkout extends React.Component<CheckoutProps> {
                 <form className='checkout-form'>
                     <label htmlFor="name">Name:</label>
                     <input type="text" id="name" placeholder="Full Name"
-                           onBlur={(e) => this.orderDetails(e, "name")}/><br/>
+                           onChange={(e) => this.orderDetails(e, "name")}/><br/>
                     <label htmlFor="house">House name/number:</label>
                     <input type="text" id="house" placeholder="House Name/Number"
-                           onBlur={(e) => this.orderDetails(e, "house name/number")}/><br/>
+                           onChange={(e) => this.orderDetails(e, "house name/number")}/><br/>
                     <label htmlFor="street">Street:</label>
                     <input type="text" id="street" placeholder="Street Name"
-                           onBlur={(e) => this.orderDetails(e, "street name")}/><br/>
+                           onChange={(e) => this.orderDetails(e, "street name")}/><br/>
                     <label htmlFor="city">Town/City:</label>
                     <input type="text" id="city" placeholder="Town/City Name"
-                           onBlur={(e) => this.orderDetails(e, "city name")}/><br/>
+                           onChange={(e) => this.orderDetails(e, "city name")}/><br/>
                     <label htmlFor="postcode">Post Code:</label>
                     <input type="text" id="postcode" placeholder="Post Code"
-                           onBlur={(e) => this.orderDetails(e, "postcode")}/><br/>
+                           onChange={(e) => this.orderDetails(e, "postcode")}/><br/>
                     <label htmlFor="email">Email Address:</label>
                     <input type="text" id="email" placeholder="Email Address"
-                           onBlur={(e) => this.orderDetails(e, "email address")}/><br/>
+                           onChange={(e) => this.orderDetails(e, "email address")}/><br/>
                 </form>
                 <PaymentButtons amount={this.state.basketTotal} order={this.state.order} completeOrder={() => {this.props.completeOrder()}} myBasket={this.props.myBasket}/>
             </div>
