@@ -3,7 +3,7 @@ import {MenuProps} from "../webpage-types";
 import basket from '../website-icons/shopping-cart.webp'
 import {Link, useNavigate} from "react-router-dom";
 import menuIcon from '../website-icons/menu-icon.webp'
-import DropDown from "../DropDown";
+import Dropdown from "../dropdown-menu/dropdown";
 
 export default function Menu(props:MenuProps){
     let navigate = useNavigate()
@@ -28,7 +28,7 @@ export default function Menu(props:MenuProps){
                 </span>
                 </div>
                 <span className="drop-down-container">
-                    <DropDown/>
+                    <Dropdown/>
                 </span>
                     <span onClick={() => navigate('/Basket')} className="menu-options basket-button"
                           data-testid='basket-button'>

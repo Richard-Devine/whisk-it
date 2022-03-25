@@ -73,7 +73,7 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
                                         <div data-testid='title-div' className='product-details-title-div'>
                                             {product.title}
                                         </div>
-                                        <div data-testid='back-button-div'>
+                                        <div data-testid='back-button-div' className='back-button-div'>
                                            <Link to="/Products"> <img src={backButton} alt='Back Button' className='back-button'/></Link>
                                         </div>
                                     </div>
@@ -84,7 +84,7 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
                                     {this.selectBox(product)}
                                     </div>
                                     <div className='allergy-price-buy-container'>
-                                        <div data-testid='allergy-div'>
+                                        <div data-testid='allergy-div' className='allergy-div'>
                                             <div data-testid='allergens-div' className='allergens-div'>Allergens:</div>
                                             {product.allergens}
                                         </div>

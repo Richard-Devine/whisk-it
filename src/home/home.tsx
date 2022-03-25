@@ -49,7 +49,7 @@ export default function Home(props: HomeProps) {
     }
 
     return (
-        <div>
+        <div className='home-container'>
             <div data-testid='blurb-container'>
                 This is the blurb
             </div>

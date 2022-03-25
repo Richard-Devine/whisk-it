@@ -1,6 +1,6 @@
 import * as React from "react";
 import {CheckoutProps, CheckoutState} from "../webpage-types"
-import PaymentButtons from "../paypal-buttons";
+import PaymentButtons from "../paypal-button/paypal-buttons";
 
 export default class Checkout extends React.Component<CheckoutProps> {
     state: CheckoutState = {

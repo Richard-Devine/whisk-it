@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {PayPalButtons, PayPalScriptProvider} from "@paypal/react-paypal-js";
-import {OrderProps, PaymentButtonsProps} from "./webpage-types"
+import {OrderProps, PaymentButtonsProps} from "../webpage-types"
 import {useNavigate} from "react-router-dom";
 import emailjs from '@emailjs/browser'
 

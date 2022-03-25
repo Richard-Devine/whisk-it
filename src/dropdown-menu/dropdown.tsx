@@ -1,22 +1,22 @@
 import * as React from 'react'
 import {Link} from "react-router-dom";
-import {DropDownState} from "./webpage-types";
-import menuIcon from "./website-icons/menu-icon.webp";
+import {DropDownState} from "../webpage-types";
+import menuIcon from "../website-icons/menu-icon.webp";
 
 
-export default class DropDown extends React.Component {
+export default class Dropdown extends React.Component {
 
     state:DropDownState = {
-        menuDisplay: true
+        menuDisplay: false
+
     }
     showMenu() {
         this.setState({menuDisplay:!this.state.menuDisplay})
-        console.log("hello")
     }
     dropDown() {
-        if (this.state.menuDisplay) {
+        if (this.state.menuDisplay === true) {
             return (
-                <div className="drop-down-wrapper">
+                <div className="drop-down-wrapper" onClick={() => this.showMenu()}>
                     <div className="drop-down-options" data-testid='home-button'>
                         <Link to="/">Home</Link>
                     </div>
