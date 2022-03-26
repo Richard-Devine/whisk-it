@@ -4,36 +4,52 @@ import PaymentButtons from "../paypal-button/paypal-buttons";
 
 export default class Checkout extends React.Component<CheckoutProps> {
     state: CheckoutState = {
-        basketTotal: 0,
-        order: {}
+        basketTotal: "",
+        order: {},
+        confirmed:false
     }
 
     orderDetails(e: any, key: string) {
 
-        if(e.target.value < 1){
-            alert("Please enter your " + key)
-        } else {
             if (key === "name") {
                 this.state.order.name = e.target.value
+                    if(e.target.value < 1){
+                    delete this.state.order.name
+                }
             }
             if (key === "house name/number") {
                 this.state.order.house = e.target.value
+                if(e.target.value < 1){
+                    delete this.state.order.house
+                }
             }
             if (key === "street name") {
                 this.state.order.street = e.target.value
+                if(e.target.value < 1){
+                    delete this.state.order.street
+                }
             }
             if (key === "city name") {
                 this.state.order.city = e.target.value
+                if(e.target.value < 1){
+                    delete this.state.order.city
+                }
             }
             if (key === "postcode") {
                 this.state.order.postcode = e.target.value
+                if(e.target.value < 1){
+                    delete this.state.order.postcode
+                }
             }
             if (key === "email address") {
                 this.state.order.email = e.target.value
+                if(e.target.value < 1){
+                    delete this.state.order.email
+                }
             }
-        }
         console.log(this.state.order)
-    }
+        }
+
 
 
     componentDidMount() {
@@ -52,10 +68,36 @@ export default class Checkout extends React.Component<CheckoutProps> {
             }
             currentTotal += (product.price + 350)
             let newTotal = (currentTotal / 100)
-            this.setState({basketTotal: newTotal})
+            this.setState({basketTotal: newTotal.toString()})
             this.state.order.order = string
         })
 
+    }
+    checked(e:any) {
+        console.log("changed")
+        if (this.state.order.name && this.state.order.order && this.state.order.email && this.state.order.city && this.state.order.street && this.state.order.postcode && this.state.order.house) {
+            this.setState({confirmed:true})
+            console.log("true")
+        } else {
+            alert("Please fill out all delivery details")
+            this.setState({confirmed:false})
+            console.log("false")
+            e.target.checked = false
+
+        }
+
+    }
+
+    payment() {
+        if (this.state.confirmed){
+            return(
+                <PaymentButtons amount={this.state.basketTotal} order={this.state.order} completeOrder={() => {this.props.completeOrder()}} myBasket={this.props.myBasket}/>
+            )
+        } else {
+            return (
+                <div>Paypal payment button will appear when the checkbox above has been checked</div>
+            )
+        }
     }
 
 
@@ -83,7 +125,10 @@ export default class Checkout extends React.Component<CheckoutProps> {
                     <input type="text" id="email" placeholder="Email Address"
                            onChange={(e) => this.orderDetails(e, "email address")}/><br/>
                 </form>
-                <PaymentButtons amount={this.state.basketTotal} order={this.state.order} completeOrder={() => {this.props.completeOrder()}} myBasket={this.props.myBasket}/>
+                <label><input id='check' type='checkbox' onChange={(e) => {this.checked(e)}}/>I confirm all my delivery details
+                    are correct.</label>
+
+                {this.payment()}
             </div>
         )
     }

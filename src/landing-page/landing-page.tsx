@@ -11,6 +11,7 @@ import Checkout from "../checkout/checkout";
 import CheckoutComplete from "../checkout-complete/checkout-complete";
 import {dataProps, LandingPageState, itemProps, OrderProps} from "../webpage-types";
 import {Route, Routes} from "react-router-dom";
+import {useNavigate} from "@reach/router";
 
 
 export default class LandingPage extends React.Component {

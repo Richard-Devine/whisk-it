@@ -68,8 +68,9 @@ export type CheckoutProps = {
     completeOrder: () => void
 }
 export type CheckoutState = {
-    basketTotal: number
+    basketTotal: string
     order: OrderProps
+    confirmed: boolean
 }
 export type OrderProps = {
     name?: string
@@ -81,11 +82,12 @@ export type OrderProps = {
     order?: string
 }
 export type PaymentButtonsProps = {
-    amount: number
+    amount: string
     order: OrderProps
     completeOrder: () => void
     myBasket: itemProps[]
 }
+
 export type CheckoutCompleteProps = {
     myBasket: itemProps[]
 }
