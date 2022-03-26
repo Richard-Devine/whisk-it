@@ -3,13 +3,13 @@
   "name": "Whisk It",
   "icons": [
     {
-      "src": "whisk-it-fav.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "src": "whisk-it-fav-64.ico",
+      "sizes": "64x64",
       "type": "image/x-icon"
     },
     {
-      "src": "whisk-it-fav.ico",
-      "type": "image/x-icon",
+      "src": "whisk-it-fav.png",
+      "type": "image/png",
       "sizes": "288x288"
     },
     {
