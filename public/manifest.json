@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "Whisk it logo.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src": "whisk-it-fav.ico",
+      "type": "image/x-icon",
+      "sizes": "288x288"
     },
     {
-      "src": "Whisk it logo.png",
+      "src": "Whisk it logo.webp",
       "type": "image/png",
       "sizes": "512x512"
     }
