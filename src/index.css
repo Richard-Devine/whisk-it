@@ -76,6 +76,7 @@ select{
     font-size: 30px;
     font-weight: bold;
     border-radius: 10px;
+    padding:5px
 }
 
 .menu-options {
@@ -86,14 +87,16 @@ select{
 .basket-button {
     float: right;
     display: grid;
-    grid-template-columns: 30% 1fr;
+    grid-template-columns: 35% 1fr;
     grid-column-gap: 5px;
 }
 
 .basket-image {
-    height: 33px;
+    height: 25px;
     margin-right:5px;
+    padding-top: 1px;
 }
+
 .basket-total{
     margin: 0;
     padding-top: 3px;
@@ -106,6 +109,17 @@ select{
     display:none
 }
 /*----------------------Home-----------------------*/
+.blurb-header{
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--blue);
+    margin-top: 10px;
+}
+.blurb-container{
+    padding:10px;
+    font-size: 1.1em;
+
+}
 .new-offers-container{
     color: var(--blue);
     font-size: 2em;
@@ -294,14 +308,15 @@ select{
     display: grid;
     grid-template-columns: repeat(6, calc(17% - 10px));
     align-items: center;
+    justify-items: center;
     grid-column-gap: 5px;
     grid-row-gap: 5px;
     margin:10px 0 0 10px
 }
 .gallery-images{
-    width: 200px;
+    max-width: 200px;
     max-height: 200px;
-    align-self: center;
+
 }
 /*---------------------Basket-----------------------*/
 .basket-wrapper{

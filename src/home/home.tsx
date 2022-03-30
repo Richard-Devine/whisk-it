@@ -50,8 +50,17 @@ export default function Home(props: HomeProps) {
 
     return (
         <div className='home-container'>
-            <div data-testid='blurb-container'>
-                This is the blurb
+            <div className="blurb-header">About us!</div>
+            <div data-testid='blurb-container' className='blurb-container'>
+                Welcome to Whisk it!<br/>
+                <br/>
+                After spending most of our days off baking and receiving really positive, lovely comments from family and friends about our various flavours of Brownies, Blondies and Cookie Bars, we thought why not create a little business and see where it takes us!<br/>
+                <br/>
+                We started our business off during the start of the pandemic and the support we received from you all was overwhelming and we are so grateful. So we’ve decided to open our very own website for you to buy your own Brownies, Blondies and Cookie Bars whenever you want, at whatever hour!<br/>
+                <br/>
+                For those who don't know, Soph and myself, Kayla, are sisters and whilst we don't rate ourselves as pro bakers the various Brownies, Blondies and Cookie bars we have made have always gone down a treat. We are self taught and enjoy baking yummy treats. We both work full time in the public services sector but love nothing more than baking up the highest quality Brownies, Blondies and Cookie Bars for you to enjoy, on our rest days.<br/>
+                <br/>
+                If you fancy trying some of our bakes and would like to support our small business then please place an order!
             </div>
             <div data-testid='new-products-container' className='new-products-container' >
                 Our latest products!

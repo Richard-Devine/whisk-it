@@ -7,7 +7,8 @@ export default function Product(props: ProductProps) {
 
     function routing(id:number){
         props.onClick(id);
-        navigate("/Products/"+props.title)
+        const string = props.title.replace(/ /g, "")
+        navigate("/Products/"+string)
     }
 
     return (
