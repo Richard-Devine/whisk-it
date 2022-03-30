@@ -1,28 +1,28 @@
-import mintAeroBrownies from './images/Mint Aero Brownie.webp'
-import crunchieBrownies from './images/Crunchie Bar Brownie.webp'
-import cookiesAndCreamBrownies from './images/Cookies and Cream Brownie.webp'
-import cremeEggBrownie from './images/Creme Egg Brownie Pre Cut.webp'
-import bakewellBlondie from './images/Bakewell Blondie.webp'
-import biscoffBlondie from './images/Biscoff Blondie.webp'
-import milkyWayCrispyRollBlondie from './images/Milky Way Crispy Roll Blondie.webp'
-import galaxyCookieBar from './images/Galaxy Cookie Bar Pile.webp'
-import happyHippoCookieBar from './images/Happy Hippo Cookie Bars.webp'
-import halfAndHalf from './images/Half and Half.webp'
-import selectionBox from './images/Brownie-Blondie Selection.webp'
-import guylianSeashellBrownie from './images/Guylian Seashell Brownie.webp'
-import daimBarBrownie from './images/Diam Bar Brownie.webp'
-import oreoBlondie from './images/Oreo Blondies Table.webp'
-import tobleroneBrownie from './images/Toberlone Brownie.webp'
-import jaffaCakeBrownie from './images/Jaffa Cake Brownie.webp'
-import lemonAndWhiteChocBlondie from './images/Lemon and White Chocolate Blondie.webp'
+import mintAeroBrownies from './images/full-size/Mint Aero Brownie.webp'
+import crunchieBrownies from './images/full-size/Crunchie Bar Brownie.webp'
+import cookiesAndCreamBrownies from './images/full-size/Cookies and Cream Brownie.webp'
+import cremeEggBrownie from './images/full-size/Creme Egg Brownie Pre Cut.webp'
+import bakewellBlondie from './images/full-size/Bakewell Blondie.webp'
+import biscoffBlondie from './images/full-size/Biscoff Blondie.webp'
+import milkyWayCrispyRollBlondie from './images/full-size/Milky Way Crispy Roll Blondie.webp'
+import galaxyCookieBar from './images/full-size/Galaxy Cookie Bar Pile.webp'
+import happyHippoCookieBar from './images/full-size/Happy Hippo Cookie Bars.webp'
+import halfAndHalf from './images/full-size/Half and Half.webp'
+import selectionBox from './images/full-size/Brownie-Blondie Selection.webp'
+import guylianSeashellBrownie from './images/full-size/Guylian Seashell Brownie.webp'
+import daimBarBrownie from './images/full-size/Diam Bar Brownie.webp'
+import oreoBlondie from './images/full-size/Oreo Blondies Table.webp'
+import tobleroneBrownie from './images/full-size/Toberlone Brownie.webp'
+import jaffaCakeBrownie from './images/full-size/Jaffa Cake Brownie.webp'
+import lemonAndWhiteChocBlondie from './images/full-size/Lemon and White Chocolate Blondie.webp'
+import terryChocolateOrangeBrownie from './images/full-size/Terry Chocolate Orange Brownie.webp'
+import whiteChocolateSmartieBlondie from './images/full-size/White Chocolate Smartie Blondie.webp'
 
 
-import terryChocolateOrangeBrownie from './images/Terry Chocolate Orange Brownie.webp'
-import whiteChocolateSmartieBlondie from './images/White Chocolate Smartie Blondie.webp'
-import miniEggEasterEggBrownie from './images/Mini Egg Easter Egg Brownie.webp'
-import cremeEggEasterEggBrownie from './images/Crème Egg Easter Egg Brownie.webp'
-import mintAeroEasterEggBrownie from './images/Mint Areo Easter Egg Brownie.webp'
-import cremeEggScotchEgg from './images/Brownie Scotch Crème Egg.webp'
+import miniEggEasterEggBrownie from './images/full-size/Mini Egg Easter Egg Brownie.webp'
+import cremeEggEasterEggBrownie from './images/full-size/Crème Egg Easter Egg Brownie.webp'
+import mintAeroEasterEggBrownie from './images/full-size/Mint Areo Easter Egg Brownie.webp'
+import cremeEggScotchEgg from './images/full-size/Brownie Scotch Crème Egg.webp'
 
 
 export const data = [{id: 0, title: 'Mint Aero Brownies', imageURL: mintAeroBrownies, description: 'Our signature fudgey brownie recipe crammed full with mint flavoured Aero balls.', price: 1300, offer: false, allergens: 'Wheat, Eggs, Dairy, may contain Nuts, may contain Peanuts'},
@@ -41,14 +41,14 @@ export const data = [{id: 0, title: 'Mint Aero Brownies', imageURL: mintAeroBrow
     {id: 13, title: 'Toblerone Brownie', imageURL: tobleroneBrownie, description: 'Our signature brownie full of the chewy and nutty triangular pieces of Swiss chocolate, plus extra milk chocolate chunks.', price: 1300, offer: false, allergens: 'Wheat, Eggs, Dairy, Soya, Nuts'},
     {id: 14, title: 'Oreo Blondie', imageURL: oreoBlondie, description: 'Our soft and fudgey blondie recipe packed full of white chocolate chunks and crushed Oreos.', price: 1300, offer: false, allergens: 'Wheat, Eggs, Dairy, may contain Nuts'},
     {id: 15, title: 'Daim Bar Brownie', imageURL: daimBarBrownie, description: 'Our signature brownie packed full of crunchie almond caramel pieces and extra milk chocolate chunks.', price: 1300, offer: false, allergens: 'Wheat, Eggs, Dairy, Soya, may contain Nuts'},
-    {id: 16, title: 'Guylian Brownie', imageURL: guylianSeashellBrownie, description: "Our signature brownie with milk and white chocolate chunks and Guylian Seashells folded throughout. Topped with more of the world's favourite Belgian chocolates.", price: 1300, offer: false, allergens: 'Wheat, Eggs, Dairy, Soya, Nuts'}]
+    {id: 16, title: 'Guylian Brownie', imageURL: guylianSeashellBrownie, description: "Our signature brownie with milk and white chocolate chunks and Guylian Seashells folded throughout. Topped with more of the world's favourite Belgian chocolates.", price: 1300, offer: false, allergens: 'Wheat, Eggs, Dairy, Soya, Nuts'},
+    {id: 17, title: "Terry's Chocolate Orange Brownie", imageURL: terryChocolateOrangeBrownie, description: 'Our signature brownie with melted chocolate orange folded through, milk chocolate chunks and MORE chocolate orange pieces. The brownie is then topped with a drizzle of chocolate orange chocolate and a segment.', price: 1050, offer: false, allergens: 'Wheat, Eggs, Dairy, Soya, may contain Nuts'},
+    {id: 18, title: 'White Smartie Blondie', imageURL: whiteChocolateSmartieBlondie, description: 'Chewy and fudgey blondie that is packed full of white chocolate chunks and white Smartie chocolate pieces.', price: 1050, offer: false, allergens: 'Wheat, Eggs, Dairy, may contain Nuts'}]
 
 
 
 
-/*{id: id, title: 'Terry Chocolate Orange Brownie', imageURL: terryChocolateOrangeBrownie, description: 'Our signature brownie with melted chocolate orange folded through, milk chocolate chunks and MORE chocolate orange pieces. The  brownie is then topped with a drizzle of chocolate orange chocolate and a segment.', price: '10.50', offer: true, allergens: 'allergens'},
-    {id: id, title: 'White Smartie Blondie', imageURL: whiteChocolateSmartieBlondie, description: 'Chewy and fudgey blondie that is packed full of white chocolate chunks and white Smartie chocolate pieces.', price: '10.50', offer: true, allergens: 'allergens'},
-    {id: id, title: 'Mini Egg Blondie Easter Egg', imageURL: miniEggEasterEggBrownie, description: 'Easter egg shaped Mini Egg Blondie, perfect for an Easter treat.', price: '10.50', offer: true/false, allergens: 'allergens'},
+/*    {id: id, title: 'Mini Egg Blondie Easter Egg', imageURL: miniEggEasterEggBrownie, description: 'Easter egg shaped Mini Egg Blondie, perfect for an Easter treat.', price: '10.50', offer: true/false, allergens: 'allergens'},
     {id: id, title: 'Crème Egg Brownie Easter Egg', imageURL: cremeEggEasterEggBrownie, description: 'Easter egg shaped Crème Egg Blondie, perfect for an Easter treat.', price: '10.50', offer: true/false, allergens: 'allergens'},
     {id: id, title: 'Mint Aero Brownie Easter Egg', imageURL: mintAeroEasterEggBrownie, description: 'Easter egg shaped Mint Aero Brownie, perfect for an Easter treat.', price: '10.50', offer: true/false, allergens: 'allergens'},
     {id: id, title: 'Crème Egg Scotched Egg', imageURL: cremeEggScotchEgg, description: 'A whole Crème egg wrapped on our signature fudgey brownie, which is then rolled in milk chocolate and finished with chocolate sprinkles.', price: '10.50', offer: true/false, allergens: 'allergens'}*/

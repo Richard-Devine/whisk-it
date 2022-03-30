@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
-fs.readdir("../images",(err,files)=>{
+fs.readdir("../images/full-size",(err,files)=>{
   console.log(files)
   let content = `export const imageArr = [`
   for(let file of files){
@@ -12,4 +12,5 @@ fs.readdir("../images",(err,files)=>{
     if(err) console.log(err)
   })
 })
+
 

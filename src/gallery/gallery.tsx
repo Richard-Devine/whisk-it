@@ -8,7 +8,7 @@ export default function Gallery() {
             {imageArr.map((source, index) => {
                 return (
                     <div key={index} className='gallery-images-div' data-testid='gallery-images-div'>
-                        <img src={require('../images/' + source)} alt='Gallery' className='gallery-images'/>
+                        <img src={require('../images/thumbnails/' + source)} alt='Gallery' className='gallery-images' loading='lazy'/>
                     </div>
                 )
             })}

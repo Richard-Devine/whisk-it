@@ -39,14 +39,9 @@ export default function PaymentButtons (props:PaymentButtonsProps) {
                 })
             })
             props.completeOrder()
-
             navigate("/CheckoutComplete")
-
         });
     }
-
-
-
     return (
         <div>
             <PayPalScriptProvider options={{
@@ -59,6 +54,4 @@ export default function PaymentButtons (props:PaymentButtonsProps) {
             </PayPalScriptProvider>
         </div>
     )
-
-
 }
