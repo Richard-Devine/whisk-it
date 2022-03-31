@@ -1,15 +1,15 @@
-import * as React from 'react'
-import {CheckoutCompleteProps} from "../webpage-types";
+import * as React from "react";
 
-export default function CheckoutComplete(props:CheckoutCompleteProps) {
+export default function CheckoutComplete() {
 
-    return(
-        <div className='payment-complete-div'>
+    return (
+        <div className="payment-complete-div">
             <br/>
             <br/>
-            Thank you for your purchase. You will receive an Email confirmation shortly of your order and delivery details you provided us.
+            Thank you for your purchase. You will receive an Email confirmation shortly of your order and delivery
+            details you provided us.
             <br/>
             <br/>
         </div>
-    )
-}
+    );
+};

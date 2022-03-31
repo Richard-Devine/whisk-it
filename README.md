@@ -1,43 +1,15 @@
-Header: 
+<h1>Whisk It! Website</h1>
 
-logo and menu bar for Home, Products, Gallery, Deals, Contact Us
+https://master.d2wmeuxau7vz56.amplifyapp.com/
 
-Page 1: 
+Built using create react app (https://github.com/facebook/create-react-app)
+Routing done by using react router (https://github.com/remix-run/react-router)
 
-Home page with new products, images, offers, blurb and instagram feed
+<h2>Commands</h2>
 
-Page 2:
+install dependencies: ```npm install```
 
-show all products with titles and price that are clickable to get more detail 
+run tests: ```npm test```
 
-Page 3: 
+run app: ```npm start```
 
-show individual product with description, price and quantity
-
-Page 4: 
-
-show current deals/ old deals? 
-
-Page 5: 
-
-gallery?
-
-Page 6:
-
-contact us
-
-Buy: 
-
-link to paypal to finish payment and send Email of order
-
-
-database structure
-
-product:{
-    id: azureTimeId,
-    title: someTitle,
-    imageURL: someURL,
-    description: someDescription,
-    price: somePrice,
-    offer: true/false
-    }

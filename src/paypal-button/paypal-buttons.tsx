@@ -1,12 +1,12 @@
-import * as React from 'react'
+import * as React from "react";
 import {PayPalButtons, PayPalScriptProvider} from "@paypal/react-paypal-js";
-import {OrderProps, PaymentButtonsProps} from "../webpage-types"
+import {OrderProps, PaymentButtonsProps} from "../webpage-types";
 import {useNavigate} from "react-router-dom";
-import emailjs from '@emailjs/browser'
+import emailjs from "@emailjs/browser";
 
-export default function PaymentButtons (props:PaymentButtonsProps) {
+export default function PaymentButtons(props: PaymentButtonsProps) {
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     function createOrder(data: Record<string, unknown>, actions: any) {
         return actions.order.create({
@@ -17,12 +17,11 @@ export default function PaymentButtons (props:PaymentButtonsProps) {
                     },
                 },
             ],
-        })
+        });
     }
 
     function onApprove(data: any, actions: any) {
-        return actions.order.capture().then((details: any) => {
-            const name = details.payer.name.given_name;
+        return actions.order.capture().then(() => {
 
             let templateParams: OrderProps = {
                 name: props.order.name,
@@ -32,16 +31,16 @@ export default function PaymentButtons (props:PaymentButtonsProps) {
                 postcode: props.order.postcode,
                 email: props.order.email,
                 order: props.order.order
-            }
-            console.log(templateParams)
+            };
             emailjs.send("service_habig9p", "template_5np2o56", templateParams, "YCFbF33y7QFh9Xc4O").then(() => {
                 emailjs.send("service_habig9p", "template_ku8mmba", templateParams, "YCFbF33y7QFh9Xc4O").then(() => {
-                })
-            })
-            props.completeOrder()
-            navigate("/CheckoutComplete")
+                });
+            });
+            props.completeOrder();
+            navigate("/CheckoutComplete");
         });
     }
+
     return (
         <div>
             <PayPalScriptProvider options={{
@@ -53,5 +52,5 @@ export default function PaymentButtons (props:PaymentButtonsProps) {
                                createOrder={createOrder}/>
             </PayPalScriptProvider>
         </div>
-    )
-}
+    );
+};

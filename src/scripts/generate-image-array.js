@@ -1,16 +1,15 @@
-const fs = require('fs')
-const path = require('path')
+const fs = require("fs");
 
 fs.readdir("../images/full-size",(err,files)=>{
-  console.log(files)
-  let content = `export const imageArr = [`
+
+  let content = `export const imageArr = [`;
   for(let file of files){
-    content += `"${file}",`
+    content += `"${file}",`;
   }
-  content += "]"
+  content += "]";
   fs.writeFile("../gallery/image-array.ts",content, err =>{
-    if(err) console.log(err)
-  })
-})
+    if(err) console.log(err);
+  });
+});
 
 
