@@ -11,6 +11,8 @@
 
 html{
     overflow-y: scroll;
+    margin: 0;
+    padding:0;
 }
 
 body {
@@ -335,7 +337,7 @@ select{
     justify-items: center;
     grid-column-gap: 5px;
     grid-row-gap: 5px;
-    margin:10px 0 0 10px;
+    margin:10px 0;
 }
 
 .gallery-images{
@@ -576,7 +578,7 @@ select{
     /*--------------Gallery--------------*/
 
     .gallery-container{
-        grid-template-columns: repeat(4,25%);
+        grid-template-columns: repeat(4,24%);
     }
 
     .gallery-images {
@@ -791,24 +793,6 @@ select{
         margin: 0 auto;
     }
 
-    /*---------------Footer--------------*/
-
-    .footer-links{
-        grid-template-columns: 100%;
-    }
-
-    .instagram-link{
-        grid-column-start: unset;
-        justify-self: center;
-        margin: 10px 0;
-    }
-
-    .email-link{
-        grid-column-start: unset;
-        justify-self: center;
-        margin: 0;
-    }
-
     /*------------Product List-----------*/
 
     .product-wrapper{
@@ -869,6 +853,24 @@ select{
 
     .gallery-images{
         max-width:88px;
+    }
+
+    /*---------------Footer--------------*/
+
+    .footer-links{
+        grid-template-columns: 100%;
+    }
+
+    .instagram-link{
+        grid-column-start: unset;
+        justify-self: center;
+        margin: 10px 0;
+    }
+
+    .email-link{
+        grid-column-start: unset;
+        justify-self: center;
+        margin: 0;
     }
 
     /*---------------Basket--------------*/
