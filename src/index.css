@@ -343,6 +343,34 @@ select{
     max-height: 200px;
 }
 
+.gallery-image-zoomed-div{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0,0,0,.8);
+}
+
+.gallery-image-zoomed-div img{
+    max-height: 80vh;
+    max-width: 80vw;
+    position: fixed;
+    top: 10%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.gallery-images-close{
+    top: 5%;
+    right: 3%;
+    position: fixed;
+    font-size: 2em;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 /*---------------------Basket-----------------------*/
 
 .basket-wrapper{
@@ -836,7 +864,7 @@ select{
     /*--------------Gallery--------------*/
 
     .gallery-container{
-        grid-template-columns: repeat(3,33%);
+        grid-template-columns: repeat(3,31%);
     }
 
     .gallery-images{

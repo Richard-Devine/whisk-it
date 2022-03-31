@@ -63,6 +63,10 @@ export type OffersState = {
     productRange: dataProps[];
 };
 
+export type GalleryState = {
+    source: string;
+};
+
 export type itemProps = {
     id: string;
     title: string;
