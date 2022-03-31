@@ -15,7 +15,7 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
             let selectArr: any[] = [];
             for (let i: number = 0; i < product.select; i++) {
                 selectArr.push(
-                    <span className="select-div">
+                    <span className="select-div" key={i}>
                         <select onChange={(e) => {
                             this.optionSelected(i, e, product)
                         }}>
@@ -30,10 +30,10 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
 
     options() {
         return (
-            this.state.productInfo.map((product) => {
+            this.state.productInfo.map((product, i) => {
                 if (!product.offer) {
                     return (
-                        <option value={product.title}>
+                        <option value={product.title} key={i}>
                             {product.title}
                         </option>
                     );
@@ -60,6 +60,36 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
                     product.options["4"] = event.target.value;
                     break;
             }
+            console.log(product.options)
+        }
+    };
+
+    optionCheck(product: dataProps) {
+        if (product.options) {
+            if (Object.keys(product.options).length === 2) {
+                if (product.options["1"] === "none selected" || product.options["1"] === "Choose Flavour") {
+                    alert("Please choose all flavours before adding to basket");
+                } else if (product.options["2"] === "none selected" || product.options["2"] === "Choose Flavour") {
+                    alert("Please choose all flavours before adding to basket");
+                } else {
+                    this.props.addProductButton(product);
+                }
+            }
+            if (Object.keys(product.options).length === 4) {
+                if (product.options["1"] === "none selected" || product.options["1"] === "Choose Flavour") {
+                    alert("Please choose all flavours before adding to basket");
+                } else if (product.options["2"] === "none selected" || product.options["2"] === "Choose Flavour") {
+                    alert("Please choose all flavours before adding to basket");
+                } else if (product.options["3"] === "none selected" || product.options["3"] === "Choose Flavour") {
+                    alert("Please choose all flavours before adding to basket");
+                } else if (product.options["4"] === "none selected" || product.options["4"] === "Choose Flavour") {
+                    alert("Please choose all flavours before adding to basket");
+                } else {
+                    this.props.addProductButton(product);
+                }
+            }
+        } else {
+            this.props.addProductButton(product);
         }
     };
 
@@ -99,7 +129,7 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
                                                 £{(product.price / 100).toFixed(2)}
                                             </div>
                                             <div data-testid="buy-div" className="product-details-buy-div btn"
-                                                 onClick={() => this.props.addProductButton(product)}>
+                                                 onClick={() => this.optionCheck(product)}>
                                                 Add to basket
                                             </div>
                                         </div>
@@ -113,5 +143,7 @@ export default class ProductDetails extends React.Component <ProductDetailsProps
                 })}
             </div>
         );
-    };
-};
+    }
+    ;
+}
+;
