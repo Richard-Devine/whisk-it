@@ -44,7 +44,7 @@ export default function PaymentButtons(props: PaymentButtonsProps) {
     return (
         <div>
             <PayPalScriptProvider options={{
-                "client-id": "AX0HZz9MhHlX9OlagRsmk38ODdKF7OqsiNtQOu-eD6uvDzOc1yNXjW6PvfQUy3jM2YbJAH0HQ9bxzKhV",
+                "client-id": "AcIMMes0_g7jiAT2qJOqCrBVrsKBPcHpNg-NuzKndtvq6Hvgdg5iMVzN81H1U7WnNP3ptO_xlnE9XBwe",
                 currency: "GBP"
             }}>
                 <PayPalButtons style={{layout: "horizontal"}}
