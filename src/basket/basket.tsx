@@ -36,12 +36,12 @@ export default function Basket(props: BasketProps) {
             <div>
                 {props.myBasket.map((product, i) => {
                     return (
-                        <div key={i} data-testid="basket-items-wrapper" className="basket-items-wrapper">
-                            <div data-testid="image-div" className="basket-image-div image-div">
+                        <div key={i} className="basket-items-wrapper">
+                            <div  className="basket-image-div image-div">
                                 <img src={product.imageURL} alt={product.title}/>
                             </div>
                             <div className="basket-content-wrapper" data-testid="basket-content-wrapper">
-                                <div data-testid="title-div">
+                                <div className="title-div">
                                     {product.title}
                                 </div>
                                 <div data-testid="delete-button-div">
@@ -50,7 +50,7 @@ export default function Basket(props: BasketProps) {
                                 <div>
                                     {options(product)}
                                 </div>
-                                <div data-testid="price-div">
+                                <div className="price-div">
                                     £{(product.price / 100).toFixed(2)}
                                 </div>
                             </div>
@@ -69,7 +69,7 @@ export default function Basket(props: BasketProps) {
                     Total:
                     £{(((props.myBasket.length * 350) / 100) + (props.myBasketTotal / 100)).toFixed(2)}
                 </div>
-                <div data-testid="buy-div" className="basket-buy-div btn" onClick={() => {
+                <div className="basket-buy-div btn" onClick={() => {
                     navigate("/Checkout")
                 }}>
                     Proceed to checkout
