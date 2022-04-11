@@ -17,14 +17,6 @@ import jaffaCakeBrownie from "./images/full-size/Jaffa Cake Brownie.webp";
 import lemonAndWhiteChocBlondie from "./images/full-size/Lemon and White Chocolate Blondie.webp";
 import terryChocolateOrangeBrownie from "./images/full-size/Terry Chocolate Orange Brownie.webp"
 import whiteChocolateSmartieBlondie from "./images/full-size/White Chocolate Smartie Blondie.webp";
-import easterBlondie from "./images/full-size/Easter Blondie.webp"
-import easterBrownie from "./images/full-size/Easter Brownie.webp"
-
-
-import miniEggEasterEggBrownie from "./images/full-size/Mini Egg Easter Egg Brownie.webp"
-import cremeEggEasterEggBrownie from "./images/full-size/Crème Egg Easter Egg Brownie.webp"
-import mintAeroEasterEggBrownie from "./images/full-size/Mint Areo Easter Egg Brownie.webp"
-import cremeEggScotchEgg from "./images/full-size/Brownie Scotch Crème Egg.webp"
 
 
 export const data = [{id: 0, title: "Mint Aero Brownies", imageURL: mintAeroBrownies, description: "Our signature fudgey brownie recipe crammed full with mint flavoured Aero balls.", price: 1300, offer: false, allergens: "Wheat, Eggs, Dairy, may contain Nuts, may contain Peanuts"},
@@ -45,17 +37,33 @@ export const data = [{id: 0, title: "Mint Aero Brownies", imageURL: mintAeroBrow
     {id: 15, title: "Daim Bar Brownie", imageURL: daimBarBrownie, description: "Our signature brownie packed full of crunchie almond caramel pieces and extra milk chocolate chunks.", price: 1300, offer: false, allergens: "Wheat, Eggs, Dairy, Soya, may contain Nuts"},
     {id: 16, title: "Guylian Brownie", imageURL: guylianSeashellBrownie, description: "Our signature brownie with milk and white chocolate chunks and Guylian Seashells folded throughout. Topped with more of the world's favourite Belgian chocolates.", price: 1300, offer: false, allergens: "Wheat, Eggs, Dairy, Soya, Nuts"},
     {id: 17, title: "Terry's Chocolate Orange Brownie", imageURL: terryChocolateOrangeBrownie, description: "Our signature brownie with melted chocolate orange folded through, milk chocolate chunks and MORE chocolate orange pieces. The brownie is then topped with a drizzle of chocolate orange chocolate and a segment.", price: 1300, offer: false, allergens: "Wheat, Eggs, Dairy, Soya, may contain Nuts"},
-    {id: 18, title: "White Smartie Blondie", imageURL: whiteChocolateSmartieBlondie, description: "Chewy and fudgey blondie that is packed full of white chocolate chunks and white Smartie chocolate pieces.", price: 1300, offer: false, allergens: "Wheat, Eggs, Dairy, may contain Nuts"},
-    {id: 19, title: "Easter Blondies", imageURL: easterBlondie, description: "Our signature white Chocolate flavoured blondie packed full and topped with Easter goodies, including Terry's Chocolate Orange eggs, Smartie eggs, Mini eggs, Terry's White Chocolate Orange eggs, Creme eggs and Malteaser bunnies.", price: 1300, offer: false, allergens: "Wheat, Eggs, Dairy, Soya, may contain Nuts"},
-    {id: 20, title: "Easter Brownies", imageURL: easterBrownie, description: "Our signature Chocolatey, fudgey Brownie, packed full and topped with Easter goodies, including Terry's Chocolate Orange eggs, Smartie eggs, Mini eggs, Terry's White Chocolate Orange eggs, Creme eggs and Malteaser bunnies.", price: 1300, offer: false, allergens: "Wheat, Eggs, Dairy, Soya, may contain Nuts"}]
+    {id: 18, title: "White Smartie Blondie", imageURL: whiteChocolateSmartieBlondie, description: "Chewy and fudgey blondie that is packed full of white chocolate chunks and white Smartie chocolate pieces.", price: 1300, offer: false, allergens: "Wheat, Eggs, Dairy, may contain Nuts"}];
 
 /* SOON TO BE ADDED:
+
+    import miniEggEasterEggBrownie from "./images/full-size/Mini Egg Easter Egg Brownie.webp";
+    import cremeEggEasterEggBrownie from "./images/full-size/Crème Egg Easter Egg Brownie.webp";
+    import mintAeroEasterEggBrownie from "./images/full-size/Mint Areo Easter Egg Brownie.webp";
+    import cremeEggScotchEgg from "./images/full-size/Brownie Scotch Crème Egg.webp";
+
+
    {id: id, title: "Mini Egg Blondie Easter Egg", imageURL: miniEggEasterEggBrownie, description: "Easter egg shaped Mini Egg Blondie, perfect for an Easter treat.", price: 1050, offer: true/false, allergens: "allergens"},
    {id: id, title: "Crème Egg Brownie Easter Egg", imageURL: cremeEggEasterEggBrownie, description: "Easter egg shaped Crème Egg Blondie, perfect for an Easter treat.", price: 1050, offer: true/false, allergens: "allergens"},
    {id: id, title: "Mint Aero Brownie Easter Egg", imageURL: mintAeroEasterEggBrownie, description: "Easter egg shaped Mint Aero Brownie, perfect for an Easter treat.", price: 1050, offer: true/false, allergens: "allergens"},
    {id: id, title: "Crème Egg Scotched Egg", imageURL: cremeEggScotchEgg, description: "A whole Crème egg wrapped on our signature fudgey brownie, which is then rolled in milk chocolate and finished with chocolate sprinkles.", price: 1050, offer: true/false, allergens: "allergens"}
    */
 
+
+/* PREVIOUS PRODUCTS:
+
+    import easterBlondie from "./images/full-size/Easter Blondie.webp";
+    import easterBrownie from "./images/full-size/Easter Brownie.webp";
+
+    {id: 19, title: "Easter Blondies", imageURL: easterBlondie, description: "Our signature white Chocolate flavoured blondie packed full and topped with Easter goodies, including Terry's Chocolate Orange eggs, Smartie eggs, Mini eggs, Terry's White Chocolate Orange eggs, Creme eggs and Malteaser bunnies.", price: 1300, offer: false, allergens: "Wheat, Eggs, Dairy, Soya, may contain Nuts"},
+    {id: 20, title: "Easter Brownies", imageURL: easterBrownie, description: "Our signature Chocolatey, fudgey Brownie, packed full and topped with Easter goodies, including Terry's Chocolate Orange eggs, Smartie eggs, Mini eggs, Terry's White Chocolate Orange eggs, Creme eggs and Malteaser bunnies.", price: 1300, offer: false, allergens: "Wheat, Eggs, Dairy, Soya, may contain Nuts"}
+    */
+
+
 /* TEMPLATE:
-{id: id, title: "title", imageURL: "www.somewhere.com/image3", description: "description", price: 1300, offer: true/false, allergens: "allergens"}
+    {id: id, title: "title", imageURL: "www.somewhere.com/image3", description: "description", price: 1300, offer: true/false, allergens: "allergens"}
 */
