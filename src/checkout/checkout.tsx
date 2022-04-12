@@ -2,7 +2,7 @@ import * as React from "react";
 import {CheckoutProps, CheckoutState} from "../webpage-types";
 import PaymentButtons from "../paypal-button/paypal-buttons";
 
-export default class Checkout extends React.Component<CheckoutProps> {
+export class Checkout extends React.Component<CheckoutProps> {
     state: CheckoutState = {
         basketTotal: "",
         order: {},
@@ -53,7 +53,6 @@ export default class Checkout extends React.Component<CheckoutProps> {
                 delete this.state.order.email;
             }
         }
-        console.log(this.state.order);
     };
 
     componentDidMount() {
@@ -101,7 +100,7 @@ export default class Checkout extends React.Component<CheckoutProps> {
             );
         } else {
             return (
-                <div>Paypal payment button will appear when the checkbox above has been checked</div>
+                <div className="unchecked-statement">Paypal payment button will appear when the checkbox above has been checked</div>
             );
         }
     };
@@ -111,22 +110,22 @@ export default class Checkout extends React.Component<CheckoutProps> {
         return (
             <div className="checkout-form-container"> Delivery Details
                 <form className="checkout-form">
-                    <label htmlFor="name">Name:</label>
+                    <label id="name-label" htmlFor="name">Name:</label>
                     <input type="text" id="name" placeholder="Full Name"
                            onChange={(e) => this.orderDetails(e, "name")}/><br/>
-                    <label htmlFor="house">House name/number:</label>
+                    <label id="house-label" htmlFor="house">House name/number:</label>
                     <input type="text" id="house" placeholder="House Name/Number"
                            onChange={(e) => this.orderDetails(e, "house name/number")}/><br/>
-                    <label htmlFor="street">Street:</label>
+                    <label id="street-label" htmlFor="street">Street:</label>
                     <input type="text" id="street" placeholder="Street Name"
                            onChange={(e) => this.orderDetails(e, "street name")}/><br/>
-                    <label htmlFor="city">Town/City:</label>
+                    <label id="city-label" htmlFor="city">Town/City:</label>
                     <input type="text" id="city" placeholder="Town/City Name"
                            onChange={(e) => this.orderDetails(e, "city name")}/><br/>
-                    <label htmlFor="postcode">Post Code:</label>
+                    <label id="postcode-label" htmlFor="postcode">Post Code:</label>
                     <input type="text" id="postcode" placeholder="Post Code"
                            onChange={(e) => this.orderDetails(e, "postcode")}/><br/>
-                    <label htmlFor="email">Email Address:</label>
+                    <label id="email-label" htmlFor="email">Email Address:</label>
                     <input type="text" id="email" placeholder="Email Address"
                            onChange={(e) => this.orderDetails(e, "email address")}/><br/>
                 </form>
@@ -138,4 +137,4 @@ export default class Checkout extends React.Component<CheckoutProps> {
             </div>
         );
     };
-};
+}
