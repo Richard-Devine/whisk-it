@@ -54,7 +54,7 @@ export default function Home(props: HomeProps) {
     return (
         <div className="home-container">
             <div className="blurb-header">About us!</div>
-            <div data-testid="blurb-container" className="blurb-container">
+            <div className="blurb-container">
                 Welcome to Whisk it!<br/>
                 <br/>
                 After spending most of our days off baking and receiving really positive, lovely comments from family
@@ -74,7 +74,7 @@ export default function Home(props: HomeProps) {
                 If you fancy trying some of our bakes and would like to support our small business then please place an
                 order!
             </div>
-            <div data-testid="new-products-container" className="new-products-container">
+            <div className="new-products-container">
                 Our latest products!
                 {data.map((product, i) => {
                     if (product.id > data.length - 2) {
@@ -82,18 +82,17 @@ export default function Home(props: HomeProps) {
                             <div className="new-products-wrapper" key={i} onClick={() => {
                                 routing(product.id, product.title)
                             }}>
-                                <div data-testid="image-div" className="product-list-image-div">
-                                    <img src={product.imageURL} alt={product.title}/>
+                                <div className="product-list-image-div">
+                                    <img src={product.imageURL} alt={product.title} />
                                 </div>
-                                <div data-testid="info-container" className="product-list-info-container">
-                                    <div data-testid="title-div"
-                                         className="product-list-info product-list-title-div">
+                                <div className="product-list-info-container">
+                                    <div className="product-list-info product-list-title-div">
                                         {product.title}
                                     </div>
-                                    <div data-testid="description-div" className="product-list-info">
+                                    <div className="product-list-info">
                                         {product.description}
                                     </div>
-                                    <div data-testid="price-div" className="product-list-info">
+                                    <div className="product-list-info">
                                         £{(product.price / 100).toFixed(2)}
                                     </div>
                                 </div>
