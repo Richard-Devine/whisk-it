@@ -2,7 +2,7 @@ import * as React from "react";
 import {CheckoutProps, CheckoutState} from "../webpage-types";
 import PaymentButtons from "../paypal-button/paypal-buttons";
 
-export class Checkout extends React.Component<CheckoutProps> {
+export default class Checkout extends React.Component<CheckoutProps> {
     state: CheckoutState = {
         basketTotal: "",
         order: {},
@@ -79,14 +79,11 @@ export class Checkout extends React.Component<CheckoutProps> {
     };
 
     checked(e: any) {
-        console.log("changed");
         if (this.state.order.name && this.state.order.order && this.state.order.email && this.state.order.city && this.state.order.street && this.state.order.postcode && this.state.order.house) {
             this.setState({confirmed: true});
-            console.log("true");
         } else {
             alert("Please fill out all delivery details");
             this.setState({confirmed: false});
-            console.log("false");
             e.target.checked = false;
         }
     };
