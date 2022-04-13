@@ -33,7 +33,7 @@ export const data = [{id: 0, title: "Mint Aero Brownies", imageURL: mintAeroBrow
     {id: 14, title: "Oreo Blondie", imageURL: oreoBlondie, description: "Our soft and fudgey blondie recipe packed full of white chocolate chunks and crushed Oreos.", price: 1300, offer: false, allergens: "Wheat, Eggs, Dairy, may contain Nuts"},
     {id: 15, title: "Daim Bar Brownie", imageURL: daimBarBrownie, description: "Our signature brownie packed full of crunchie almond caramel pieces and extra milk chocolate chunks.", price: 1300, offer: false, allergens: "Wheat, Eggs, Dairy, Soya, may contain Nuts"},
     {id: 16, title: "Guylian Brownie", imageURL: guylianSeashellBrownie, description: "Our signature brownie with milk and white chocolate chunks and Guylian Seashells folded throughout. Topped with more of the world's favourite Belgian chocolates.", price: 1300, offer: false, allergens: "Wheat, Eggs, Dairy, Soya, Nuts"},
-    {id: 18, title: "White Smartie Blondie", imageURL: whiteChocolateSmartieBlondie, description: "Chewy and fudgey blondie that is packed full of white chocolate chunks and white Smartie chocolate pieces.", price: 1300, offer: false, allergens: "Wheat, Eggs, Dairy, may contain Nuts"}];
+    {id: 17, title: "White Smartie Blondie", imageURL: whiteChocolateSmartieBlondie, description: "Chewy and fudgey blondie that is packed full of white chocolate chunks and white Smartie chocolate pieces.", price: 1300, offer: false, allergens: "Wheat, Eggs, Dairy, may contain Nuts"}];
 
 /* SOON TO BE ADDED:
 
@@ -60,7 +60,7 @@ export const data = [{id: 0, title: "Mint Aero Brownies", imageURL: mintAeroBrow
 
     {id: 19, title: "Easter Blondies", imageURL: easterBlondie, description: "Our signature white Chocolate flavoured blondie packed full and topped with Easter goodies, including Terry's Chocolate Orange eggs, Smartie eggs, Mini eggs, Terry's White Chocolate Orange eggs, Creme eggs and Malteaser bunnies.", price: 1300, offer: false, allergens: "Wheat, Eggs, Dairy, Soya, may contain Nuts"},
     {id: 20, title: "Easter Brownies", imageURL: easterBrownie, description: "Our signature Chocolatey, fudgey Brownie, packed full and topped with Easter goodies, including Terry's Chocolate Orange eggs, Smartie eggs, Mini eggs, Terry's White Chocolate Orange eggs, Creme eggs and Malteaser bunnies.", price: 1300, offer: false, allergens: "Wheat, Eggs, Dairy, Soya, may contain Nuts"}
-    {id: 17, title: "Terry's Chocolate Orange Brownie", imageURL: terryChocolateOrangeBrownie, description: "Our signature brownie with melted chocolate orange folded through, milk chocolate chunks and MORE chocolate orange pieces. The brownie is then topped with a drizzle of chocolate orange chocolate and a segment.", price: 1300, offer: false, allergens: "Wheat, Eggs, Dairy, Soya, may contain Nuts"},
+    {id: 18, title: "Terry's Chocolate Orange Brownie", imageURL: terryChocolateOrangeBrownie, description: "Our signature brownie with melted chocolate orange folded through, milk chocolate chunks and MORE chocolate orange pieces. The brownie is then topped with a drizzle of chocolate orange chocolate and a segment.", price: 1300, offer: false, allergens: "Wheat, Eggs, Dairy, Soya, may contain Nuts"},
     */
 
 
