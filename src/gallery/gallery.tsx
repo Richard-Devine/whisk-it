@@ -28,10 +28,10 @@ export default class Gallery extends React.Component {
 
     render() {
         return (
-            <div className="gallery-container" data-testid="gallery-container">
+            <div className="gallery-container">
                 {imageArr.map((source, index) => {
                     return (
-                        <div key={index} className="gallery-images-div" data-testid="gallery-images-div">
+                        <div key={index} className="gallery-images-div">
                             <img src={require("../images/thumbnails/" + source)} alt="Gallery"
                                  className="gallery-images"
                                  loading="lazy" onClick={() => this.zoomHandler(source)}/>
