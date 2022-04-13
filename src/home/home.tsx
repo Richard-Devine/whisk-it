@@ -77,7 +77,7 @@ export default function Home(props: HomeProps) {
             <div data-testid="new-products-container" className="new-products-container">
                 Our latest products!
                 {data.map((product, i) => {
-                    if (product.id > data.length - 3) {
+                    if (product.id > data.length - 2) {
                         return (
                             <div className="new-products-wrapper" key={i} onClick={() => {
                                 routing(product.id, product.title)
