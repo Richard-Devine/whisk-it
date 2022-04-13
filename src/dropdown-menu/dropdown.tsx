@@ -3,7 +3,6 @@ import {Link} from "react-router-dom";
 import {DropDownState} from "../webpage-types";
 import menuIcon from "../website-icons/menu-icon.webp";
 
-
 export default class Dropdown extends React.Component {
 
     state: DropDownState = {
@@ -18,19 +17,16 @@ export default class Dropdown extends React.Component {
         if (this.state.menuDisplay) {
             return (
                 <div className="drop-down-wrapper" onClick={() => this.showMenu()}>
-                    <div className="drop-down-options" data-testid="home-button">
+                    <div className="drop-down-options">
                         <Link to="/">Home</Link>
                     </div>
-                    <div className="drop-down-options"
-                         data-testid="products-button">
+                    <div className="drop-down-options">
                         <Link to="/Products">Products</Link>
                     </div>
-                    <div className="drop-down-options"
-                         data-testid="offers-button">
+                    <div className="drop-down-options">
                         <Link to="/Offers">Offers</Link>
                     </div>
-                    <div className="drop-down-options"
-                         data-testid="gallery-button">
+                    <div className="drop-down-options">
                         <Link to="/Gallery">Gallery</Link>
                     </div>
                 </div>
@@ -42,8 +38,8 @@ export default class Dropdown extends React.Component {
 
     render() {
         return (
-            <div>
-                <span onClick={() => {
+            <div className="drop-down-container" >
+                <span className="drop-down-image-span" onClick={() => {
                     this.showMenu()
                 }}><img src={menuIcon} alt="Dropdown Icon"/></span>
                 {this.dropDown()}
