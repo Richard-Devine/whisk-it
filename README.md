@@ -1,9 +1,10 @@
 <h1>Whisk It! Website</h1>
 
-https://master.d2wmeuxau7vz56.amplifyapp.com/
+https://www.whisk-it.co.uk
 
 Built using create react app (https://github.com/facebook/create-react-app)
-Routing done by using react router (https://github.com/remix-run/react-router)
+
+Hosted on AWS Amplify
 
 <h2>Commands</h2>
 
