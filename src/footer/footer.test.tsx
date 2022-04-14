@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from "react";
 import Footer from "./footer";
 import Enzyme, {shallow} from "enzyme";
 import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
@@ -16,7 +16,7 @@ describe("Footer tests", () => {
         expect(wrapper.find(".instagram-link-img").contains(<a href="https://www.instagram.com/whiskit_ks/"><img
             src={instagramIcon} alt="Instagram icon"/></a>)).toBe(true);
         expect(wrapper.find(".instagram-link-text").contains(<a href="https://www.instagram.com/whiskit_ks/">Follow us
-            on Instagram </a>)).toBe(true)
+            on Instagram </a>)).toBe(true);
         expect(wrapper.find(".email-link").exists()).toBe(true);
         expect(wrapper.find(".email-link-img").contains(<a href="mailto:michaelaparish@hotmail.co.uk"><img src={email}
                                                                                                            alt="Email icon"/></a>)).toBe(true);
@@ -26,5 +26,5 @@ describe("Footer tests", () => {
             products please contact us via our instagram or email above. <br/>
             We take pride and make our products to the highest quality, if you are unhappy with the quality of our
             products please do not hesitate to get in contact with us.</p>)).toBe(true);
-    })
+    });
 })

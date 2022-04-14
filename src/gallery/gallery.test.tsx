@@ -1,10 +1,10 @@
-import * as React from "react"
-import Gallery from "./gallery"
+import * as React from "react";
+import Gallery from "./gallery";
 import Enzyme, {shallow} from "enzyme";
 import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
 import {imageArr} from "./image-array";
 
-Enzyme.configure({ adapter: new Adapter() });
+Enzyme.configure({adapter: new Adapter()});
 
 describe("Gallery tests", () => {
     it("creates all required elements", () => {

@@ -30,18 +30,17 @@ export default function Home(props: HomeProps) {
                     <div className="new-offers-wrapper" key={i} onClick={() => {
                         routing(offer.id, offer.title)
                     }}>
-                        <div data-testid="image-div" className="product-list-image-div">
+                        <div className="product-list-image-div new-offers-image-div">
                             <img src={offer.imageURL} alt={offer.title}/>
                         </div>
-                        <div data-testid="info-container" className="product-list-info-container">
-                            <div data-testid="title-div"
-                                 className="product-list-info product-list-title-div">
+                        <div className="product-list-info-container new-offers-info-container">
+                            <div className="product-list-info product-list-title-div new-offers-title">
                                 {offer.title}
                             </div>
-                            <div data-testid="description-div" className="product-list-info">
+                            <div className="product-list-info new-offers-description">
                                 {offer.description}
                             </div>
-                            <div data-testid="price-div" className="product-list-info">
+                            <div className="product-list-info new-offers-price">
                                 £{(offer.price / 100).toFixed(2)}
                             </div>
                         </div>
@@ -82,17 +81,17 @@ export default function Home(props: HomeProps) {
                             <div className="new-products-wrapper" key={i} onClick={() => {
                                 routing(product.id, product.title)
                             }}>
-                                <div className="product-list-image-div">
-                                    <img src={product.imageURL} alt={product.title} />
+                                <div className="product-list-image-div new-products-image-div">
+                                    <img src={product.imageURL} alt={product.title} className="new-products-image"/>
                                 </div>
-                                <div className="product-list-info-container">
-                                    <div className="product-list-info product-list-title-div">
+                                <div className="product-list-info-container new-products-info-container">
+                                    <div className="product-list-info product-list-title-div new-products-title">
                                         {product.title}
                                     </div>
-                                    <div className="product-list-info">
+                                    <div className="product-list-info new-products-description">
                                         {product.description}
                                     </div>
-                                    <div className="product-list-info">
+                                    <div className="product-list-info new-products-price">
                                         £{(product.price / 100).toFixed(2)}
                                     </div>
                                 </div>
@@ -106,8 +105,6 @@ export default function Home(props: HomeProps) {
             <div data-testid="new-offers-container" className="new-offers-container">
                 Our latest offers!
                 {newestOffers()}
-            </div>
-            <div data-testid="instagram-container">
             </div>
         </div>
     );
