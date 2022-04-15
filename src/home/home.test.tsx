@@ -50,14 +50,13 @@ describe("Home tests", () => {
     });
 
     it("should navigate to product info page onClick", () => {
-        const mockFunc = jest.fn
-        const wrapper = shallow(<Home onClick={() => {mockFunc()}}/>)
-        //wrapper.find()
-    })
+        const mockFunc = jest.fn();
+        const wrapper = shallow(<Home onClick={mockFunc}/>);
+        wrapper.find(".new-products-wrapper").at(0).simulate("click");
+        expect(mockedNavigate).toBeCalledWith("/Products/" + data[(data.length - 2)].title);
+        expect(mockFunc).toBeCalledWith(data[(data.length - 2)].id);
+        wrapper.find(".new-offers-wrapper").at(0).simulate("click");
+        expect(mockedNavigate).toBeCalledWith("/Products/" + latestOffers[0].title);
+        expect(mockFunc).toBeCalledWith(latestOffers[0].id);
+    });
 })
-
-/*wrapper.find({"data-testid":"new-products-container"}).simulate("click");
-        expect(mockFunc).toHaveBeenCalledWith("ProductList");
-        wrapper.find({"data-testid":"new-offers-container"}).simulate("click");
-        expect(mockFunc).toHaveBeenCalledWith("Offers");
-        expect(mockFunc).toHaveBeenCalledTimes(2);*/

@@ -17,19 +17,18 @@ export default function Offers(props: OffersProps) {
             {data.map((product, i) => {
                 if (product.offer) {
                     return (
-                        <div data-testid="offer-divs" onClick={() => routing(product.id, product.title)} key={i}
-                             className="offers-wrapper">
-                            <div data-testid="img-div" className="offers-img-div">
-                                <img src={product.imageURL} alt={product.title}/>
+                        <div onClick={() => routing(product.id, product.title)} key={i} className="offers-wrapper">
+                            <div className="offers-img-div">
+                                <img src={product.imageURL} alt={product.title} className="offers-image"/>
                             </div>
-                            <div data-testid="offers-content-div" className="offers-info-container">
-                                <div data-testid="title-div" className="offers-info offers-title-div">
+                            <div className="offers-info-container">
+                                <div className="offers-info offers-title-div">
                                     {product.title}
                                 </div>
-                                <div data-testid="description-div" className="offers-info">
+                                <div className="offers-info offers-description-div">
                                     {product.description}
                                 </div>
-                                <div data-testid="price-div" className="offers-info">
+                                <div className="offers-info offers-price-div">
                                     £{(product.price / 100).toFixed(2)}
                                 </div>
                             </div>

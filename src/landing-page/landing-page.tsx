@@ -68,7 +68,7 @@ export default class LandingPage extends React.Component {
     render() {
         return (
             <div className="website-container">
-                <div data-testid="header-container" className="header-container">
+                <div className="header-container">
                     <Header myBasket={this.state.basketTotal}/>
                 </div>
                 <Routes>
@@ -95,7 +95,7 @@ export default class LandingPage extends React.Component {
                                                               completeOrder={() => this.completeOrder()}/>}/>
                     <Route path="CheckoutComplete" element={<CheckoutComplete/>}/>
                 </Routes>
-                <div>
+                <div className="footer-container">
                     <Footer/>
                 </div>
             </div>

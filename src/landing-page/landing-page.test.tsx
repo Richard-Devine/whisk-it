@@ -8,48 +8,17 @@ import ProductList from "../product-list/product-list"
 import Offers from "../offers/offers";
 import Gallery from "../gallery/gallery";
 import React from "react"
+import Footer from "../footer/footer";
 
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("LandingPage tests", () => {
 
-    it("productView renders correct components on state change", () => {
+    it("should render correct divs and components", () => {
         const wrapper = shallow(<LandingPage/>)
-        const instance = wrapper.instance() as any
-        expect(wrapper.find({"data-testid":"header-container"}).exists()).toBe(true)
-        expect(wrapper.find({"data-testid":"home-container"}).exists()).toBe(true)
-        expect(wrapper.find({"data-testid":"product-details-container"}).exists()).toBe(false)
-        expect(wrapper.find({"data-testid":"product-list-container"}).exists()).toBe(false)
-        expect(wrapper.find({"data-testid":"offers-container"}).exists()).toBe(false)
-        expect(wrapper.find({"data-testid":"gallery-container"}).exists()).toBe(false)
-        expect(wrapper.find(Header).exists()).toBe(true)
-        expect(wrapper.find(Home).exists()).toBe(true)
-
-
-        expect(wrapper.find({"data-testid":"home-container"}).exists()).toBe(false)
-        expect(wrapper.find({"data-testid":"product-details-container"}).exists()).toBe(true)
-        expect(wrapper.find({"data-testid":"header-container"}).exists()).toBe(true)
-        expect(wrapper.find(ProductDetails).prop("id")).toBe(0)
-
-
-        expect(wrapper.find({"data-testid":"product-details-container"}).exists()).toBe(false)
-        expect(wrapper.find({"data-testid":"product-list-container"}).exists()).toBe(true)
-        expect(wrapper.find({"data-testid":"header-container"}).exists()).toBe(true)
-        expect(wrapper.find(ProductList).exists()).toBe(true)
-
-        expect(wrapper.find({"data-testid":"product-list-container"}).exists()).toBe(false)
-        expect(wrapper.find({"data-testid":"offers-container"}).exists()).toBe(true)
-        expect(wrapper.find({"data-testid":"header-container"}).exists()).toBe(true)
-        expect(wrapper.find(Offers).exists()).toBe(true)
-
-
-        expect(wrapper.find({"data-testid":"offers-container"}).exists()).toBe(false)
-        expect(wrapper.find({"data-testid":"gallery-container"}).exists()).toBe(true)
-        expect(wrapper.find({"data-testid":"header-container"}).exists()).toBe(true)
-
-        expect(wrapper.find({"data-testid":"gallery-container"}).exists()).toBe(false)
-        expect(wrapper.find({"data-testid":"contact-us-container"}).exists()).toBe(true)
-        expect(wrapper.find({"data-testid":"header-container"}).exists()).toBe(true)
+        expect(wrapper.find(".website-container").exists()).toBe(true)
+        expect(wrapper.find(".header-container").contains(<Header myBasket={0}/>)).toBe(true)
+        expect(wrapper.find(".footer-container").contains(<Footer/>)).toBe(true)
     })
 
     it("viewProduct changes state when called", () => {

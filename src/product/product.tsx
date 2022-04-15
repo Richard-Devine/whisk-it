@@ -13,20 +13,20 @@ export default function Product(props: ProductProps) {
     }
 
     return (
-        <div data-testid="product-wrapper" className="product-wrapper" onClick={() => {
+        <div className="product-wrapper" onClick={() => {
             routing(props.id)
         }}>
-            <div data-testid="image-div" className="product-list-image-div">
-                <img src={props.imageURL} alt={props.title}/>
+            <div className="product-list-image-div">
+                <img src={props.imageURL} alt={props.title} className="product-list-image"/>
             </div>
-            <div data-testid="info-container" className="product-list-info-container">
-                <div data-testid="title-div" className="product-list-info product-list-title-div">
+            <div className="product-list-info-container">
+                <div className="product-list-info product-list-title-div">
                     {props.title}
                 </div>
-                <div data-testid="description-div" className="product-list-info">
+                <div className="product-list-info">
                     {props.description}
                 </div>
-                <div data-testid="price-div" className="product-list-info">
+                <div className="product-list-info">
                     £{(props.price / 100).toFixed(2)}
                 </div>
             </div>

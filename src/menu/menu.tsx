@@ -11,27 +11,23 @@ export default function Menu(props: MenuProps) {
     return (
         <div>
             <div className="menu-wrapper">
-                <span className="menu-options" data-testid="home-button">
+                <span className="menu-options">
                     <Link to="/">Home</Link>
                 </span>
-                <span className="menu-options"
-                      data-testid="products-button">
+                <span className="menu-options">
                         <Link to="/Products">Products</Link>
                 </span>
-                <span className="menu-options"
-                      data-testid="offers-button">
+                <span className="menu-options">
                         <Link to="/Offers">Offers</Link>
                 </span>
-                <span className="menu-options"
-                      data-testid="gallery-button">
+                <span className="menu-options">
                         <Link to="/Gallery">Gallery</Link>
                 </span>
             </div>
             <span className="drop-down-container">
                     <Dropdown/>
                 </span>
-            <span onClick={() => navigate("/Basket")} className="menu-options basket-button"
-                  data-testid="basket-button">
+            <span onClick={() => navigate("/Basket")} className="menu-options basket-button">
                     <div className="basket-div">
                     <img src={basket} alt="My Basket" className="basket-image"/>
                     </div>
